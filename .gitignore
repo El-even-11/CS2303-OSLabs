@@ -1,6 +1,7 @@
 obj/
 libs/
 kernel/
+build/
 *.ko
 *.o
 *.mod.c
