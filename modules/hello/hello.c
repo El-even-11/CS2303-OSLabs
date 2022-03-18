@@ -30,7 +30,3 @@ static void addsyscall_exit(void)
 
 module_init(addsyscall_init);
 module_exit(addsyscall_exit);
-
-int main(){
-    
-}
