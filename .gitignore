@@ -7,3 +7,5 @@ build/
 *.mod.c
 *.order
 *.symvers
+*.cmd
+.*/
