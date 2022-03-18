@@ -1,8 +1,8 @@
-obj-m := hello.obj
-KID := ~/courses/OsLabs/kernel/goldfish
+obj-m := hello.o
+KID := ~/courses/oslabs/kernel/goldfish
 CROSS_COMPILE=arm-linux-androideabi-
 CC=$(CROSS_COMPILE)gcc
-LD=$(CROSS_COMPILE)LD
+LD=$(CROSS_COMPILE)ld
 
 all:
 	make -C $(KID) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) M=$(shell pwd) modules
