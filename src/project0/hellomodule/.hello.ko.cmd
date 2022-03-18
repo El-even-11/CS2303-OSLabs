@@ -1,1 +1,0 @@
-cmd_/home/eleven/courses/oslabs/modules/hello/hello.ko := arm-linux-androideabi-ld -r  -T /home/eleven/courses/oslabs/kernel/goldfish/scripts/module-common.lds --build-id  -o /home/eleven/courses/oslabs/modules/hello/hello.ko /home/eleven/courses/oslabs/modules/hello/hello.o /home/eleven/courses/oslabs/modules/hello/hello.mod.o
