@@ -31,6 +31,7 @@ void convert(struct task_struct *task, struct prinfo *info)
     info->uid = task->cred->uid;
     get_task_comm(info->comm, task);
 
+    // .next or .prev points to task_struct's sibling viarable.
     info->first_child_pid = (list_empty(&(task->children))) ? 0 : list_entry(task->children.next, struct task_struct, sibling)->pid;
     if (list_empty(&(task->sibling)))
     {
@@ -48,18 +49,30 @@ void convert(struct task_struct *task, struct prinfo *info)
 
 void dfs(struct task_struct *task, struct prinfo *buf, int *nr)
 {
-    
+    convert(task, &buf[*nr]);
+    *nr = *nr + 1;
+
+    struct list_head *p;
+    struct task_struct *t;
+    list_for_each(p, &(task->children))
+    {
+        t = list_entry(p, struct task_struct, sibling);
+        dfs(t, buf, nr);
+    }
 }
 
 static int sys_pstreecall(struct prinfo *buf, int *nr)
 {
     // malloc
-    struct prinfo *_buf = kmalloc(sizeof(struct prinfo) * __MAX_BUFSIZE, GFP_KERNEL); // kmalloc : kernel space malloc
+    // kmalloc : kernel space malloc
+    struct prinfo *_buf = kmalloc(sizeof(struct prinfo) * __MAX_BUFSIZE, GFP_KERNEL);
     int *_nr = kmalloc(sizeof(int), GFP_KERNEL);
+    *_nr = 0;
 
-    // deep first search
     read_lock(&tasklist_lock);
-    dfs(&init_task, _buf, _nr); // init_task : the initial process
+    // deep first search
+    // init_task : the initial process
+    dfs(&init_task, _buf, _nr);
     read_unlock(&tasklist_lock);
 
     if (copy_to_user(buf, _buf, sizeof(struct prinfo) * __MAX_BUFSIZE))
@@ -67,7 +80,7 @@ static int sys_pstreecall(struct prinfo *buf, int *nr)
         printk(KERN_ERR "copy to user failed.\n");
         return 1;
     }
-    if (copy_to_user(nr, _nr, sizeof(int))
+    if (copy_to_user(nr, _nr, sizeof(int)))
     {
         printk(KERN_ERR "copy to user failed.\n");
         return 1;
