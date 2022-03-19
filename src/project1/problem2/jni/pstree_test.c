@@ -2,6 +2,7 @@
 
 #define __NR_pstreecall 356
 #define __MAX_BUFSIZE 1024
+#define __MAX_PSTREE_DEPTH 512
 
 struct prinfo
 {
@@ -17,8 +18,46 @@ struct prinfo
 void print_tree(struct prinfo *buf, int *nr)
 {
     int i;
-    for (i = 0; i < *nr; i++)
+    int depth = -1;
+    // parent_pids : a stack to store parents' pids;
+    int parent_pids[__MAX_PSTREE_DEPTH];
+    for (i = 1; i < *nr; i++)
     {
+        int parent_pid = buf[i].parent_pid;
+        if (parent_pid == 0)
+        {
+            depth = 0;
+        }
+        else if (parent_pid != parent_pids[depth])
+        {
+            // parent process changed
+            int j;
+            for (j = 1; j < depth; j++)
+            {
+                if (parent_pid == parent_pids[j])
+                {
+                    break;
+                }
+            }
+            if (j >= depth)
+            {
+                // new parent process
+                depth++;
+                parent_pids[depth] = parent_pid;
+            }
+            else
+            {
+                // former parent process
+                depth = j;
+            }
+        }
+
+        int j;
+        for (j = 0; j < depth; j++)
+        {
+            printf("\t");
+        }
+
         printf("%s,%d,%ld,%d,%d,%d,%d\n", buf[i].comm, buf[i].pid, buf[i].state, buf[i].parent_pid, buf[i].first_child_pid, buf[i].next_sibling_pid, buf[i].uid);
     }
 }
