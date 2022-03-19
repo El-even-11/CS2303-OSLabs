@@ -31,17 +31,24 @@ void convert(struct task_struct *task, struct prinfo *info)
     info->uid = task->cred->uid;
     get_task_comm(info->comm, task);
 
-    info->first_child_pid = (list_empty(task->children)) ? 0 : list_entry(task->children.next, struct task_struct, sibling)->pid;
-    if (list_empty(task->sibling))
+    info->first_child_pid = (list_empty(&(task->children))) ? 0 : list_entry(task->children.next, struct task_struct, sibling)->pid;
+    if (list_empty(&(task->sibling)))
     {
         info->next_sibling_pid = 0;
         return;
     }
-    
+    if (task->parent->pid == list_entry(task->sibling.next, struct task_struct, sibling)->pid)
+    {
+        // if process does not have next sibling, "task->sibling.next" will point to task's parent's "sibling" variable.
+        info->next_sibling_pid = 0;
+        return;
+    }
+    info->next_sibling_pid = list_entry(task->sibling.next, struct task_struct, sibling)->pid;
 }
 
 void dfs(struct task_struct *task, struct prinfo *buf, int *nr)
 {
+    
 }
 
 static int sys_pstreecall(struct prinfo *buf, int *nr)
