@@ -2,6 +2,7 @@ obj/
 libs/
 kernel/
 build/
+sample/
 *.ko
 *.o
 *.mod.c
