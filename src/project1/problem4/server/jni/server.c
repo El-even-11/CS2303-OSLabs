@@ -43,7 +43,7 @@ void *serve(void *sockfd)
     {
         bzero(buffer, BUFFER_SIZE);
         int n = read(newsockfd, buffer, BUFFER_SIZE - 1);
-        if (strcmp(buffer, ":q") == 0)
+        if (n <= 0 || strcmp(buffer, ":q") == 0)
         {
             close(newsockfd);
             printf("Server thread closing ...\n");
@@ -61,23 +61,37 @@ void *serve(void *sockfd)
         {
             printf("Receiving message: %s\n", buffer);
             encrypt(buffer, n);
-            write(newsockfd, buffer, n);
+            if (write(newsockfd, buffer, n) < 0)
+            {
+                // printf("ERROR writing to socket");
+                close(newsockfd);
+                return;
+            }
             break;
         }
-        write(newsockfd, "Please wait ...", 15);
+        if (write(newsockfd, "Please wait ...", 15) < 0)
+        {
+            // printf("ERROR writing to socket");
+            close(newsockfd);
+            return;
+        }
     }
 
     while (available)
     {
         bzero(buffer, BUFFER_SIZE);
         int n = read(newsockfd, buffer, BUFFER_SIZE - 1);
-        if (strcmp(buffer, ":q") == 0)
+        if (n <= 0 || strcmp(buffer, ":q") == 0)
         {
             break;
         }
         printf("Receiving message: %s\n", buffer);
         encrypt(buffer, n);
-        write(newsockfd, buffer, n);
+        if (write(newsockfd, buffer, n) < 0)
+        {
+            // printf("ERROR writing to socket");
+            break;
+        }
     }
 
     pthread_mutex_lock(&mu);

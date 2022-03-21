@@ -45,15 +45,27 @@ int main(int argc, char *argv[])
         printf("Please enter the message:\n");
         bzero(buffer, BUFFER_SIZE);
         gets(buffer);
-        // printf("len : %d\n", strlen(buffer));
-        write(sockfd, buffer, strlen(buffer));
+        if (strlen(buffer) == 0)
+        {
+            continue;
+        }
+
+        if (write(sockfd, buffer, strlen(buffer)) < 0)
+        {
+            // printf("Error writing to socket\n");
+            return 0;
+        }
         if (strcmp(buffer, ":q") == 0)
         {
             printf("Client closing ...\n");
             return 0;
         }
         bzero(buffer, BUFFER_SIZE);
-        read(sockfd, buffer, BUFFER_SIZE - 1);
+        if (read(sockfd, buffer, BUFFER_SIZE - 1) <= 0)
+        {
+            // printf("Error reading from socket\n");
+            return 0;
+        }
         printf("From server: %s\n", buffer);
     }
 
