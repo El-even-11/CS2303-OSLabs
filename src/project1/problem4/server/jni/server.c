@@ -46,6 +46,7 @@ void *serve(void *sockfd)
         if (strcmp(buffer, ":q") == 0)
         {
             close(newsockfd);
+            printf("Server thread closing ...\n");
             return;
         }
         pthread_mutex_lock(&mu);
@@ -58,6 +59,7 @@ void *serve(void *sockfd)
 
         if (available)
         {
+            printf("Receiving message: %s\n", buffer);
             encrypt(buffer, n);
             write(newsockfd, buffer, n);
             break;
@@ -73,6 +75,7 @@ void *serve(void *sockfd)
         {
             break;
         }
+        printf("Receiving message: %s\n", buffer);
         encrypt(buffer, n);
         write(newsockfd, buffer, n);
     }
@@ -81,6 +84,7 @@ void *serve(void *sockfd)
     client_cnt--;
     pthread_mutex_unlock(&mu);
     close(newsockfd);
+    printf("Server thread closing ...\n");
 }
 
 int main(int argc, char *argv[])

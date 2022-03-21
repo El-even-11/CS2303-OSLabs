@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     {
         printf("Please enter the message:\n");
         bzero(buffer, BUFFER_SIZE);
-        gets(buffer, BUFFER_SIZE - 1, stdin);
+        gets(buffer);
         // printf("len : %d\n", strlen(buffer));
         write(sockfd, buffer, strlen(buffer));
         if (strcmp(buffer, ":q") == 0)
