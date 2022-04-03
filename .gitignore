@@ -3,6 +3,7 @@ libs/
 kernel/
 build/
 sample/
+submit/
 *.ko
 *.o
 *.mod.c
