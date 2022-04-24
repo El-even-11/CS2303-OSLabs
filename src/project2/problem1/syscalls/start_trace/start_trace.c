@@ -11,7 +11,7 @@ MODULE_LICENSE("Dual BSD/GPL");
 
 static int sys_start_trace(pid_t _pid)
 {
-    struct task_struck *task;
+    struct task_struct *task;
     task = get_pid_task(find_get_pid(_pid), PIDTYPE_PID); // get task by pid
     if (!task || task->trace_flag == 1)
         return -EINVAL;

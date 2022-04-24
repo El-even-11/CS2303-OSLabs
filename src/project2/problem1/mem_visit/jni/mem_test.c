@@ -23,7 +23,7 @@ int main()
 {
 	int fd;
 	struct sigaction sa;
-    unsigned long wcount;
+    int wcount;
 
     printf("Start memory trace testing program!\n");
 
@@ -36,7 +36,7 @@ int main()
 
     times = 0;
  
-	 /* allocate memory for process, set the memory can only be read */
+	/* allocate memory for process, set the memory can only be read */
 	alloc_size = 10 * getpagesize();
 	fd = open("/dev/zero", O_RDONLY);
 	memory = mmap(NULL, alloc_size, PROT_READ, MAP_PRIVATE, fd, 0);
@@ -51,9 +51,15 @@ int main()
 	memory[0] = 1;
 	printf("memory[0] = %d\n", memory[0]);
 
+	/* set protection */
+	mprotect(memory, alloc_size, PROT_READ);
+	/* try to read, nothing */
+	int a = memory[0];
+	printf("a = %d\n", a);
+
 	/* Get wcount */
-    wcount = syscall(363, getpid());
-    printf("Task pid : %d, Wcount = %lu, times = %d\n", getpid(), wcount, times);
+    syscall(363, getpid(), &wcount);
+    printf("Task pid : %d, Wcount = %d, times = %d\n", getpid(), wcount, times);
 	/* freee */
 	munmap(memory, alloc_size);
 	return 0;
