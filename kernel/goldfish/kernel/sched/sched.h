@@ -79,7 +79,9 @@ extern struct mutex sched_domains_mutex;
 
 struct cfs_rq;
 struct rt_rq;
+/* MODIFIED -- START */
 struct ras_rq;
+/* MODIFIED -- END */
 
 extern struct list_head task_groups;
 
@@ -192,6 +194,11 @@ extern int alloc_rt_sched_group(struct task_group *tg, struct task_group *parent
 extern void init_tg_rt_entry(struct task_group *tg, struct rt_rq *rt_rq,
 		struct sched_rt_entity *rt_se, int cpu,
 		struct sched_rt_entity *parent);
+
+/* MODIFIED -- START */
+extern void free_ras_sched_group(struct task_group *tg);
+extern int alloc_ras_sched_group(struct task_group *tg, struct task_group *parent);
+/* MODIFIED -- END */
 
 #else /* CONFIG_CGROUP_SCHED */
 
@@ -310,9 +317,39 @@ struct rt_rq {
 #endif
 };
 
+/* MODIFIED -- START */
 struct ras_rq {
+	struct rt_prio_array active;
+	unsigned long rt_nr_running;
+#if defined CONFIG_SMP || defined CONFIG_RT_GROUP_SCHED
+	struct {
+		int curr; /* highest queued rt task prio */
+#ifdef CONFIG_SMP
+		int next; /* next highest */
+#endif
+	} highest_prio;
+#endif
+#ifdef CONFIG_SMP
+	unsigned long rt_nr_migratory;
+	unsigned long rt_nr_total;
+	int overloaded;
+	struct plist_head pushable_tasks;
+#endif
+	int rt_throttled;
+	u64 rt_time;
+	u64 rt_runtime;
+	/* Nests inside the rq lock: */
+	raw_spinlock_t rt_runtime_lock;
 
+#ifdef CONFIG_RT_GROUP_SCHED
+	unsigned long rt_nr_boosted;
+
+	struct rq *rq;
+	struct list_head leaf_rt_rq_list;
+	struct task_group *tg;
+#endif
 };
+/* MODIFIED -- END */
 
 #ifdef CONFIG_SMP
 
@@ -1148,6 +1185,9 @@ extern void print_rt_stats(struct seq_file *m, int cpu);
 
 extern void init_cfs_rq(struct cfs_rq *cfs_rq);
 extern void init_rt_rq(struct rt_rq *rt_rq, struct rq *rq);
+/* MODIFIED -- START */
+extern void init_ras_rq(struct ras_rq *ras_rq, struct rq *rq);
+/* MODIFIED -- END */
 extern void unthrottle_offline_cfs_rqs(struct rq *rq);
 
 extern void account_cfs_bandwidth_used(int enabled, int was_enabled);
