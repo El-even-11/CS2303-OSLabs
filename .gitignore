@@ -4,6 +4,8 @@ kernel-copy/
 build/
 sample/
 submit/
+.tmp_vmlinux*
+vmlinux
 *.ko
 *.o
 *.mod.c
