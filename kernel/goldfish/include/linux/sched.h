@@ -39,7 +39,9 @@
 #define SCHED_BATCH		3
 /* SCHED_ISO: reserved but not implemented yet */
 #define SCHED_IDLE		5
+/* MODIFIED -- START */
 #define SCHED_RAS		6
+/* MODIFIED -- END */
 /* Can be ORed in to make sure the process is reverted back to SCHED_NORMAL on fork */
 #define SCHED_RESET_ON_FORK     0x40000000
 
@@ -150,7 +152,9 @@ extern unsigned long get_parent_ip(unsigned long addr);
 
 struct seq_file;
 struct cfs_rq;
+/* MODIFIED -- START */
 struct ras_rq;
+/* MODIFIED -- END */
 struct task_group;
 #ifdef CONFIG_SCHED_DEBUG
 extern void proc_sched_show_task(struct task_struct *p, struct seq_file *m);
@@ -1249,14 +1253,24 @@ struct sched_rt_entity {
 #endif
 };
 
-/* MODIFIED */
+/* MODIFIED -- START */
 struct sched_ras_entity
 {
-	
+	struct list_head run_list;
+	unsigned long timeout;
+	unsigned int time_slice;
+	int nr_cpus_allowed;
+
+	struct sched_ras_entity *back;	
+#ifdef CONFIG_RAS_GROUP_SCHED
+	struct sched_ras_entity	*parent;
+	/* rq on which this entity is (to be) queued: */
+	struct ras_rq		*ras_rq;
+	/* rq "owned" by this entity/group: */
+	struct ras_rq		*my_q;
+#endif	
 };
-
-
-/* MODIFIED */
+/* MODIFIED -- END */
 
 /*
  * default timeslice is 100 msecs (used only for SCHED_RR tasks).
@@ -1264,7 +1278,10 @@ struct sched_ras_entity
  */
 #define RR_TIMESLICE		(100 * HZ / 1000)
 
-#define RAS_TIMESLICE		(100 * HZ / 1000)
+/* MODIFIED -- START */
+#define RAS_MAX_TIMESLICE		(100 * HZ / 1000)
+#define RAS_MIN_TIMESLICE		(10 * HZ / 1000)
+/* MODIFIED -- END */
 
 struct rcu_node;
 
@@ -1298,7 +1315,9 @@ struct task_struct {
 	const struct sched_class *sched_class;
 	struct sched_entity se;
 	struct sched_rt_entity rt;
+	/* MODIFIED -- START */
 	struct sched_ras_entity ras;
+	/* MODIFIED -- END */
 #ifdef CONFIG_CGROUP_SCHED
 	struct task_group *sched_task_group;
 #endif
