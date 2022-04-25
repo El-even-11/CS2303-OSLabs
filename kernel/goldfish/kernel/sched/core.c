@@ -1723,6 +1723,9 @@ static void __sched_fork(struct task_struct *p)
 #endif
 
 	INIT_LIST_HEAD(&p->rt.run_list);
+	/* MODIFIED -- START */
+	INIT_LIST_HEAD(&p->ras.run_list);
+	/* MODIFIED -- END */
 
 #ifdef CONFIG_PREEMPT_NOTIFIERS
 	INIT_HLIST_HEAD(&p->preempt_notifiers);
@@ -4174,7 +4177,12 @@ __setscheduler(struct rq *rq, struct task_struct *p, int policy, int prio)
 	p->normal_prio = normal_prio(p);
 	/* we are holding p->pi_lock already */
 	p->prio = rt_mutex_getprio(p);
-	if (rt_prio(p->prio))
+
+	/* MODIFIED -- START */
+	if (p->policy == SCHED_RAS)
+		p->sched_class = &ras_sched_class;
+	/* MODIFIED -- END */
+	else if (rt_prio(p->prio))
 		p->sched_class = &rt_sched_class;
 	else
 		p->sched_class = &fair_sched_class;
@@ -4222,7 +4230,7 @@ recheck:
 
 		if (policy != SCHED_FIFO && policy != SCHED_RR &&
 				policy != SCHED_NORMAL && policy != SCHED_BATCH &&
-				policy != SCHED_IDLE)
+				policy != SCHED_IDLE && policy != SCHED_RAS)
 			return -EINVAL;
 	}
 
@@ -4235,8 +4243,11 @@ recheck:
 	    (p->mm && param->sched_priority > MAX_USER_RT_PRIO-1) ||
 	    (!p->mm && param->sched_priority > MAX_RT_PRIO-1))
 		return -EINVAL;
-	if (rt_policy(policy) != (param->sched_priority != 0))
+
+	/* MODIFIED -- START */	
+	if ((rt_policy(policy)| policy == SCHED_RAS ) != (param->sched_priority != 0))
 		return -EINVAL;
+	/* MODIFIED -- END */	
 
 	/*
 	 * Allow unprivileged RT tasks to decrease priority:
@@ -4895,6 +4906,9 @@ SYSCALL_DEFINE1(sched_get_priority_max, int, policy)
 	switch (policy) {
 	case SCHED_FIFO:
 	case SCHED_RR:
+	/* MODIFIED -- START */
+	case SCHED_RAS:
+	/* MODIFIED -- END */
 		ret = MAX_USER_RT_PRIO-1;
 		break;
 	case SCHED_NORMAL:
@@ -4920,6 +4934,9 @@ SYSCALL_DEFINE1(sched_get_priority_min, int, policy)
 	switch (policy) {
 	case SCHED_FIFO:
 	case SCHED_RR:
+	/* MODIFIED -- START */
+	case SCHED_RAS:
+	/* MODIFIED -- END */
 		ret = 1;
 		break;
 	case SCHED_NORMAL:
@@ -7143,6 +7160,10 @@ void __init sched_init(void)
 		rq->calc_load_update = jiffies + LOAD_FREQ;
 		init_cfs_rq(&rq->cfs);
 		init_rt_rq(&rq->rt, rq);
+		/* MODIFIED -- START */
+		init_ras_rq(&rq->ras, rq)
+		/* MODIFIED -- END */
+		
 #ifdef CONFIG_FAIR_GROUP_SCHED
 		root_task_group.shares = ROOT_TASK_GROUP_LOAD;
 		INIT_LIST_HEAD(&rq->leaf_cfs_rq_list);
@@ -7412,6 +7433,9 @@ static void free_sched_group(struct task_group *tg)
 {
 	free_fair_sched_group(tg);
 	free_rt_sched_group(tg);
+	/* MODIFIED -- START */
+	free_ras_sched_group(tg);
+	/* MODIFIED -- END */
 	autogroup_free(tg);
 	kfree(tg);
 }
@@ -7431,6 +7455,11 @@ struct task_group *sched_create_group(struct task_group *parent)
 
 	if (!alloc_rt_sched_group(tg, parent))
 		goto err;
+
+	/* MODIFIED -- START */
+	if (!alloc_ras_sched_group(tg, parent))
+		goto err;
+	/* MODIFIED -- END */	
 
 	spin_lock_irqsave(&task_group_lock, flags);
 	list_add_rcu(&tg->list, &task_groups);

@@ -319,33 +319,20 @@ struct rt_rq {
 
 /* MODIFIED -- START */
 struct ras_rq {
-	struct rt_prio_array active;
-	unsigned long rt_nr_running;
-#if defined CONFIG_SMP || defined CONFIG_RT_GROUP_SCHED
-	struct {
-		int curr; /* highest queued rt task prio */
-#ifdef CONFIG_SMP
-		int next; /* next highest */
-#endif
-	} highest_prio;
-#endif
-#ifdef CONFIG_SMP
-	unsigned long rt_nr_migratory;
-	unsigned long rt_nr_total;
-	int overloaded;
-	struct plist_head pushable_tasks;
-#endif
-	int rt_throttled;
-	u64 rt_time;
-	u64 rt_runtime;
-	/* Nests inside the rq lock: */
-	raw_spinlock_t rt_runtime_lock;
+	struct list_head active;
+	unsigned long ras_nr_running;
 
-#ifdef CONFIG_RT_GROUP_SCHED
-	unsigned long rt_nr_boosted;
+	int ras_throttled;
+	u64 ras_time;
+	u64 ras_runtime;
+	/* Nests inside the rq lock: */
+	raw_spinlock_t ras_runtime_lock;
+
+#ifdef CONFIG_RAS_GROUP_SCHED
+	unsigned long ras_nr_boosted;
 
 	struct rq *rq;
-	struct list_head leaf_rt_rq_list;
+	struct list_head leaf_ras_rq_list;
 	struct task_group *tg;
 #endif
 };
