@@ -6,11 +6,11 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
- 
+
 static int alloc_size;
-static char* memory;
+static char *memory;
 static int times;
- 
+
 void segv_handler(int signal_number)
 {
 	printf("find memory accessed!\n");
@@ -18,48 +18,60 @@ void segv_handler(int signal_number)
 	times++;
 	printf("set memory read write!\n");
 }
- 
+
 int main()
 {
 	int fd;
 	struct sigaction sa;
-    int wcount;
+	int wcount;
 
-    printf("Start memory trace testing program!\n");
+	printf("Start memory trace testing program!\n");
 
 	syscall(361, getpid());
- 
+
 	/* Init segv_handler to handle SIGSEGV */
 	memset(&sa, 0, sizeof(sa));
 	sa.sa_handler = &segv_handler;
 	sigaction(SIGSEGV, &sa, NULL);
 
-    times = 0;
- 
+	times = 0;
+
 	/* allocate memory for process, set the memory can only be read */
 	alloc_size = 10 * getpagesize();
 	fd = open("/dev/zero", O_RDONLY);
 	memory = mmap(NULL, alloc_size, PROT_READ, MAP_PRIVATE, fd, 0);
 	close(fd);
-	/* try to write, will receive a SIGSEGV */
-	memory[0] = 0;
-	printf("memory[0] = %d\n", memory[0]);
 
-	/* set protection */
-	mprotect(memory, alloc_size, PROT_READ);
-	/* try to write, will receive a SIGSEGV */
-	memory[0] = 1;
-	printf("memory[0] = %d\n", memory[0]);
-
-	/* set protection */
-	mprotect(memory, alloc_size, PROT_READ);
-	/* try to read, nothing */
-	int a = memory[0];
-	printf("a = %d\n", a);
+	int i;
+	for (i = 0; i < getpagesize(); i++)
+	{
+		/* set protection */
+		mprotect(memory, alloc_size, PROT_READ);
+		/* try to write, will receive a SIGSEGV */
+		memory[i] = i;
+		printf("memory[%d] = %d\n", i,memory[i]);
+	}
 
 	/* Get wcount */
-    syscall(363, getpid(), &wcount);
-    printf("Task pid : %d, Wcount = %d, times = %d\n", getpid(), wcount, times);
+	syscall(363, getpid(), &wcount);
+	printf("Task pid : %d, Wcount = %d, times = %d\n", getpid(), wcount, times);
+
+	// stop tracing
+	syscall(362, getpid());
+
+	for (i = 0; i < getpagesize(); i++)
+	{
+		/* set protection */
+		mprotect(memory, alloc_size, PROT_READ);
+		/* try to write, will receive a SIGSEGV */
+		memory[i] = i;
+		printf("memory[%d] = %d\n", i,memory[i]);
+	}
+
+	/* Get wcount */
+	syscall(363, getpid(), &wcount);
+	printf("Task pid : %d, Wcount = %d, times = %d\n", getpid(), wcount, times);
+	
 	/* freee */
 	munmap(memory, alloc_size);
 	return 0;
