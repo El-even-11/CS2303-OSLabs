@@ -4245,7 +4245,7 @@ recheck:
 		return -EINVAL;
 
 	/* MODIFIED -- START */	
-	if ((rt_policy(policy)| policy == SCHED_RAS ) != (param->sched_priority != 0))
+	if ((rt_policy(policy) | (policy == SCHED_RAS)) != (param->sched_priority != 0))
 		return -EINVAL;
 	/* MODIFIED -- END */	
 
@@ -7161,7 +7161,7 @@ void __init sched_init(void)
 		init_cfs_rq(&rq->cfs);
 		init_rt_rq(&rq->rt, rq);
 		/* MODIFIED -- START */
-		init_ras_rq(&rq->ras, rq)
+		init_ras_rq(&rq->ras, rq);
 		/* MODIFIED -- END */
 		
 #ifdef CONFIG_FAIR_GROUP_SCHED

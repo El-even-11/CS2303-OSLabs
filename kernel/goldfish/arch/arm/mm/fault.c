@@ -28,6 +28,8 @@
 
 #include "fault.h"
 
+int LAB_DEBUG = 0;
+
 #ifdef CONFIG_MMU
 
 #ifdef CONFIG_KPROBES
@@ -212,10 +214,17 @@ static inline bool access_error(unsigned int fsr, struct vm_area_struct *vma)
 {
 	unsigned int mask = VM_READ | VM_WRITE | VM_EXEC;
 
-	if (fsr & FSR_WRITE)
+	if (fsr & FSR_WRITE){
 		mask = VM_WRITE;
-	if (fsr & FSR_LNX_PF)
+		if (LAB_DEBUG) printk(KERN_DEBUG "I'm in access_error, mask = VM_WRITE");
+	}
+		
+	if (fsr & FSR_LNX_PF){
 		mask = VM_EXEC;
+		if (LAB_DEBUG) printk(KERN_DEBUG "I'm in access_error, mask = VM_EXEC");
+	}
+		
+	if (LAB_DEBUG) printk(KERN_DEBUG "I'm in access_error, return value : %d",vma->vm_flags & mask ? false : true);
 
 	return vma->vm_flags & mask ? false : true;
 }
@@ -241,6 +250,7 @@ __do_page_fault(struct mm_struct *mm, unsigned long addr, unsigned int fsr,
 good_area:
 	if (access_error(fsr, vma)) {
 		fault = VM_FAULT_BADACCESS;
+		if (LAB_DEBUG) printk(KERN_DEBUG "I'm in __do_page_fault, access error");
 		goto out;
 	}
 
@@ -270,6 +280,8 @@ do_page_fault(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
 
 	tsk = current;
 	mm  = tsk->mm;
+
+	LAB_DEBUG = tsk->trace_flag; // for debug
 
 	/* Enable interrupts if they were enabled in the parent context. */
 	if (interrupts_enabled(regs))
@@ -307,6 +319,7 @@ retry:
 	}
 
 	fault = __do_page_fault(mm, addr, fsr, flags, tsk);
+	if (LAB_DEBUG) printk(KERN_DEBUG "I'm in do_page_fault, fault : %d",fault);
 
 	/* If we need to retry but a fatal signal is pending, handle the
 	 * signal first. We do not need to release the mmap_sem because
@@ -381,11 +394,12 @@ retry:
 		code = fault == VM_FAULT_BADACCESS ?
 			SEGV_ACCERR : SEGV_MAPERR;
 
-		/* MODIFIED */
+		/* MODIFIED -- START */
 		// SIGSEGV! If tracing, add one to task wcounts	
+		if (LAB_DEBUG) printk(KERN_DEBUG "I'm in do_page_fault, received SIGSEGV, fault: %d",fault);
 		if (tsk->trace_flag == 1)
 			tsk->wcounts++;
-		/* MODIFIED */
+		/* MODIFIED -- END */
 	}
 
 	__do_user_fault(tsk, addr, fsr, sig, code, regs);
