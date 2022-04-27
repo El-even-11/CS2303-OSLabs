@@ -9,7 +9,50 @@ static inline struct ras_rq *ras_rq_of_se(struct sched_ras_entity *ras_se){
 	return ras_se->ras_rq;
 }
 
-// Add a task to the run queue
+// Update the current task's runtime statistics. Skip current tasks that
+// are not in our scheduling class.
+static void update_curr_ras(struct rq *rq)
+{
+	struct task_struct *curr = rq->curr;
+	struct sched_ras_entity *ras_se = &curr->ras;
+	struct ras_rq *ras_rq = ras_rq_of_se(ras_se);
+	u64 delta_exec;
+
+	if (curr->sched_class != &ras_sched_class)
+		return;
+
+	delta_exec = rq->clock_task - curr->se.exec_start;
+	if (unlikely((s64)delta_exec < 0))
+		delta_exec = 0;
+
+	schedstat_set(curr->se.statistics.exec_max,
+		      max(curr->se.statistics.exec_max, delta_exec));
+
+	curr->se.sum_exec_runtime += delta_exec;
+	curr->se.exec_start = rq->clock_task;
+}
+
+static inline int on_ras_rq(struct sched_ras_entity *ras_se)
+{
+	return !list_empty(&ras_se->run_list);
+}
+
+static void requeue_task_ras(struct rq *rq, struct task_struct *p, int head){
+	struct sched_ras_entity *ras_se = &p->ras;
+	struct ras_rq *ras_rq = ras_rq_of_se(ras_se);
+	if (on_ras_rq(ras_se)) {
+		struct list_head *queue = &ras_rq->queue;
+		if (head){
+			printk(KERN_DEBUG "I'm in requeue_task_ras, move head");
+			list_move(&ras_se->run_list, queue);
+		} else {
+			printk(KERN_DEBUG "I'm in requeue_task_ras, move tail");
+			list_move_tail(&ras_se->run_list, queue);
+		}
+	}
+}
+
+// Add a task to the run queue.
 static void 
 enqueue_task_ras(struct rq *rq, struct task_struct *p, int flags){
 	struct sched_ras_entity *ras_se = &p->ras;
@@ -19,41 +62,73 @@ enqueue_task_ras(struct rq *rq, struct task_struct *p, int flags){
 
 	struct ras_rq *ras_rq = ras_rq_of_se(ras_se);
 	struct list_head *queue = &ras_rq->queue;
+
+	if (flags & ENQUEUE_HEAD){
+		printk(KERN_DEBUG "I'm in enqueue_task_ras, enqueue head");
+		list_add(&rt_se->run_list, queue);
+	} else{
+		printk(KERN_DEBUG "I'm in enqueue_task_ras, enqueue tail");
+		list_add_tail(&rt_se->run_list, queue);
+	}
+		
+	ras_rq->ras_nr_running++;	
+	inc_nr_running(rq);
 }
 
+// Remove a task from the run queue.
 static void 
 dequeue_task_ras(struct rq *rq, struct task_struct *p, int flags){
+	struct sched_ras_entity *ras_se = &p->ras;
 
+	update_curr_ras(rq);
+
+	struct ras_rq *ras_rq = ras_rq_of_se(ras_se);
+
+	list_del_init(&ras_se->run_list);
+
+    ras_rq->ras_nr_running--;
+	dec_nr_running(rq);
 }
 
 static void
 yield_task_ras(struct rq *rq){
-
+	requeue_task_ras(rq, rq->curr, 0);
 }
 
+// Preempt the current task with a newly woken task if needed.
 static void 
 check_preempt_curr_ras(struct rq *rq, struct task_struct *p, int flags){
-
+	if (p->prio < rq->curr->prio) {
+		resched_task(rq->curr);
+		return;
+	}
 }
 
 static struct task_struct*
 pick_next_task_ras(struct rq *rq){
+
     return NULL;
 }
 
 static void 
 put_prev_task_ras(struct rq *rq, struct task_struct *p){
-    
+    update_curr_ras(rq);
+
+	if (on_rt_rq(&p->rt) && p->rt.nr_cpus_allowed > 1)
+		enqueue_pushable_task(rq, p);
 }
 
 static void 
 set_curr_task_ras(struct rq *rq){
-
+	struct task_struct *p = rq->curr;
+	p->se.exec_start = rq->clock_task;
 }
 
 static void 
 task_tick_ras(struct rq *rq, struct task_struct *p, int queued){
+	struct sched_ras_entity *ras_se = &p->ras;
 
+	update_curr_ras(rq);
 }
 
 static unsigned int 
