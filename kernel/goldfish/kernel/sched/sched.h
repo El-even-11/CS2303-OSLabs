@@ -319,7 +319,7 @@ struct rt_rq {
 
 /* MODIFIED -- START */
 struct ras_rq {
-	struct list_head active;
+	struct list_head queue;
 	unsigned long ras_nr_running;
 
 	int ras_throttled;

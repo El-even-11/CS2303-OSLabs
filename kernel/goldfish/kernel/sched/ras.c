@@ -5,9 +5,20 @@
 #include "sched.h"
 #include <linux/slab.h>
 
+static inline struct ras_rq *ras_rq_of_se(struct sched_ras_entity *ras_se){
+	return ras_se->ras_rq;
+}
+
+// Add a task to the run queue
 static void 
 enqueue_task_ras(struct rq *rq, struct task_struct *p, int flags){
+	struct sched_ras_entity *ras_se = &p->ras;
 
+	if (flags & ENQUEUE_WAKEUP)
+		ras_se->timeout = 0;
+
+	struct ras_rq *ras_rq = ras_rq_of_se(ras_se);
+	struct list_head *queue = &ras_rq->queue;
 }
 
 static void 
@@ -56,7 +67,7 @@ switched_to_ras(struct rq *rq, struct task_struct *p){
 }
 
 void init_ras_rq(struct ras_rq *ras_rq, struct rq *rq){
-	
+
 }
 
 void free_ras_sched_group(struct task_group *tg){
