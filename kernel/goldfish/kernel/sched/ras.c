@@ -104,6 +104,7 @@ check_preempt_curr_ras(struct rq *rq, struct task_struct *p, int flags){
 	}
 }
 
+// TODO!
 static struct task_struct*
 pick_next_task_ras(struct rq *rq){
 
@@ -124,6 +125,7 @@ set_curr_task_ras(struct rq *rq){
 	p->se.exec_start = rq->clock_task;
 }
 
+// TODO!
 static void 
 task_tick_ras(struct rq *rq, struct task_struct *p, int queued){
 	struct sched_ras_entity *ras_se = &p->ras;
