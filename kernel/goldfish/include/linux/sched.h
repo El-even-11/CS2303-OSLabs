@@ -1259,16 +1259,16 @@ struct sched_ras_entity
 	struct list_head run_list;
 	unsigned long timeout;
 	unsigned int time_slice;
+	unsigned int total_timeslice;
 	int nr_cpus_allowed;
 
-	struct sched_ras_entity *back;	
-#ifdef CONFIG_RAS_GROUP_SCHED
-	struct sched_ras_entity	*parent;
-	/* rq on which this entity is (to be) queued: */
-	struct ras_rq		*ras_rq;
-	/* rq "owned" by this entity/group: */
-	struct ras_rq		*my_q;
-#endif	
+	// struct sched_ras_entity *back;	
+
+	// struct sched_ras_entity	*parent;
+	// /* rq on which this entity is (to be) queued: */
+	// struct ras_rq		*ras_rq;
+	// /* rq "owned" by this entity/group: */
+	// struct ras_rq		*my_q;
 };
 /* MODIFIED -- END */
 

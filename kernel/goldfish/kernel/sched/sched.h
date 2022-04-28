@@ -328,13 +328,11 @@ struct ras_rq {
 	/* Nests inside the rq lock: */
 	raw_spinlock_t ras_runtime_lock;
 
-#ifdef CONFIG_RAS_GROUP_SCHED
-	unsigned long ras_nr_boosted;
+	// unsigned long ras_nr_boosted;
 
-	struct rq *rq;
-	struct list_head leaf_ras_rq_list;
-	struct task_group *tg;
-#endif
+	// struct rq *rq;
+	// struct list_head leaf_ras_rq_list;
+	// struct task_group *tg;
 };
 /* MODIFIED -- END */
 

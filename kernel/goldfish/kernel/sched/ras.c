@@ -5,8 +5,21 @@
 #include "sched.h"
 #include <linux/slab.h>
 
+static inline struct task_struct *ras_task_of(struct sched_ras_entity *ras_se)
+{
+	return container_of(ras_se, struct task_struct, ras);
+}
+
 static inline struct ras_rq *ras_rq_of_se(struct sched_ras_entity *ras_se){
-	return ras_se->ras_rq;
+	struct task_struct *p = ras_task_of(ras_se);
+	struct rq *rq = task_rq(p);
+
+	return &rq->ras;
+}
+
+static inline int on_ras_rq(struct sched_ras_entity *ras_se)
+{
+	return !list_empty(&ras_se->run_list);
 }
 
 // Update the current task's runtime statistics. Skip current tasks that
@@ -15,7 +28,7 @@ static void update_curr_ras(struct rq *rq)
 {
 	struct task_struct *curr = rq->curr;
 	struct sched_ras_entity *ras_se = &curr->ras;
-	struct ras_rq *ras_rq = ras_rq_of_se(ras_se);
+	struct ras_rq *ras_rq = &rq->ras;
 	u64 delta_exec;
 
 	if (curr->sched_class != &ras_sched_class)
@@ -32,14 +45,9 @@ static void update_curr_ras(struct rq *rq)
 	curr->se.exec_start = rq->clock_task;
 }
 
-static inline int on_ras_rq(struct sched_ras_entity *ras_se)
-{
-	return !list_empty(&ras_se->run_list);
-}
-
 static void requeue_task_ras(struct rq *rq, struct task_struct *p, int head){
 	struct sched_ras_entity *ras_se = &p->ras;
-	struct ras_rq *ras_rq = ras_rq_of_se(ras_se);
+	struct ras_rq *ras_rq = &rq->ras;
 	if (on_ras_rq(ras_se)) {
 		struct list_head *queue = &ras_rq->queue;
 		if (head){
@@ -60,15 +68,15 @@ enqueue_task_ras(struct rq *rq, struct task_struct *p, int flags){
 	if (flags & ENQUEUE_WAKEUP)
 		ras_se->timeout = 0;
 
-	struct ras_rq *ras_rq = ras_rq_of_se(ras_se);
+	struct ras_rq *ras_rq = &rq->ras;
 	struct list_head *queue = &ras_rq->queue;
 
 	if (flags & ENQUEUE_HEAD){
 		printk(KERN_DEBUG "I'm in enqueue_task_ras, enqueue head");
-		list_add(&rt_se->run_list, queue);
-	} else{
+		list_add(&ras_se->run_list, queue);
+	} else {
 		printk(KERN_DEBUG "I'm in enqueue_task_ras, enqueue tail");
-		list_add_tail(&rt_se->run_list, queue);
+		list_add_tail(&ras_se->run_list, queue);
 	}
 		
 	ras_rq->ras_nr_running++;	
@@ -82,7 +90,7 @@ dequeue_task_ras(struct rq *rq, struct task_struct *p, int flags){
 
 	update_curr_ras(rq);
 
-	struct ras_rq *ras_rq = ras_rq_of_se(ras_se);
+	struct ras_rq *ras_rq = &rq->ras;
 
 	list_del_init(&ras_se->run_list);
 
@@ -104,19 +112,30 @@ check_preempt_curr_ras(struct rq *rq, struct task_struct *p, int flags){
 	}
 }
 
-// TODO!
+// Pick next task in run queue. If no task in run queue, return null.
 static struct task_struct*
 pick_next_task_ras(struct rq *rq){
+	struct sched_ras_entity *ras_se;
+	struct task_struct *p;
+	struct ras_rq *ras_rq = &rq->ras;
 
-    return NULL;
+	// No task in run queue, return null.
+	if (!ras_rq->ras_nr_running)
+		return NULL;
+
+	struct list_head *queue = &ras_rq->queue;
+	
+	ras_se = list_entry(queue->next, struct sched_ras_entity, run_list);
+
+	p = ras_task_of(ras_se);
+	p->se.exec_start = rq->clock_task;
+
+    return p;
 }
 
 static void 
 put_prev_task_ras(struct rq *rq, struct task_struct *p){
     update_curr_ras(rq);
-
-	if (on_rt_rq(&p->rt) && p->rt.nr_cpus_allowed > 1)
-		enqueue_pushable_task(rq, p);
 }
 
 static void 
@@ -131,20 +150,41 @@ task_tick_ras(struct rq *rq, struct task_struct *p, int queued){
 	struct sched_ras_entity *ras_se = &p->ras;
 
 	update_curr_ras(rq);
+
+	if (p->policy != SCHED_RAS)
+		return;
+
+	if (--p->ras.time_slice)
+		return;	
 }
 
 static unsigned int 
 get_rr_interval_ras(struct rq *rq, struct task_struct *task){
+	if (task->policy == SCHED_RAS) {
+		struct sched_ras_entity *ras_se = &task->ras;
+		return ras_se->total_timeslice;
+	}
+		
     return 0;
 }
 
 static void 
 switched_to_ras(struct rq *rq, struct task_struct *p){
-
+	if (p->on_rq && rq->curr != p && p->prio < rq->curr->prio){
+        resched_task(rq->curr);
+    }       
 }
 
 void init_ras_rq(struct ras_rq *ras_rq, struct rq *rq){
+	struct list_head *queue;
+	queue = &ras_rq->queue;
+	INIT_LIST_HEAD(queue);
 
+	ras_rq->ras_nr_running = 0;
+	ras_rq->ras_time = 0;
+	ras_rq->ras_throttled = 0;
+	ras_rq->ras_runtime = 0;
+	// raw_spin_lock_init(&ras_rq->ras_runtime_lock); // what is spin lock?
 }
 
 void free_ras_sched_group(struct task_group *tg){
