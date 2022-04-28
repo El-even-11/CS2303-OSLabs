@@ -10,7 +10,8 @@ static inline struct task_struct *ras_task_of(struct sched_ras_entity *ras_se)
 	return container_of(ras_se, struct task_struct, ras);
 }
 
-static inline struct ras_rq *ras_rq_of_se(struct sched_ras_entity *ras_se){
+static inline struct ras_rq *ras_rq_of_se(struct sched_ras_entity *ras_se)
+{
 	struct task_struct *p = ras_task_of(ras_se);
 	struct rq *rq = task_rq(p);
 
@@ -39,21 +40,26 @@ static void update_curr_ras(struct rq *rq)
 		delta_exec = 0;
 
 	schedstat_set(curr->se.statistics.exec_max,
-		      max(curr->se.statistics.exec_max, delta_exec));
+				  max(curr->se.statistics.exec_max, delta_exec));
 
 	curr->se.sum_exec_runtime += delta_exec;
 	curr->se.exec_start = rq->clock_task;
 }
 
-static void requeue_task_ras(struct rq *rq, struct task_struct *p, int head){
+static void requeue_task_ras(struct rq *rq, struct task_struct *p, int head)
+{
 	struct sched_ras_entity *ras_se = &p->ras;
 	struct ras_rq *ras_rq = &rq->ras;
-	if (on_ras_rq(ras_se)) {
+	if (on_ras_rq(ras_se))
+	{
 		struct list_head *queue = &ras_rq->queue;
-		if (head){
+		if (head)
+		{
 			printk(KERN_DEBUG "I'm in requeue_task_ras, move head");
 			list_move(&ras_se->run_list, queue);
-		} else {
+		}
+		else
+		{
 			printk(KERN_DEBUG "I'm in requeue_task_ras, move tail");
 			list_move_tail(&ras_se->run_list, queue);
 		}
@@ -61,8 +67,10 @@ static void requeue_task_ras(struct rq *rq, struct task_struct *p, int head){
 }
 
 // Add a task to the run queue.
-static void 
-enqueue_task_ras(struct rq *rq, struct task_struct *p, int flags){
+static void
+enqueue_task_ras(struct rq *rq, struct task_struct *p, int flags)
+{
+	printk(KERN_DEBUG "I'm in enqueue_task_ras, start!");
 	struct sched_ras_entity *ras_se = &p->ras;
 
 	if (flags & ENQUEUE_WAKEUP)
@@ -71,21 +79,26 @@ enqueue_task_ras(struct rq *rq, struct task_struct *p, int flags){
 	struct ras_rq *ras_rq = &rq->ras;
 	struct list_head *queue = &ras_rq->queue;
 
-	if (flags & ENQUEUE_HEAD){
+	if (flags & ENQUEUE_HEAD)
+	{
 		printk(KERN_DEBUG "I'm in enqueue_task_ras, enqueue head");
 		list_add(&ras_se->run_list, queue);
-	} else {
+	}
+	else
+	{
 		printk(KERN_DEBUG "I'm in enqueue_task_ras, enqueue tail");
 		list_add_tail(&ras_se->run_list, queue);
 	}
-		
-	ras_rq->ras_nr_running++;	
+
+	ras_rq->ras_nr_running++;
 	inc_nr_running(rq);
 }
 
 // Remove a task from the run queue.
-static void 
-dequeue_task_ras(struct rq *rq, struct task_struct *p, int flags){
+static void
+dequeue_task_ras(struct rq *rq, struct task_struct *p, int flags)
+{
+	printk(KERN_DEBUG "I'm in dequeue_task_ras, start!");
 	struct sched_ras_entity *ras_se = &p->ras;
 
 	update_curr_ras(rq);
@@ -94,27 +107,34 @@ dequeue_task_ras(struct rq *rq, struct task_struct *p, int flags){
 
 	list_del_init(&ras_se->run_list);
 
-    ras_rq->ras_nr_running--;
+	ras_rq->ras_nr_running--;
 	dec_nr_running(rq);
 }
 
 static void
-yield_task_ras(struct rq *rq){
+yield_task_ras(struct rq *rq)
+{
+	printk(KERN_DEBUG "I'm in yield_task_ras, start!");
 	requeue_task_ras(rq, rq->curr, 0);
 }
 
 // Preempt the current task with a newly woken task if needed.
-static void 
-check_preempt_curr_ras(struct rq *rq, struct task_struct *p, int flags){
-	if (p->prio < rq->curr->prio) {
+static void
+check_preempt_curr_ras(struct rq *rq, struct task_struct *p, int flags)
+{
+	printk(KERN_DEBUG "I'm in check_preempt_curr_ras, start!");
+	if (p->prio < rq->curr->prio)
+	{
 		resched_task(rq->curr);
 		return;
 	}
 }
 
 // Pick next task in run queue. If no task in run queue, return null.
-static struct task_struct*
-pick_next_task_ras(struct rq *rq){
+static struct task_struct *
+pick_next_task_ras(struct rq *rq)
+{
+	printk(KERN_DEBUG "I'm in pick_next_task_ras, start!");
 	struct sched_ras_entity *ras_se;
 	struct task_struct *p;
 	struct ras_rq *ras_rq = &rq->ras;
@@ -124,58 +144,109 @@ pick_next_task_ras(struct rq *rq){
 		return NULL;
 
 	struct list_head *queue = &ras_rq->queue;
-	
+
 	ras_se = list_entry(queue->next, struct sched_ras_entity, run_list);
 
 	p = ras_task_of(ras_se);
 	p->se.exec_start = rq->clock_task;
 
-    return p;
+	return p;
 }
 
-static void 
-put_prev_task_ras(struct rq *rq, struct task_struct *p){
-    update_curr_ras(rq);
+static void
+put_prev_task_ras(struct rq *rq, struct task_struct *p)
+{
+	printk(KERN_DEBUG "I'm in put_prev_task_ras, start!");
+	update_curr_ras(rq);
 }
 
-static void 
-set_curr_task_ras(struct rq *rq){
+static void
+set_curr_task_ras(struct rq *rq)
+{
+	printk(KERN_DEBUG "I'm in set_curr_task_ras, start!");
 	struct task_struct *p = rq->curr;
 	p->se.exec_start = rq->clock_task;
 }
 
 // TODO!
-static void 
-task_tick_ras(struct rq *rq, struct task_struct *p, int queued){
-	struct sched_ras_entity *ras_se = &p->ras;
+static void
+task_tick_ras(struct rq *rq, struct task_struct *task, int queued)
+{
+	struct sched_ras_entity *ras_se = &task->ras;
+	struct ras_rq *ras_rq = &rq->ras;
 
 	update_curr_ras(rq);
 
-	if (p->policy != SCHED_RAS)
+	if (task->policy != SCHED_RAS)
 		return;
 
-	if (--p->ras.time_slice)
-		return;	
+	if (--task->ras.time_slice)
+		return;
+
+	if (ras_rq->ras_nr_running == 1){
+		// No race. Set MAX timeslice to avoid frequently schedule.
+		task->ras.time_slice = RAS_MAX_TIMESLICE;
+		task->ras.total_timeslice = RAS_MAX_TIMESLICE;
+		printk(KERN_DEBUG "I'm in task_tick_ras, no race");
+	} else {
+		// Calculate race probability.
+		int wcounts = task->wcounts;
+
+		struct list_head *p;
+		struct sched_ras_entity *ras_se_tmp;
+		struct task_struct *t;
+		struct list_head *queue;
+
+		queue = &ras_rq->queue;
+		int sum = 0;
+		list_for_each(p, queue)
+		{
+			ras_se_tmp = list_entry(p, struct sched_ras_entity, run_list);
+			t = ras_task_of(ras_se_tmp);
+			sum += t->wcounts;
+		}
+
+		int race_prob = wcounts * 10 / sum;
+		unsigned int timeslice = -10 * race_prob + RAS_MAX_TIMESLICE;
+
+		printk(KERN_DEBUG "I'm in task_tick_ras, wcounts: %d, sum: %d, race_prob: %d",wcounts,sum,race_prob);
+
+		task->ras.time_slice = timeslice;
+		task->ras.total_timeslice = timeslice;
+	}
+	
+	// Requeue to the end of queue if we are the only element on the queue.
+	if (ras_se->run_list.prev != ras_se->run_list.next){
+        requeue_task_ras(rq, task, 0);
+        set_tsk_need_resched(task);
+    }
 }
 
-static unsigned int 
-get_rr_interval_ras(struct rq *rq, struct task_struct *task){
-	if (task->policy == SCHED_RAS) {
+static unsigned int
+get_rr_interval_ras(struct rq *rq, struct task_struct *task)
+{
+	printk(KERN_DEBUG "I'm in get_rr_interval_ras, start!");
+	if (task->policy == SCHED_RAS)
+	{
 		struct sched_ras_entity *ras_se = &task->ras;
 		return ras_se->total_timeslice;
 	}
-		
-    return 0;
+
+	return 0;
 }
 
-static void 
-switched_to_ras(struct rq *rq, struct task_struct *p){
-	if (p->on_rq && rq->curr != p && p->prio < rq->curr->prio){
-        resched_task(rq->curr);
-    }       
+static void
+switched_to_ras(struct rq *rq, struct task_struct *p)
+{
+	printk(KERN_DEBUG "I'm in switched_to_ras, start!");
+	if (p->on_rq && rq->curr != p && p->prio < rq->curr->prio)
+	{
+		resched_task(rq->curr);
+	}
 }
 
-void init_ras_rq(struct ras_rq *ras_rq, struct rq *rq){
+void init_ras_rq(struct ras_rq *ras_rq, struct rq *rq)
+{
 	struct list_head *queue;
 	queue = &ras_rq->queue;
 	INIT_LIST_HEAD(queue);
@@ -187,73 +258,78 @@ void init_ras_rq(struct ras_rq *ras_rq, struct rq *rq){
 	// raw_spin_lock_init(&ras_rq->ras_runtime_lock); // what is spin lock?
 }
 
-void free_ras_sched_group(struct task_group *tg){
-
+void free_ras_sched_group(struct task_group *tg)
+{
 }
 
-int alloc_ras_sched_group(struct task_group *tg, struct task_group *parent){
-    return 0;
+int alloc_ras_sched_group(struct task_group *tg, struct task_group *parent)
+{
+	return 0;
 }
 
 /* -- DUMMY -- */
 #ifdef CONFIG_SMP
 static int
-select_task_rq_ras(struct task_struct *p, int sd_flag, int flags) {}
+select_task_rq_ras(struct task_struct *p, int sd_flag, int flags)
+{
+}
 
-static void 
+static void
 set_cpus_allowed_ras(struct task_struct *p, const struct cpumask *new_mask) {}
 
-static void 
+static void
 rq_online_ras(struct rq *rq) {}
 
-static void 
+static void
 rq_offline_ras(struct rq *rq) {}
 
-static void 
+static void
 pre_schedule_ras(struct rq *rq, struct task_struct *prev) {}
 
-static void 
+static void
 post_schedule_ras(struct rq *rq) {}
 
-static void 
+static void
 task_woken_ras(struct rq *rq, struct task_struct *p) {}
 
-static void 
+static void
 switched_from_ras(struct rq *rq, struct task_struct *p) {}
 #endif
 
 static void
-prio_changed_ras(struct rq *rq, struct task_struct *p, int oldprio) {}
+prio_changed_ras(struct rq *rq, struct task_struct *p, int oldprio)
+{
+}
 /* -- DUMMY -- */
 
 const struct sched_class ras_sched_class = {
-	.next			= &idle_sched_class,         // required
-	.enqueue_task		= enqueue_task_ras,      // required
-	.dequeue_task		= dequeue_task_ras,      // required
-	.yield_task		= yield_task_ras,            // required
+	.next = &idle_sched_class,		  // required
+	.enqueue_task = enqueue_task_ras, // required
+	.dequeue_task = dequeue_task_ras, // required
+	.yield_task = yield_task_ras,	  // required
 
-	.check_preempt_curr	= check_preempt_curr_ras,   // required
+	.check_preempt_curr = check_preempt_curr_ras, // required
 
-	.pick_next_task		= pick_next_task_ras,    // required
-	.put_prev_task		= put_prev_task_ras,     // required
+	.pick_next_task = pick_next_task_ras, // required
+	.put_prev_task = put_prev_task_ras,	  // required
 
 #ifdef CONFIG_SMP
-	.select_task_rq		= select_task_rq_ras,
+	.select_task_rq = select_task_rq_ras,
 
-	.set_cpus_allowed       = set_cpus_allowed_ras,
-	.rq_online              = rq_online_ras,
-	.rq_offline             = rq_offline_ras,
-	.pre_schedule		= pre_schedule_ras,
-	.post_schedule		= post_schedule_ras,
-	.task_woken		= task_woken_ras,
-	.switched_from		= switched_from_ras,
+	.set_cpus_allowed = set_cpus_allowed_ras,
+	.rq_online = rq_online_ras,
+	.rq_offline = rq_offline_ras,
+	.pre_schedule = pre_schedule_ras,
+	.post_schedule = post_schedule_ras,
+	.task_woken = task_woken_ras,
+	.switched_from = switched_from_ras,
 #endif
 
-	.set_curr_task          = set_curr_task_ras,    // required
-	.task_tick		= task_tick_ras,                // required
+	.set_curr_task = set_curr_task_ras, // required
+	.task_tick = task_tick_ras,			// required
 
-	.get_rr_interval	= get_rr_interval_ras,      // required
+	.get_rr_interval = get_rr_interval_ras, // required
 
-	.prio_changed		= prio_changed_ras,
-	.switched_to		= switched_to_ras,          // required
+	.prio_changed = prio_changed_ras,
+	.switched_to = switched_to_ras, // required
 };

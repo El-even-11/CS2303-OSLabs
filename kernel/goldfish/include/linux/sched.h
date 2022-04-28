@@ -1280,7 +1280,6 @@ struct sched_ras_entity
 
 /* MODIFIED -- START */
 #define RAS_MAX_TIMESLICE		(100 * HZ / 1000)
-#define RAS_MIN_TIMESLICE		(10 * HZ / 1000)
 /* MODIFIED -- END */
 
 struct rcu_node;
