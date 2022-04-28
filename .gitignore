@@ -13,3 +13,4 @@ vmlinux
 *.symvers
 *.cmd
 .*/
+*.map
