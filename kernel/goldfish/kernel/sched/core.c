@@ -4244,10 +4244,8 @@ recheck:
 	    (!p->mm && param->sched_priority > MAX_RT_PRIO-1))
 		return -EINVAL;
 
-	/* MODIFIED -- START */	
-	if ((rt_policy(policy) | (policy == SCHED_RAS)) != (param->sched_priority != 0))
+	if (rt_policy(policy) != (param->sched_priority != 0))
 		return -EINVAL;
-	/* MODIFIED -- END */	
 
 	/*
 	 * Allow unprivileged RT tasks to decrease priority:
@@ -4906,11 +4904,11 @@ SYSCALL_DEFINE1(sched_get_priority_max, int, policy)
 	switch (policy) {
 	case SCHED_FIFO:
 	case SCHED_RR:
-	/* MODIFIED -- START */
-	case SCHED_RAS:
-	/* MODIFIED -- END */
 		ret = MAX_USER_RT_PRIO-1;
 		break;
+	/* MODIFIED -- START */
+	case SCHED_RAS:	
+	/* MODIFIED -- END */	
 	case SCHED_NORMAL:
 	case SCHED_BATCH:
 	case SCHED_IDLE:
@@ -4934,11 +4932,11 @@ SYSCALL_DEFINE1(sched_get_priority_min, int, policy)
 	switch (policy) {
 	case SCHED_FIFO:
 	case SCHED_RR:
-	/* MODIFIED -- START */
-	case SCHED_RAS:
-	/* MODIFIED -- END */
 		ret = 1;
 		break;
+	/* MODIFIED -- START */
+	case SCHED_RAS:
+	/* MODIFIED -- END */	
 	case SCHED_NORMAL:
 	case SCHED_BATCH:
 	case SCHED_IDLE:

@@ -4,6 +4,7 @@ kernel-copy/
 build/
 sample/
 submit/
+.*/
 .tmp_vmlinux*
 vmlinux
 *.ko
@@ -12,5 +13,4 @@ vmlinux
 *.order
 *.symvers
 *.cmd
-.*/
 *.map

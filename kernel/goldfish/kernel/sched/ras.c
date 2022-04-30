@@ -206,13 +206,18 @@ task_tick_ras(struct rq *rq, struct task_struct *task, int queued)
 			sum += t->wcounts;
 		}
 
-		int race_prob = wcounts * 10 / sum;
-		unsigned int timeslice = -10 * race_prob + RAS_MAX_TIMESLICE;
-
-		printk(KERN_DEBUG "I'm in task_tick_ras, wcounts: %d, sum: %d, race_prob: %d",wcounts,sum,race_prob);
-
-		task->ras.time_slice = timeslice;
-		task->ras.total_timeslice = timeslice;
+		// not tracing or no memory write
+		if (sum == 0) {
+			task->ras.time_slice = RAS_MAX_TIMESLICE;
+			task->ras.total_timeslice = RAS_MAX_TIMESLICE;
+			printk(KERN_DEBUG "I'm in task_tick_ras, sum: 0");
+		} else {
+			int race_prob = wcounts * 10 / sum;
+			unsigned int timeslice = -10 * race_prob + RAS_MAX_TIMESLICE;
+			task->ras.time_slice = timeslice;
+			task->ras.total_timeslice = timeslice;
+			printk(KERN_DEBUG "I'm in task_tick_ras, wcounts: %d, sum: %d, race_prob: %d",wcounts,sum,race_prob);
+		}
 	}
 	
 	// Requeue to the end of queue if we are the only element on the queue.
@@ -247,6 +252,7 @@ switched_to_ras(struct rq *rq, struct task_struct *p)
 
 void init_ras_rq(struct ras_rq *ras_rq, struct rq *rq)
 {
+	printk(KERN_DEBUG "I'm in init_ras_rq, start!");
 	struct list_head *queue;
 	queue = &ras_rq->queue;
 	INIT_LIST_HEAD(queue);
@@ -264,7 +270,8 @@ void free_ras_sched_group(struct task_group *tg)
 
 int alloc_ras_sched_group(struct task_group *tg, struct task_group *parent)
 {
-	return 0;
+	// 1 indicates no error
+	return 1;
 }
 
 /* -- DUMMY -- */
