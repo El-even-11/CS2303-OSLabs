@@ -158,6 +158,7 @@ put_prev_task_ras(struct rq *rq, struct task_struct *p)
 {
 	printk(KERN_DEBUG "I'm in put_prev_task_ras, start!");
 	update_curr_ras(rq);
+	p->se.exec_start = 0;
 }
 
 static void
@@ -168,7 +169,6 @@ set_curr_task_ras(struct rq *rq)
 	p->se.exec_start = rq->clock_task;
 }
 
-// TODO!
 static void
 task_tick_ras(struct rq *rq, struct task_struct *task, int queued)
 {
@@ -206,8 +206,8 @@ task_tick_ras(struct rq *rq, struct task_struct *task, int queued)
 			sum += t->wcounts;
 		}
 
-		// not tracing or no memory write
 		if (sum == 0) {
+			// not tracing or no memory write
 			task->ras.time_slice = RAS_MAX_TIMESLICE;
 			task->ras.total_timeslice = RAS_MAX_TIMESLICE;
 			printk(KERN_DEBUG "I'm in task_tick_ras, sum: 0");

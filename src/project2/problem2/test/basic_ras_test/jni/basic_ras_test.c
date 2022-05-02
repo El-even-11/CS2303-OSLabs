@@ -31,7 +31,7 @@ void segv_handler(int signal_number)
 	mprotect(memory, alloc_size, PROT_READ | PROT_WRITE);
 }
 
-int main()
+int main(int argc,char *argv[])
 {
 	int fd;
 	int childnum;
@@ -64,12 +64,12 @@ int main()
 
     printf("Current scheduling algorithm is %s\n",policys[policy]);
 
-    printf("Please input the choice of scheduling algorithm (0-NORMAL, 1-FIFO, 2-RR, 6-RAS): 6\n");
+    printf("Please input the choice of scheduling algorithm (0-NORMAL, 1-FIFO, 2-RR, 6-RAS): %d\n",atoi(argv[1]));
     struct sched_param param;
     param.sched_priority = 0;
 
     printf("Changing ...\n");
-    syscall(156, getpid(), 6, &param);
+    syscall(156, getpid(), atoi(argv[1]), &param);
 
     policy = syscall(157, getpid());
     printf("Current scheduling algorithm is %s\n", policys[policy]);

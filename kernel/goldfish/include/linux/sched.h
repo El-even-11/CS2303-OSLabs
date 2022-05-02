@@ -1262,13 +1262,13 @@ struct sched_ras_entity
 	unsigned int total_timeslice;
 	int nr_cpus_allowed;
 
-	// struct sched_ras_entity *back;	
+	struct sched_ras_entity *back;	
 
-	// struct sched_ras_entity	*parent;
-	// /* rq on which this entity is (to be) queued: */
-	// struct ras_rq		*ras_rq;
-	// /* rq "owned" by this entity/group: */
-	// struct ras_rq		*my_q;
+	struct sched_ras_entity	*parent;
+	/* rq on which this entity is (to be) queued: */
+	struct ras_rq		*ras_rq;
+	/* rq "owned" by this entity/group: */
+	struct ras_rq		*my_q;
 };
 /* MODIFIED -- END */
 

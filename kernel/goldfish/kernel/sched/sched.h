@@ -328,11 +328,11 @@ struct ras_rq {
 	/* Nests inside the rq lock: */
 	raw_spinlock_t ras_runtime_lock;
 
-	// unsigned long ras_nr_boosted;
+	unsigned long ras_nr_boosted;
 
-	// struct rq *rq;
-	// struct list_head leaf_ras_rq_list;
-	// struct task_group *tg;
+	struct rq *rq;
+	struct list_head leaf_ras_rq_list;
+	struct task_group *tg;
 };
 /* MODIFIED -- END */
 
@@ -397,7 +397,9 @@ struct rq {
 
 	struct cfs_rq cfs;
 	struct rt_rq rt;
+	/* MODIFIED -- START */
 	struct ras_rq ras;
+	/* MODIFIED -- END */
 
 #ifdef CONFIG_FAIR_GROUP_SCHED
 	/* list of leaf cfs_rq on this cpu: */
@@ -406,9 +408,11 @@ struct rq {
 #ifdef CONFIG_RT_GROUP_SCHED
 	struct list_head leaf_rt_rq_list;
 #endif
-#ifdef CONFIG_RAS_GROUP_SCHED
+/* MODIFIED -- START */
+// #ifdef CONFIG_RAS_GROUP_SCHED
 	struct list_head leaf_ras_rq_list;
-#endif
+// #endif
+/* MODIFIED -- END */
 
 	/*
 	 * This is part of a global counter where only the total sum
@@ -873,7 +877,9 @@ enum cpuacct_stat_index {
 
 extern const struct sched_class stop_sched_class;
 extern const struct sched_class rt_sched_class;
+/* MODIFIED -- START */
 extern const struct sched_class ras_sched_class;
+/* MODIFIED -- END */
 extern const struct sched_class fair_sched_class;
 extern const struct sched_class idle_sched_class;
 
@@ -898,6 +904,9 @@ extern void update_group_power(struct sched_domain *sd, int cpu);
 extern int update_runtime(struct notifier_block *nfb, unsigned long action, void *hcpu);
 extern void init_sched_rt_class(void);
 extern void init_sched_fair_class(void);
+/* MODIFIED -- START */
+extern void init_sched_ras_class(void);
+/* MODIFIED -- END */
 
 extern void resched_task(struct task_struct *p);
 extern void resched_cpu(int cpu);
