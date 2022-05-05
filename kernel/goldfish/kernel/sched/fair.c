@@ -5525,8 +5525,8 @@ static unsigned int get_rr_interval_fair(struct rq *rq, struct task_struct *task
  */
 const struct sched_class fair_sched_class = {
 	/* MODIFIED -- START */
-	.next			= &ras_sched_class,
-	// .next			= &idle_sched_class,
+	// .next			= &ras_sched_class,
+	.next			= &idle_sched_class,
 	/* MODIFIED -- END */
 	.enqueue_task		= enqueue_task_fair,
 	.dequeue_task		= dequeue_task_fair,

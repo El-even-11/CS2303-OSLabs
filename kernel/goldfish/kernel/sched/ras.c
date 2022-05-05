@@ -172,53 +172,66 @@ set_curr_task_ras(struct rq *rq)
 static void
 task_tick_ras(struct rq *rq, struct task_struct *task, int queued)
 {
+	printk(KERN_DEBUG "I'm in task_tick_ras, start");
 	struct sched_ras_entity *ras_se = &task->ras;
 	struct ras_rq *ras_rq = &rq->ras;
 
 	update_curr_ras(rq);
-
+	
 	if (task->policy != SCHED_RAS)
+	{
+		printk(KERN_DEBUG "I'm in task_tick_ras, not ras");
 		return;
+	}
+		
 
 	if (--task->ras.time_slice)
+	{
+		
 		return;
-
-	if (ras_rq->ras_nr_running == 1){
-		// No race. Set MAX timeslice to avoid frequently schedule.
-		task->ras.time_slice = RAS_MAX_TIMESLICE;
-		task->ras.total_timeslice = RAS_MAX_TIMESLICE;
-		printk(KERN_DEBUG "I'm in task_tick_ras, no race");
-	} else {
-		// Calculate race probability.
-		int wcounts = task->wcounts;
-
-		struct list_head *p;
-		struct sched_ras_entity *ras_se_tmp;
-		struct task_struct *t;
-		struct list_head *queue;
-
-		queue = &ras_rq->queue;
-		int sum = 0;
-		list_for_each(p, queue)
-		{
-			ras_se_tmp = list_entry(p, struct sched_ras_entity, run_list);
-			t = ras_task_of(ras_se_tmp);
-			sum += t->wcounts;
-		}
-
-		if (sum == 0) {
-			// not tracing or no memory write
-			task->ras.time_slice = RAS_MAX_TIMESLICE;
-			task->ras.total_timeslice = RAS_MAX_TIMESLICE;
-			printk(KERN_DEBUG "I'm in task_tick_ras, sum: 0");
-		} else {
-			int race_prob = wcounts * 10 / sum;
-			unsigned int timeslice = -10 * race_prob + RAS_MAX_TIMESLICE;
-			task->ras.time_slice = timeslice;
-			task->ras.total_timeslice = timeslice;
-			printk(KERN_DEBUG "I'm in task_tick_ras, wcounts: %d, sum: %d, race_prob: %d",wcounts,sum,race_prob);
-		}
 	}
+		
+
+	// if (ras_rq->ras_nr_running == 1){
+	// 	// No race. Set MAX timeslice to avoid frequently schedule.
+	// 	task->ras.time_slice = RAS_MAX_TIMESLICE;
+	// 	task->ras.total_timeslice = RAS_MAX_TIMESLICE;
+	// 	printk(KERN_DEBUG "I'm in task_tick_ras, no race");
+	// } else {
+	// 	// Calculate race probability.
+	// 	int wcounts = task->wcounts;
+
+	// 	struct list_head *p;
+	// 	struct sched_ras_entity *ras_se_tmp;
+	// 	struct task_struct *t;
+	// 	struct list_head *queue;
+
+	// 	queue = &ras_rq->queue;
+	// 	int sum = 0;
+	// 	list_for_each(p, queue)
+	// 	{
+	// 		ras_se_tmp = list_entry(p, struct sched_ras_entity, run_list);
+	// 		t = ras_task_of(ras_se_tmp);
+	// 		sum += t->wcounts;
+	// 	}
+
+	// 	if (sum == 0) {
+	// 		// not tracing or no memory write
+	// 		task->ras.time_slice = RAS_MAX_TIMESLICE;
+	// 		task->ras.total_timeslice = RAS_MAX_TIMESLICE;
+	// 		printk(KERN_DEBUG "I'm in task_tick_ras, sum: 0");
+	// 	} else {
+	// 		int race_prob = wcounts * 10 / sum;
+	// 		unsigned int timeslice = -10 * race_prob + RAS_MAX_TIMESLICE;
+	// 		task->ras.time_slice = timeslice;
+	// 		task->ras.total_timeslice = timeslice;
+	// 		printk(KERN_DEBUG "I'm in task_tick_ras, wcounts: %d, sum: %d, race_prob: %d",wcounts,sum,race_prob);
+	// 	}
+	// }
+
+	printk(KERN_DEBUG "I'm in task_tick_ras, set timeslice");
+	task->ras.time_slice = RAS_MAX_TIMESLICE;
+	task->ras.total_timeslice = RAS_MAX_TIMESLICE;
 	
 	// Requeue to the end of queue if we are the only element on the queue.
 	if (ras_se->run_list.prev != ras_se->run_list.next){
@@ -233,6 +246,7 @@ get_rr_interval_ras(struct rq *rq, struct task_struct *task)
 	printk(KERN_DEBUG "I'm in get_rr_interval_ras, start!");
 	if (task->policy == SCHED_RAS)
 	{
+		printk(KERN_DEBUG "I'm in get_rr_interval_ras, return total timeslice!");
 		struct sched_ras_entity *ras_se = &task->ras;
 		return ras_se->total_timeslice;
 	}
@@ -304,13 +318,12 @@ switched_from_ras(struct rq *rq, struct task_struct *p) {}
 #endif
 
 static void
-prio_changed_ras(struct rq *rq, struct task_struct *p, int oldprio)
-{
-}
+prio_changed_ras(struct rq *rq, struct task_struct *p, int oldprio) {}
 /* -- DUMMY -- */
 
 const struct sched_class ras_sched_class = {
-	.next = &idle_sched_class,		  // required
+	// .next = &idle_sched_class,		  // required
+	.next = &fair_sched_class,		  // required
 	.enqueue_task = enqueue_task_ras, // required
 	.dequeue_task = dequeue_task_ras, // required
 	.yield_task = yield_task_ras,	  // required

@@ -1991,6 +1991,7 @@ static void watchdog(struct rq *rq, struct task_struct *p)
 
 static void task_tick_rt(struct rq *rq, struct task_struct *p, int queued)
 {
+	printk(KERN_DEBUG "I'm in task_tick_rt, start");
 	struct sched_rt_entity *rt_se = &p->rt;
 
 	update_curr_rt(rq);
@@ -2001,13 +2002,19 @@ static void task_tick_rt(struct rq *rq, struct task_struct *p, int queued)
 	 * RR tasks need a special form of timeslice management.
 	 * FIFO tasks have no timeslices.
 	 */
-	if (p->policy != SCHED_RR)
+	if (p->policy != SCHED_RR){
+		printk(KERN_DEBUG "I'm in task_tick_rt, not rt");
 		return;
+	}
+		
 
-	if (--p->rt.time_slice)
+	if (--p->rt.time_slice){
+		printk(KERN_DEBUG "I'm in task_tick_rt, --, time_slice: %d",p->rt.time_slice);
 		return;
+	}
+		
 
-	// printk(KERN_DEBUG "I'm in task_tick_rt, run out of timeslice");
+	printk(KERN_DEBUG "I'm in task_tick_rt, run out of timeslice");
 	p->rt.time_slice = RR_TIMESLICE;
 
 	/*
@@ -2047,7 +2054,8 @@ static unsigned int get_rr_interval_rt(struct rq *rq, struct task_struct *task)
 }
 
 const struct sched_class rt_sched_class = {
-	.next			= &fair_sched_class,
+	.next			= &ras_sched_class,
+	// .next			= &fair_sched_class,
 	.enqueue_task		= enqueue_task_rt,
 	.dequeue_task		= dequeue_task_rt,
 	.yield_task		= yield_task_rt,

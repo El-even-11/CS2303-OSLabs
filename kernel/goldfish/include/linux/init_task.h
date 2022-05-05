@@ -169,6 +169,12 @@ extern struct task_group root_task_group;
 		.time_slice	= RR_TIMESLICE,				\
 		.nr_cpus_allowed = NR_CPUS,				\
 	},								\
+	/* --- MODIFIED START --- */
+	.ras	= {						\
+		.run_list 	= LIST_HEAD_INIT(tsk.ras.run_list),	\	
+		.time_slice	= RAS_MAX_TIMESLICE,				\
+	},								\
+	/* --- MODIFIED END --- */
 	.tasks		= LIST_HEAD_INIT(tsk.tasks),			\
 	INIT_PUSHABLE_TASKS(tsk)					\
 	INIT_CGROUP_SCHED(tsk)						\
