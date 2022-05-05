@@ -59,7 +59,7 @@ static void start_rt_bandwidth(struct rt_bandwidth *rt_b)
 
 void init_rt_rq(struct rt_rq *rt_rq, struct rq *rq)
 {
-	printk(KERN_DEBUG "I'm in init_rt_rq, start!");
+	// printk(KERN_DEBUG "I'm in init_rt_rq, start!");
 	struct rt_prio_array *array;
 	int i;
 
@@ -1155,7 +1155,7 @@ static void dequeue_rt_entity(struct sched_rt_entity *rt_se)
 static void
 enqueue_task_rt(struct rq *rq, struct task_struct *p, int flags)
 {
-	printk(KERN_DEBUG "I'm in enqueue_task_rt, start!");
+	// printk(KERN_DEBUG "I'm in enqueue_task_rt, start!");
 	struct sched_rt_entity *rt_se = &p->rt;
 
 	if (flags & ENQUEUE_WAKEUP)
@@ -1171,7 +1171,7 @@ enqueue_task_rt(struct rq *rq, struct task_struct *p, int flags)
 
 static void dequeue_task_rt(struct rq *rq, struct task_struct *p, int flags)
 {
-	printk(KERN_DEBUG "I'm in dequeue_task_rt, start!");
+	// printk(KERN_DEBUG "I'm in dequeue_task_rt, start!");
 	struct sched_rt_entity *rt_se = &p->rt;
 
 	update_curr_rt(rq);
@@ -1213,7 +1213,7 @@ static void requeue_task_rt(struct rq *rq, struct task_struct *p, int head)
 
 static void yield_task_rt(struct rq *rq)
 {
-	printk(KERN_DEBUG "I'm in yield_task_rt, start!");
+	// printk(KERN_DEBUG "I'm in yield_task_rt, start!");
 	requeue_task_rt(rq, rq->curr, 0);
 }
 
@@ -1306,7 +1306,7 @@ static void check_preempt_equal_prio(struct rq *rq, struct task_struct *p)
  */
 static void check_preempt_curr_rt(struct rq *rq, struct task_struct *p, int flags)
 {
-	printk(KERN_DEBUG "I'm in check_preempt_curr_rt, start!");
+	// printk(KERN_DEBUG "I'm in check_preempt_curr_rt, start!");
 	if (p->prio < rq->curr->prio) {
 		resched_task(rq->curr);
 		return;
@@ -1349,7 +1349,6 @@ static struct sched_rt_entity *pick_next_rt_entity(struct rq *rq,
 
 static struct task_struct *_pick_next_task_rt(struct rq *rq)
 {
-	printk(KERN_DEBUG "I'm in pick_next_task_rt, start!");
 	struct sched_rt_entity *rt_se;
 	struct task_struct *p;
 	struct rt_rq *rt_rq;
@@ -1376,6 +1375,7 @@ static struct task_struct *_pick_next_task_rt(struct rq *rq)
 
 static struct task_struct *pick_next_task_rt(struct rq *rq)
 {
+	// printk(KERN_DEBUG "I'm in pick_next_task_rt, start!");
 	struct task_struct *p = _pick_next_task_rt(rq);
 
 	/* The running task is never eligible for pushing */
@@ -1395,7 +1395,7 @@ static struct task_struct *pick_next_task_rt(struct rq *rq)
 
 static void put_prev_task_rt(struct rq *rq, struct task_struct *p)
 {
-	printk(KERN_DEBUG "I'm in put_prev_task_rt, start!");
+	// printk(KERN_DEBUG "I'm in put_prev_task_rt, start!");
 	update_curr_rt(rq);
 
 	/*
@@ -1907,7 +1907,7 @@ void init_sched_rt_class(void)
  */
 static void switched_to_rt(struct rq *rq, struct task_struct *p)
 {
-	printk(KERN_DEBUG "I'm in switched_to_rt, start!");
+	// printk(KERN_DEBUG "I'm in switched_to_rt, start!");
 	int check_resched = 1;
 
 	/*
@@ -2007,7 +2007,7 @@ static void task_tick_rt(struct rq *rq, struct task_struct *p, int queued)
 	if (--p->rt.time_slice)
 		return;
 
-	printk(KERN_DEBUG "I'm in task_tick_rt, run out of timeslice");
+	// printk(KERN_DEBUG "I'm in task_tick_rt, run out of timeslice");
 	p->rt.time_slice = RR_TIMESLICE;
 
 	/*
@@ -2025,7 +2025,7 @@ static void task_tick_rt(struct rq *rq, struct task_struct *p, int queued)
 
 static void set_curr_task_rt(struct rq *rq)
 {
-	printk(KERN_DEBUG "I'm in set_curr_task_rt, start!");
+	// printk(KERN_DEBUG "I'm in set_curr_task_rt, start!");
 	struct task_struct *p = rq->curr;
 
 	p->se.exec_start = rq->clock_task;
@@ -2036,7 +2036,7 @@ static void set_curr_task_rt(struct rq *rq)
 
 static unsigned int get_rr_interval_rt(struct rq *rq, struct task_struct *task)
 {
-	printk(KERN_DEBUG "I'm in get_rr_interval_rt, start!");
+	// printk(KERN_DEBUG "I'm in get_rr_interval_rt, start!");
 	/*
 	 * Time slice is 0 for SCHED_FIFO tasks
 	 */

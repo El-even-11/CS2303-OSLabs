@@ -66,7 +66,7 @@ int main(int argc,char *argv[])
 
     printf("Please input the choice of scheduling algorithm (0-NORMAL, 1-FIFO, 2-RR, 6-RAS): %d\n",atoi(argv[1]));
     struct sched_param param;
-    param.sched_priority = 0;
+    param.sched_priority = atoi(argv[1]) == 6 ? 0 : 1;
 
     printf("Changing ...\n");
     syscall(156, getpid(), atoi(argv[1]), &param);
