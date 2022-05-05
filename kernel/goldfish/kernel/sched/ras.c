@@ -70,7 +70,6 @@ static void requeue_task_ras(struct rq *rq, struct task_struct *p, int head)
 static void
 enqueue_task_ras(struct rq *rq, struct task_struct *p, int flags)
 {
-	printk(KERN_DEBUG "I'm in enqueue_task_ras, start!");
 	struct sched_ras_entity *ras_se = &p->ras;
 
 	if (flags & ENQUEUE_WAKEUP)
@@ -81,16 +80,15 @@ enqueue_task_ras(struct rq *rq, struct task_struct *p, int flags)
 
 	if (flags & ENQUEUE_HEAD)
 	{
-		printk(KERN_DEBUG "I'm in enqueue_task_ras, enqueue head");
 		list_add(&ras_se->run_list, queue);
 	}
 	else
 	{
-		printk(KERN_DEBUG "I'm in enqueue_task_ras, enqueue tail");
 		list_add_tail(&ras_se->run_list, queue);
 	}
 
 	ras_rq->ras_nr_running++;
+	printk(KERN_DEBUG "I'm in enqueue_task_ras, pid %d enqueue, ras_nr_running: %d",p->pid,ras_rq->ras_nr_running);
 	inc_nr_running(rq);
 }
 
@@ -123,11 +121,9 @@ static void
 check_preempt_curr_ras(struct rq *rq, struct task_struct *p, int flags)
 {
 	printk(KERN_DEBUG "I'm in check_preempt_curr_ras, start!");
-	if (p->prio < rq->curr->prio)
-	{
-		resched_task(rq->curr);
-		return;
-	}
+	resched_task(rq->curr);
+	return;
+	
 }
 
 // Pick next task in run queue. If no task in run queue, return null.
@@ -140,15 +136,19 @@ pick_next_task_ras(struct rq *rq)
 	struct ras_rq *ras_rq = &rq->ras;
 
 	// No task in run queue, return null.
-	if (!ras_rq->ras_nr_running)
+	if (!ras_rq->ras_nr_running){
+		printk(KERN_DEBUG "I'm in pick_next_task_ras, no task in run queue, return null!");
 		return NULL;
-
+	}
+		
 	struct list_head *queue = &ras_rq->queue;
 
 	ras_se = list_entry(queue->next, struct sched_ras_entity, run_list);
 
 	p = ras_task_of(ras_se);
 	p->se.exec_start = rq->clock_task;
+
+	printk(KERN_DEBUG "I'm in pick_next_task_ras, pick next task pid: %d",p->pid);
 
 	return p;
 }
@@ -172,26 +172,18 @@ set_curr_task_ras(struct rq *rq)
 static void
 task_tick_ras(struct rq *rq, struct task_struct *task, int queued)
 {
-	printk(KERN_DEBUG "I'm in task_tick_ras, start");
 	struct sched_ras_entity *ras_se = &task->ras;
 	struct ras_rq *ras_rq = &rq->ras;
 
 	update_curr_ras(rq);
 	
 	if (task->policy != SCHED_RAS)
-	{
-		printk(KERN_DEBUG "I'm in task_tick_ras, not ras");
-		return;
-	}
-		
+		return;		
 
 	if (--task->ras.time_slice)
-	{
-		
 		return;
-	}
-		
-
+	
+	
 	// if (ras_rq->ras_nr_running == 1){
 	// 	// No race. Set MAX timeslice to avoid frequently schedule.
 	// 	task->ras.time_slice = RAS_MAX_TIMESLICE;
@@ -229,12 +221,13 @@ task_tick_ras(struct rq *rq, struct task_struct *task, int queued)
 	// 	}
 	// }
 
-	printk(KERN_DEBUG "I'm in task_tick_ras, set timeslice");
+	// printk(KERN_DEBUG "I'm in task_tick_ras, timeslice run out, reset");
 	task->ras.time_slice = RAS_MAX_TIMESLICE;
 	task->ras.total_timeslice = RAS_MAX_TIMESLICE;
 	
 	// Requeue to the end of queue if we are the only element on the queue.
 	if (ras_se->run_list.prev != ras_se->run_list.next){
+		printk(KERN_DEBUG "I'm in task_tick_ras, requeue_task_ras");
         requeue_task_ras(rq, task, 0);
         set_tsk_need_resched(task);
     }
@@ -258,7 +251,7 @@ static void
 switched_to_ras(struct rq *rq, struct task_struct *p)
 {
 	printk(KERN_DEBUG "I'm in switched_to_ras, start!");
-	if (p->on_rq && rq->curr != p && p->prio < rq->curr->prio)
+	if (p->on_rq && rq->curr != p)
 	{
 		resched_task(rq->curr);
 	}

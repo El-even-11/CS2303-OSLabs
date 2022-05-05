@@ -60,7 +60,13 @@ int main()
 	{
 		// Fork child task.
 		pid = fork();
-		if (pid == 0)
+		if (pid > 0)
+		{
+			// parent task
+			child_pid_arr[i] = pid;
+			printf("Fork child pid: %d\n", pid);
+		} 
+		else if (pid == 0)
 		{
 			// child task
 			syscall(361, getpid());
@@ -80,12 +86,7 @@ int main()
 			syscall(161, getpid(), &t);
 			timeslice = t.tv_nsec / 1000000;
 			printf("Pid: %d Timeslice : %ld ms.\n", getpid(), timeslice);
-			exit(0);
-		}
-		else if (pid > 0)
-		{
-			// parent task
-			child_pid_arr[i] = pid;
+			exit(1);
 		}
 	}
 

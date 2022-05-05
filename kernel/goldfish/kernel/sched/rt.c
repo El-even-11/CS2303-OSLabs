@@ -1991,7 +1991,6 @@ static void watchdog(struct rq *rq, struct task_struct *p)
 
 static void task_tick_rt(struct rq *rq, struct task_struct *p, int queued)
 {
-	printk(KERN_DEBUG "I'm in task_tick_rt, start");
 	struct sched_rt_entity *rt_se = &p->rt;
 
 	update_curr_rt(rq);
@@ -2002,19 +2001,13 @@ static void task_tick_rt(struct rq *rq, struct task_struct *p, int queued)
 	 * RR tasks need a special form of timeslice management.
 	 * FIFO tasks have no timeslices.
 	 */
-	if (p->policy != SCHED_RR){
-		printk(KERN_DEBUG "I'm in task_tick_rt, not rt");
+	if (p->policy != SCHED_RR)
 		return;
-	}
 		
 
-	if (--p->rt.time_slice){
-		printk(KERN_DEBUG "I'm in task_tick_rt, --, time_slice: %d",p->rt.time_slice);
+	if (--p->rt.time_slice)
 		return;
-	}
 		
-
-	printk(KERN_DEBUG "I'm in task_tick_rt, run out of timeslice");
 	p->rt.time_slice = RR_TIMESLICE;
 
 	/*
