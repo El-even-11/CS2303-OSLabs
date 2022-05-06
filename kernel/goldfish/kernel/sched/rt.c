@@ -1092,9 +1092,14 @@ static void __enqueue_rt_entity(struct sched_rt_entity *rt_se, bool head)
 		list_add(&rt_se->run_list, queue);
 	else
 		list_add_tail(&rt_se->run_list, queue);
+	
+
 	__set_bit(rt_se_prio(rt_se), array->bitmap);
 
 	inc_rt_tasks(rt_se, rt_rq);
+
+	if (rt_task_of(rt_se)->policy == SCHED_RR)
+		printk(KERN_DEBUG "I'm in enqueue_task_rt, pid %d enqueue, rt_nr_running: %d",rt_task_of(rt_se)->pid,rt_rq->rt_nr_running);
 }
 
 static void __dequeue_rt_entity(struct sched_rt_entity *rt_se)
@@ -1109,6 +1114,8 @@ static void __dequeue_rt_entity(struct sched_rt_entity *rt_se)
 	dec_rt_tasks(rt_se, rt_rq);
 	if (!rt_rq->rt_nr_running)
 		list_del_leaf_rt_rq(rt_rq);
+	if (rt_task_of(rt_se)->policy == SCHED_RR)
+		printk(KERN_DEBUG "I'm in dequeue_task_rt, pid %d dequeue, rt_nr_running: %d",rt_task_of(rt_se)->pid,rt_rq->rt_nr_running);	
 }
 
 /*
@@ -1197,6 +1204,7 @@ requeue_rt_entity(struct rt_rq *rt_rq, struct sched_rt_entity *rt_se, int head)
 			list_move(&rt_se->run_list, queue);
 		else
 			list_move_tail(&rt_se->run_list, queue);
+		// printk(KERN_DEBUG "I'm in requeue_task_rt, move pid: %d",rt_task_of(rt_se)->pid);	
 	}
 }
 
@@ -1306,8 +1314,8 @@ static void check_preempt_equal_prio(struct rq *rq, struct task_struct *p)
  */
 static void check_preempt_curr_rt(struct rq *rq, struct task_struct *p, int flags)
 {
-	// printk(KERN_DEBUG "I'm in check_preempt_curr_rt, start!");
 	if (p->prio < rq->curr->prio) {
+		// printk(KERN_DEBUG "I'm in check_preempt_curr_rt, newly woken pid: %d, curr pid: %d",p->pid,rq->curr->pid);
 		resched_task(rq->curr);
 		return;
 	}
@@ -1390,6 +1398,8 @@ static struct task_struct *pick_next_task_rt(struct rq *rq)
 	rq->post_schedule = has_pushable_tasks(rq);
 #endif
 
+	// if (p->policy == SCHED_RR)
+	// 	printk(KERN_DEBUG "I'm in pick_next_task_rt, pick next task pid: %d",p->pid);
 	return p;
 }
 
@@ -1907,7 +1917,8 @@ void init_sched_rt_class(void)
  */
 static void switched_to_rt(struct rq *rq, struct task_struct *p)
 {
-	// printk(KERN_DEBUG "I'm in switched_to_rt, start!");
+	// if (p->policy == SCHED_RR)
+	// 	printk(KERN_DEBUG "I'm in switched_to_rt, start!");
 	int check_resched = 1;
 
 	/*
@@ -1924,8 +1935,11 @@ static void switched_to_rt(struct rq *rq, struct task_struct *p)
 		    rq != task_rq(p))
 			check_resched = 0;
 #endif /* CONFIG_SMP */
-		if (check_resched && p->prio < rq->curr->prio)
+		if (check_resched && p->prio < rq->curr->prio){
+			// if (p->policy == SCHED_RR)
+			// 	printk(KERN_DEBUG "I'm in switched_to_rt, rsched task pid: %d",p->pid);
 			resched_task(rq->curr);
+		}
 	}
 }
 
@@ -2016,6 +2030,8 @@ static void task_tick_rt(struct rq *rq, struct task_struct *p, int queued)
 	 */
 	for_each_sched_rt_entity(rt_se) {
 		if (rt_se->run_list.prev != rt_se->run_list.next) {
+			// if (p->policy == SCHED_RR)
+			// 	printk(KERN_DEBUG "I'm in task_tick_rt, requeue_task_rt, pid: %d",p->pid);
 			requeue_task_rt(rq, p, 0);
 			set_tsk_need_resched(p);
 			return;
@@ -2025,8 +2041,9 @@ static void task_tick_rt(struct rq *rq, struct task_struct *p, int queued)
 
 static void set_curr_task_rt(struct rq *rq)
 {
-	// printk(KERN_DEBUG "I'm in set_curr_task_rt, start!");
 	struct task_struct *p = rq->curr;
+	// if (p->policy == SCHED_RR)
+	// 	printk(KERN_DEBUG "I'm in set_curr_task_rt, start!");
 
 	p->se.exec_start = rq->clock_task;
 

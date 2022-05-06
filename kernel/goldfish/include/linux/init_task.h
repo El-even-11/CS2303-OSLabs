@@ -172,6 +172,7 @@ extern struct task_group root_task_group;
 	.ras	= {						\
 		.run_list 	= LIST_HEAD_INIT(tsk.ras.run_list),	\
 		.time_slice	= RAS_MAX_TIMESLICE,				\
+		.total_timeslice = RAS_MAX_TIMESLICE,			\
 	},								\
 	.tasks		= LIST_HEAD_INIT(tsk.tasks),			\
 	INIT_PUSHABLE_TASKS(tsk)					\
