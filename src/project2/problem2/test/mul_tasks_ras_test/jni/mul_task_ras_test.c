@@ -12,7 +12,7 @@
 #include <sched.h>
 #include <time.h>
 
-#define RANGE 4096 // task access range: [0,4096)
+#define MAX_WRITE_RANGE 4096 // task access MAX_WRITE_RANGE: [0,4096)
 
 static int alloc_size;
 static char *memory;
@@ -61,6 +61,11 @@ int main(int argc,char *argv[])
 	for (i = 0; i < childnum; i++)
 	{
 		// Fork child task.
+		int shift;
+		shift = rand() % 8;
+		int write_range;
+		write_range = MAX_WRITE_RANGE >> shift;
+		
 		pid = fork();
 		if (pid > 0)
 		{
@@ -81,20 +86,19 @@ int main(int argc,char *argv[])
 			setres = syscall(156, getpid(), atoi(argv[1]), &param);
 			printf("set task pid %d policy %d -> %d, set res: %d.\n", getpid(),oldpolicy,atoi(argv[1]),setres);
 			sleep(5);
+			
 			int j;
-			for (j = 0; j < RANGE ; j++)
+			for (j = 0; j < write_range ; j++)
 			{
 				mprotect(memory, alloc_size, PROT_READ);
 				memory[j] = j;
-				// int a;
-				// a = rand()* rand();
 			}
 
-			struct timespec t;
-			long timeslice;
-			syscall(161, getpid(), &t);
-			timeslice = t.tv_nsec / 1000000;
-			printf("Pid: %d Timeslice : %ld ms.\n", getpid(), timeslice);
+			// struct timespec t;
+			// long timeslice;
+			// syscall(161, getpid(), &t);
+			// timeslice = t.tv_nsec / 1000000;
+			printf("pid %d done, write_range: %d.\n", getpid(), write_range);
 			exit(1);
 		}
 	}
