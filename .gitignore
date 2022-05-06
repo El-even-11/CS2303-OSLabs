@@ -6,7 +6,8 @@ build/
 sample/
 submit/
 .*/
-.tmp_vmlinux*
+.tmp_*
+.version
 vmlinux
 *.ko
 *.o
