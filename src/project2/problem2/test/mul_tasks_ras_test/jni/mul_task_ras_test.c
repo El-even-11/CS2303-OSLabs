@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <sched.h>
+#include <time.h>
 
 #define RANGE 4096 // task access range: [0,4096)
 
@@ -22,8 +23,9 @@ void segv_handler(int signal_number)
 	mprotect(memory, alloc_size, PROT_READ | PROT_WRITE);
 }
 
-int main()
+int main(int argc,char *argv[])
 {
+	srand((unsigned)time(NULL));
 	int fd;
 	int childnum;
 	struct sigaction sa;
@@ -69,16 +71,23 @@ int main()
 		else if (pid == 0)
 		{
 			// child task
+			int oldpolicy;
+			oldpolicy = syscall(157, getpid());
 			syscall(361, getpid());
 			struct sched_param param;
-			param.sched_priority = 0;
-			syscall(156, getpid(), 6, &param);
-			int policy = syscall(157, getpid());
+			param.sched_priority = atoi(argv[1]) == 6 ? 0 : 40;
+			// param.sched_priority = 1;
+			int setres;
+			setres = syscall(156, getpid(), atoi(argv[1]), &param);
+			printf("set task pid %d policy %d -> %d, set res: %d.\n", getpid(),oldpolicy,atoi(argv[1]),setres);
+			sleep(5);
 			int j;
-			for (j = 0; j < RANGE * 10; j++)
+			for (j = 0; j < RANGE ; j++)
 			{
 				mprotect(memory, alloc_size, PROT_READ);
-				memory[j%RANGE] = j;
+				memory[j] = j;
+				// int a;
+				// a = rand()* rand();
 			}
 
 			struct timespec t;
