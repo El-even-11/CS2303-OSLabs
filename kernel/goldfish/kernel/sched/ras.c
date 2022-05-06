@@ -194,46 +194,46 @@ task_tick_ras(struct rq *rq, struct task_struct *task, int queued)
 		return;
 	
 	
-	// if (ras_rq->ras_nr_running == 1){
-	// 	// No race. Set MAX timeslice to avoid frequently schedule.
-	// 	task->ras.time_slice = RAS_MAX_TIMESLICE;
-	// 	task->ras.total_timeslice = RAS_MAX_TIMESLICE;
-	// 	printk(KERN_DEBUG "I'm in task_tick_ras, no race");
-	// } else {
-	// 	// Calculate race probability.
-	// 	int wcounts = task->wcounts;
+	if (ras_rq->ras_nr_running == 1){
+		// No race. Set MAX timeslice to avoid frequently schedule.
+		task->ras.time_slice = RAS_MAX_TIMESLICE;
+		task->ras.total_timeslice = RAS_MAX_TIMESLICE;
+		printk(KERN_DEBUG "I'm in task_tick_ras, no race, set max timeslice");
+	} else {
+		// Calculate race probability.
+		int wcounts = task->wcounts;
 
-	// 	struct list_head *p;
-	// 	struct sched_ras_entity *ras_se_tmp;
-	// 	struct task_struct *t;
-	// 	struct list_head *queue;
+		struct list_head *p;
+		struct sched_ras_entity *ras_se_tmp;
+		struct task_struct *t;
+		struct list_head *queue;
 
-	// 	queue = &ras_rq->queue;
-	// 	int sum = 0;
-	// 	list_for_each(p, queue)
-	// 	{
-	// 		ras_se_tmp = list_entry(p, struct sched_ras_entity, run_list);
-	// 		t = ras_task_of(ras_se_tmp);
-	// 		sum += t->wcounts;
-	// 	}
+		queue = &ras_rq->queue;
+		int sum = 0;
+		list_for_each(p, queue)
+		{
+			ras_se_tmp = list_entry(p, struct sched_ras_entity, run_list);
+			t = ras_task_of(ras_se_tmp);
+			sum += t->wcounts;
+		}
 
-	// 	if (sum == 0) {
-	// 		// not tracing or no memory write
-	// 		task->ras.time_slice = RAS_MAX_TIMESLICE;
-	// 		task->ras.total_timeslice = RAS_MAX_TIMESLICE;
-	// 		printk(KERN_DEBUG "I'm in task_tick_ras, sum: 0");
-	// 	} else {
-	// 		int race_prob = wcounts * 10 / sum;
-	// 		unsigned int timeslice = -10 * race_prob + RAS_MAX_TIMESLICE;
-	// 		task->ras.time_slice = timeslice;
-	// 		task->ras.total_timeslice = timeslice;
-	// 		printk(KERN_DEBUG "I'm in task_tick_ras, wcounts: %d, sum: %d, race_prob: %d",wcounts,sum,race_prob);
-	// 	}
-	// }
+		if (sum == 0 || sum == wcounts) {
+			// not tracing or no memory write
+			task->ras.time_slice = RAS_MAX_TIMESLICE;
+			task->ras.total_timeslice = RAS_MAX_TIMESLICE;
+			printk(KERN_DEBUG "I'm in task_tick_ras, not tracing or memory write, set max timeslice");
+		} else {
+			int race_prob = wcounts * 10 / sum;
+			unsigned int timeslice = -1*race_prob + RAS_MAX_TIMESLICE;
+			task->ras.time_slice = timeslice;
+			task->ras.total_timeslice = timeslice;
+			printk(KERN_DEBUG "I'm in task_tick_ras, wcounts: %d, sum: %d, race_prob: %d, set timeslice: %d",wcounts,sum,race_prob,timeslice);
+		}
+	}
 
-	printk(KERN_DEBUG "I'm in task_tick_ras, timeslice run out, reset");
-	task->ras.time_slice = RAS_MAX_TIMESLICE;
-	task->ras.total_timeslice = RAS_MAX_TIMESLICE;
+	// printk(KERN_DEBUG "I'm in task_tick_ras, timeslice run out, reset");
+	// task->ras.time_slice = RAS_MAX_TIMESLICE;
+	// task->ras.total_timeslice = RAS_MAX_TIMESLICE;
 	
 	// Requeue to the end of queue if we are NOT the only element on the queue.
 	if (ras_se->run_list.prev != ras_se->run_list.next){
