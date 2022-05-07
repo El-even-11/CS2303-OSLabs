@@ -12,8 +12,9 @@
 #include <sched.h>
 #include <time.h>
 
-#define MAX_WRITE_RANGE 8192 // task access MAX_WRITE_RANGE: [0,4096)
-#define SHIFT_RANEG 14
+#define WRITE_RANGE 1024
+#define MAX_WRITE_TIMES 8192 
+#define SHIFT_RANGE 10
 
 static int alloc_size;
 static char *memory;
@@ -63,9 +64,9 @@ int main(int argc,char *argv[])
 	{
 		// Fork child task.
 		int shift;
-		shift = rand() % SHIFT_RANEG;
-		int write_range;
-		write_range = MAX_WRITE_RANGE >> shift;
+		shift = rand() % SHIFT_RANGE;
+		int write_times;
+		write_times = MAX_WRITE_TIMES >> shift;
 		
 		pid = fork();
 		if (pid > 0)
@@ -89,17 +90,19 @@ int main(int argc,char *argv[])
 			sleep(5);
 			
 			int j;
-			for (j = 0; j < write_range ; j++)
+			for (j = 0; j < write_times ; j++)
 			{
+				int pos;
+				pos = rand() % WRITE_RANGE;
 				mprotect(memory, alloc_size, PROT_READ);
-				memory[j] = j;
+				memory[pos] = pos;
 			}
 
 			// struct timespec t;
 			// long timeslice;
 			// syscall(161, getpid(), &t);
 			// timeslice = t.tv_nsec / 1000000;
-			printf("pid %d done, write_range: %d.\n", getpid(), write_range);
+			printf("pid %d done, write times: %d.\n", getpid(), write_times);
 			exit(1);
 		}
 	}
@@ -109,7 +112,8 @@ int main(int argc,char *argv[])
 		waitpid(child_pid_arr[i],NULL,0);
 
 	printf("END!\n");
-	/* freee */
+	
+	// free
 	munmap(memory, alloc_size);
 	return 0;
 }

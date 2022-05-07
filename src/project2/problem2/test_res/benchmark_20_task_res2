@@ -1,0 +1,255 @@
+Please choose the number of child tasks (1-100): 20
+Start  NORMAL | FIFO | RR | RAS  Benchmark ...
+--------------------------------------------------
+Start NORMAL Benchmark ...
+Fork child pid: 1464
+set task pid 1465 policy 0 -> 0
+set task pid 1464 policy 0 -> 0
+Fork child pid: 1465
+Fork child pid: 1466
+Fork child pid: 1467
+Fork child pid: 1468
+Fork child pid: 1469
+Fork child pid: 1470
+Fork child pid: 1471
+Fork child pid: 1472
+Fork child pid: 1473
+Fork child pid: 1474
+Fork child pid: 1475
+set task pid 1466 policy 0 -> 0
+set task pid 1470 policy 0 -> 0
+set task pid 1471 policy 0 -> 0
+set task pid 1473 policy 0 -> 0
+set task pid 1474 policy 0 -> 0
+set task pid 1475 policy 0 -> 0
+set task pid 1468 policy 0 -> 0
+set task pid 1476 policy 0 -> 0
+set task pid 1469 policy 0 -> 0
+Fork child pid: 1476
+Fork child pid: 1477
+Fork child pid: 1478
+Fork child pid: 1479
+set task pid 1467 policy 0 -> 0
+set task pid 1480 policy 0 -> 0
+set task pid 1479 policy 0 -> 0
+set task pid 1478 policy 0 -> 0
+set task pid 1477 policy 0 -> 0
+set task pid 1472 policy 0 -> 0
+Fork child pid: 1480
+Fork child pid: 1481
+Fork child pid: 1482
+Fork child pid: 1483
+set task pid 1483 policy 0 -> 0
+set task pid 1482 policy 0 -> 0
+set task pid 1481 policy 0 -> 0
+pid 1464 done, write times: 64
+pid 1465 done, write times: 128
+pid 1473 done, write times: 16
+pid 1474 done, write times: 16
+pid 1476 done, write times: 64
+pid 1467 done, write times: 32
+pid 1481 done, write times: 128
+pid 1466 done, write times: 32
+pid 1480 done, write times: 256
+pid 1468 done, write times: 512
+pid 1482 done, write times: 512
+pid 1472 done, write times: 512
+pid 1478 done, write times: 1024
+pid 1475 done, write times: 1024
+pid 1477 done, write times: 1024
+pid 1469 done, write times: 2048
+pid 1483 done, write times: 2048
+pid 1479 done, write times: 4096
+pid 1470 done, write times: 4096
+pid 1471 done, write times: 8192
+NORMAL benchmark end, time consume: 9.815 ms
+--------------------------------------------------
+Start FIFO Benchmark ...
+Fork child pid: 1484
+Fork child pid: 1485
+Fork child pid: 1486
+Fork child pid: 1487
+Fork child pid: 1488
+Fork child pid: 1489
+Fork child pid: 1490
+set task pid 1490 policy 0 -> 1
+set task pid 1489 policy 0 -> 1
+set task pid 1488 policy 0 -> 1
+set task pid 1487 policy 0 -> 1
+set task pid 1486 policy 0 -> 1
+set task pid 1484 policy 0 -> 1
+set task pid 1491 policy 0 -> 1
+Fork child pid: 1491
+Fork child pid: 1492
+set task pid 1492 policy 0 -> 1
+Fork child pid: 1493
+set task pid 1493 policy 0 -> 1
+Fork child pid: 1494
+set task pid 1494 policy 0 -> 1
+Fork child pid: 1495
+set task pid 1495 policy 0 -> 1
+Fork child pid: 1496
+set task pid 1496 policy 0 -> 1
+set task pid 1485 policy 0 -> 1
+set task pid 1497 policy 0 -> 1
+Fork child pid: 1497
+Fork child pid: 1498
+Fork child pid: 1499
+Fork child pid: 1500
+set task pid 1500 policy 0 -> 1
+Fork child pid: 1501
+set task pid 1501 policy 0 -> 1
+Fork child pid: 1502
+set task pid 1502 policy 0 -> 1
+Fork child pid: 1503
+set task pid 1503 policy 0 -> 1
+set task pid 1499 policy 0 -> 1
+set task pid 1498 policy 0 -> 1
+pid 1490 done, write times: 4096
+pid 1489 done, write times: 2048
+pid 1488 done, write times: 512
+pid 1487 done, write times: 32
+pid 1486 done, write times: 32
+pid 1484 done, write times: 64
+pid 1491 done, write times: 8192
+pid 1492 done, write times: 512
+pid 1493 done, write times: 16
+pid 1494 done, write times: 16
+pid 1495 done, write times: 1024
+pid 1496 done, write times: 64
+pid 1485 done, write times: 128
+pid 1497 done, write times: 1024
+pid 1500 done, write times: 256
+pid 1501 done, write times: 128
+pid 1502 done, write times: 512
+pid 1503 done, write times: 2048
+pid 1499 done, write times: 4096
+pid 1498 done, write times: 1024
+FIFO benchmark end, time consume: 9.395 ms
+--------------------------------------------------
+Start RR Benchmark ...
+Fork child pid: 1504
+Fork child pid: 1505
+set task pid 1505 policy 0 -> 2
+set task pid 1504 policy 0 -> 2
+set task pid 1506 policy 0 -> 2
+Fork child pid: 1506
+Fork child pid: 1507
+set task pid 1507 policy 0 -> 2
+Fork child pid: 1508
+Fork child pid: 1509
+Fork child pid: 1510
+Fork child pid: 1511
+Fork child pid: 1512
+set task pid 1512 policy 0 -> 2
+set task pid 1511 policy 0 -> 2
+set task pid 1510 policy 0 -> 2
+set task pid 1509 policy 0 -> 2
+set task pid 1508 policy 0 -> 2
+Fork child pid: 1513
+Fork child pid: 1514
+Fork child pid: 1515
+set task pid 1513 policy 0 -> 2
+set task pid 1515 policy 0 -> 2
+set task pid 1514 policy 0 -> 2
+Fork child pid: 1516
+Fork child pid: 1517
+Fork child pid: 1518
+Fork child pid: 1519
+Fork child pid: 1520
+set task pid 1521 policy 0 -> 2
+set task pid 1520 policy 0 -> 2
+set task pid 1516 policy 0 -> 2
+set task pid 1519 policy 0 -> 2
+set task pid 1518 policy 0 -> 2
+set task pid 1517 policy 0 -> 2
+Fork child pid: 1521
+set task pid 1522 policy 0 -> 2
+Fork child pid: 1522
+Fork child pid: 1523
+set task pid 1523 policy 0 -> 2
+pid 1505 done, write times: 128
+pid 1504 done, write times: 64
+pid 1506 done, write times: 32
+pid 1507 done, write times: 32
+pid 1512 done, write times: 512
+pid 1508 done, write times: 512
+pid 1513 done, write times: 16
+pid 1514 done, write times: 16
+pid 1521 done, write times: 128
+pid 1520 done, write times: 256
+pid 1516 done, write times: 64
+pid 1522 done, write times: 512
+pid 1515 done, write times: 1024
+pid 1518 done, write times: 1024
+pid 1517 done, write times: 1024
+pid 1509 done, write times: 2048
+pid 1523 done, write times: 2048
+pid 1510 done, write times: 4096
+pid 1519 done, write times: 4096
+pid 1511 done, write times: 8192
+RR benchmark end, time consume: 9.649 ms
+--------------------------------------------------
+Start RAS Benchmark ...
+Fork child pid: 1524
+Fork child pid: 1525
+Fork child pid: 1526
+Fork child pid: 1527
+Fork child pid: 1528
+Fork child pid: 1529
+Fork child pid: 1530
+Fork child pid: 1531
+set task pid 1530 policy 0 -> 6
+set task pid 1529 policy 0 -> 6
+set task pid 1531 policy 0 -> 6
+set task pid 1528 policy 0 -> 6
+set task pid 1527 policy 0 -> 6
+set task pid 1525 policy 0 -> 6
+set task pid 1524 policy 0 -> 6
+Fork child pid: 1532
+Fork child pid: 1533
+set task pid 1532 policy 0 -> 6
+set task pid 1533 policy 0 -> 6
+set task pid 1526 policy 0 -> 6
+Fork child pid: 1534
+set task pid 1534 policy 0 -> 6
+set task pid 1535 policy 0 -> 6
+Fork child pid: 1535
+Fork child pid: 1536
+Fork child pid: 1537
+Fork child pid: 1538
+Fork child pid: 1539
+Fork child pid: 1540
+Fork child pid: 1541
+Fork child pid: 1542
+Fork child pid: 1543
+set task pid 1543 policy 0 -> 6
+set task pid 1542 policy 0 -> 6
+set task pid 1541 policy 0 -> 6
+set task pid 1540 policy 0 -> 6
+set task pid 1539 policy 0 -> 6
+set task pid 1538 policy 0 -> 6
+set task pid 1536 policy 0 -> 6
+set task pid 1537 policy 0 -> 6
+pid 1528 done, write times: 512
+pid 1527 done, write times: 32
+pid 1525 done, write times: 128
+pid 1524 done, write times: 64
+pid 1532 done, write times: 512
+pid 1533 done, write times: 16
+pid 1526 done, write times: 32
+pid 1534 done, write times: 16
+pid 1542 done, write times: 512
+pid 1541 done, write times: 128
+pid 1540 done, write times: 256
+pid 1536 done, write times: 64
+pid 1535 done, write times: 1024
+pid 1537 done, write times: 1024
+pid 1543 done, write times: 2048
+pid 1538 done, write times: 1024
+pid 1529 done, write times: 2048
+pid 1530 done, write times: 4096
+pid 1539 done, write times: 4096
+pid 1531 done, write times: 8192
+RAS benchmark end, time consume: 8.866 ms
+Benchmark end
