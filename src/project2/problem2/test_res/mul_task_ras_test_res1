@@ -1,0 +1,720 @@
+[enqueue] task 483 enqueue, task count: 1
+[dequeue] task 483 dequeue, task count: 0
+[enqueue] task 489 enqueue, task count: 1
+[dequeue] task 489 dequeue, task count: 0
+[enqueue] task 488 enqueue, task count: 1
+[dequeue] task 488 dequeue, task count: 0
+[enqueue] task 487 enqueue, task count: 1
+[dequeue] task 487 dequeue, task count: 0
+[enqueue] task 486 enqueue, task count: 1
+[dequeue] task 486 dequeue, task count: 0
+[enqueue] task 484 enqueue, task count: 1
+[dequeue] task 484 dequeue, task count: 0
+[enqueue] task 490 enqueue, task count: 1
+[dequeue] task 490 dequeue, task count: 0
+[enqueue] task 493 enqueue, task count: 1
+[dequeue] task 493 dequeue, task count: 0
+[enqueue] task 491 enqueue, task count: 1
+[dequeue] task 491 dequeue, task count: 0
+[enqueue] task 492 enqueue, task count: 1
+[dequeue] task 492 dequeue, task count: 0
+[enqueue] task 485 enqueue, task count: 1
+[dequeue] task 485 dequeue, task count: 0
+[enqueue] task 496 enqueue, task count: 1
+[dequeue] task 496 dequeue, task count: 0
+[enqueue] task 495 enqueue, task count: 1
+[dequeue] task 495 dequeue, task count: 0
+[enqueue] task 499 enqueue, task count: 1
+[dequeue] task 499 dequeue, task count: 0
+[enqueue] task 497 enqueue, task count: 1
+[dequeue] task 497 dequeue, task count: 0
+[enqueue] task 494 enqueue, task count: 1
+[dequeue] task 494 dequeue, task count: 0
+[enqueue] task 498 enqueue, task count: 1
+[dequeue] task 498 dequeue, task count: 0
+[enqueue] task 500 enqueue, task count: 1
+[dequeue] task 500 dequeue, task count: 0
+[enqueue] task 502 enqueue, task count: 1
+[dequeue] task 502 dequeue, task count: 0
+[enqueue] task 501 enqueue, task count: 1
+[dequeue] task 501 dequeue, task count: 0
+[enqueue] task 506 enqueue, task count: 1
+[dequeue] task 506 dequeue, task count: 0
+[enqueue] task 505 enqueue, task count: 1
+[dequeue] task 505 dequeue, task count: 0
+[enqueue] task 504 enqueue, task count: 1
+[dequeue] task 504 dequeue, task count: 0
+[enqueue] task 503 enqueue, task count: 1
+[dequeue] task 503 dequeue, task count: 0
+[enqueue] task 508 enqueue, task count: 1
+[dequeue] task 508 dequeue, task count: 0
+[enqueue] task 507 enqueue, task count: 1
+[dequeue] task 507 dequeue, task count: 0
+[enqueue] task 509 enqueue, task count: 1
+[dequeue] task 509 dequeue, task count: 0
+[enqueue] task 511 enqueue, task count: 1
+[dequeue] task 511 dequeue, task count: 0
+[enqueue] task 510 enqueue, task count: 1
+[dequeue] task 510 dequeue, task count: 0
+[enqueue] task 512 enqueue, task count: 1
+[dequeue] task 512 dequeue, task count: 0
+[enqueue] task 513 enqueue, task count: 1
+[dequeue] task 513 dequeue, task count: 0
+[enqueue] task 517 enqueue, task count: 1
+[dequeue] task 517 dequeue, task count: 0
+[enqueue] task 516 enqueue, task count: 1
+[dequeue] task 516 dequeue, task count: 0
+[enqueue] task 515 enqueue, task count: 1
+[dequeue] task 515 dequeue, task count: 0
+[enqueue] task 514 enqueue, task count: 1
+[dequeue] task 514 dequeue, task count: 0
+[enqueue] task 520 enqueue, task count: 1
+[dequeue] task 520 dequeue, task count: 0
+[enqueue] task 519 enqueue, task count: 1
+[dequeue] task 519 dequeue, task count: 0
+[enqueue] task 518 enqueue, task count: 1
+[dequeue] task 518 dequeue, task count: 0
+[enqueue] task 523 enqueue, task count: 1
+[dequeue] task 523 dequeue, task count: 0
+[enqueue] task 522 enqueue, task count: 1
+[dequeue] task 522 dequeue, task count: 0
+[enqueue] task 523 enqueue, task count: 1
+[pick next] pick task 523 as the next to run
+[enqueue] task 522 enqueue, task count: 2
+[dequeue] task 523 dequeue, task count: 1
+[pick next] pick task 522 as the next to run
+[dequeue] task 522 dequeue, task count: 0
+[enqueue] task 526 enqueue, task count: 1
+[dequeue] task 526 dequeue, task count: 0
+[enqueue] task 525 enqueue, task count: 1
+[dequeue] task 525 dequeue, task count: 0
+[enqueue] task 524 enqueue, task count: 1
+[dequeue] task 524 dequeue, task count: 0
+[enqueue] task 528 enqueue, task count: 1
+[dequeue] task 528 dequeue, task count: 0
+[enqueue] task 527 enqueue, task count: 1
+[dequeue] task 527 dequeue, task count: 0
+[enqueue] task 532 enqueue, task count: 1
+[dequeue] task 532 dequeue, task count: 0
+[enqueue] task 531 enqueue, task count: 1
+[dequeue] task 531 dequeue, task count: 0
+[enqueue] task 530 enqueue, task count: 1
+[dequeue] task 530 dequeue, task count: 0
+[enqueue] task 529 enqueue, task count: 1
+[dequeue] task 529 dequeue, task count: 0
+[enqueue] task 533 enqueue, task count: 1
+[dequeue] task 533 dequeue, task count: 0
+[enqueue] task 533 enqueue, task count: 1
+[pick next] pick task 533 as the next to run
+[dequeue] task 533 dequeue, task count: 0
+[enqueue] task 483 enqueue, task count: 1
+[pick next] pick task 483 as the next to run
+[dequeue] task 483 dequeue, task count: 0
+[enqueue] task 483 enqueue, task count: 1
+[dequeue] task 483 dequeue, task count: 0
+[enqueue] task 489 enqueue, task count: 1
+[pick next] pick task 489 as the next to run
+[enqueue] task 488 enqueue, task count: 2
+[enqueue] task 487 enqueue, task count: 3
+[enqueue] task 486 enqueue, task count: 4
+[enqueue] task 484 enqueue, task count: 5
+[tick] no write. set task 489 timeslice 100 ms
+[requeue] move task 489 to tail
+[pick next] pick task 488 as the next to run
+[dequeue] task 488 dequeue, task count: 4
+[enqueue] task 488 enqueue, task count: 5
+[dequeue] task 488 dequeue, task count: 4
+[pick next] pick task 487 as the next to run
+[dequeue] task 487 dequeue, task count: 3
+[enqueue] task 487 enqueue, task count: 4
+[dequeue] task 487 dequeue, task count: 3
+[pick next] pick task 486 as the next to run
+[dequeue] task 486 dequeue, task count: 2
+[enqueue] task 486 enqueue, task count: 3
+[dequeue] task 486 dequeue, task count: 2
+[pick next] pick task 484 as the next to run
+[dequeue] task 484 dequeue, task count: 1
+[enqueue] task 484 enqueue, task count: 2
+[dequeue] task 484 dequeue, task count: 1
+[pick next] pick task 489 as the next to run
+[enqueue] task 490 enqueue, task count: 2
+[enqueue] task 493 enqueue, task count: 3
+[enqueue] task 491 enqueue, task count: 4
+[enqueue] task 492 enqueue, task count: 5
+[enqueue] task 485 enqueue, task count: 6
+[tick] no write. set task 489 timeslice 100 ms
+[requeue] move task 489 to tail
+[pick next] pick task 490 as the next to run
+[dequeue] task 490 dequeue, task count: 5
+[enqueue] task 490 enqueue, task count: 6
+[dequeue] task 490 dequeue, task count: 5
+[pick next] pick task 493 as the next to run
+[dequeue] task 493 dequeue, task count: 4
+[enqueue] task 493 enqueue, task count: 5
+[dequeue] task 493 dequeue, task count: 4
+[pick next] pick task 491 as the next to run
+[dequeue] task 491 dequeue, task count: 3
+[enqueue] task 491 enqueue, task count: 4
+[dequeue] task 491 dequeue, task count: 3
+[pick next] pick task 492 as the next to run
+[dequeue] task 492 dequeue, task count: 2
+[enqueue] task 492 enqueue, task count: 3
+[dequeue] task 492 dequeue, task count: 2
+[pick next] pick task 485 as the next to run
+[dequeue] task 485 dequeue, task count: 1
+[enqueue] task 485 enqueue, task count: 2
+[dequeue] task 485 dequeue, task count: 1
+[pick next] pick task 489 as the next to run
+[enqueue] task 496 enqueue, task count: 2
+[enqueue] task 495 enqueue, task count: 3
+[tick] no write. set task 489 timeslice 100 ms
+[requeue] move task 489 to tail
+[pick next] pick task 496 as the next to run
+[tick] task count: 3, wcounts: 446, sum: 2159, race_prob: 2. set task 496 timeslice 80 ms
+[requeue] move task 496 to tail
+[pick next] pick task 495 as the next to run
+[enqueue] task 499 enqueue, task count: 4
+[dequeue] task 495 dequeue, task count: 3
+[enqueue] task 495 enqueue, task count: 4
+[dequeue] task 495 dequeue, task count: 3
+[pick next] pick task 489 as the next to run
+[enqueue] task 497 enqueue, task count: 4
+[enqueue] task 494 enqueue, task count: 5
+[enqueue] task 498 enqueue, task count: 6
+[dequeue] task 489 dequeue, task count: 5
+[enqueue] task 489 enqueue, task count: 6
+[dequeue] task 489 dequeue, task count: 5
+[pick next] pick task 496 as the next to run
+[tick] no write. set task 496 timeslice 100 ms
+[requeue] move task 496 to tail
+[pick next] pick task 499 as the next to run
+[dequeue] task 499 dequeue, task count: 4
+[enqueue] task 499 enqueue, task count: 5
+[dequeue] task 499 dequeue, task count: 4
+[pick next] pick task 497 as the next to run
+[dequeue] task 497 dequeue, task count: 3
+[enqueue] task 497 enqueue, task count: 4
+[dequeue] task 497 dequeue, task count: 3
+[pick next] pick task 494 as the next to run
+[dequeue] task 494 dequeue, task count: 2
+[enqueue] task 494 enqueue, task count: 3
+[dequeue] task 494 dequeue, task count: 2
+[pick next] pick task 498 as the next to run
+[enqueue] task 500 enqueue, task count: 3
+[dequeue] task 498 dequeue, task count: 2
+[enqueue] task 498 enqueue, task count: 3
+[dequeue] task 498 dequeue, task count: 2
+[pick next] pick task 496 as the next to run
+[tick] no write. set task 496 timeslice 100 ms
+[requeue] move task 496 to tail
+[pick next] pick task 500 as the next to run
+[dequeue] task 500 dequeue, task count: 1
+[enqueue] task 500 enqueue, task count: 2
+[dequeue] task 500 dequeue, task count: 1
+[pick next] pick task 496 as the next to run
+[tick] no race. set task 496 timeslice 100 ms
+[enqueue] task 502 enqueue, task count: 2
+[enqueue] task 501 enqueue, task count: 3
+[tick] no write. set task 496 timeslice 100 ms
+[requeue] move task 496 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 3, wcounts: 423, sum: 3426, race_prob: 1. set task 502 timeslice 90 ms
+[requeue] move task 502 to tail
+[pick next] pick task 501 as the next to run
+[dequeue] task 501 dequeue, task count: 2
+[enqueue] task 501 enqueue, task count: 3
+[dequeue] task 501 dequeue, task count: 2
+[pick next] pick task 496 as the next to run
+[enqueue] task 506 enqueue, task count: 3
+[enqueue] task 505 enqueue, task count: 4
+[enqueue] task 504 enqueue, task count: 5
+[enqueue] task 503 enqueue, task count: 6
+[tick] task count: 6, wcounts: 3356, sum: 3779, race_prob: 8. set task 496 timeslice 20 ms
+[requeue] move task 496 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 6, wcounts: 947, sum: 4303, race_prob: 2. set task 502 timeslice 80 ms
+[requeue] move task 502 to tail
+[pick next] pick task 506 as the next to run
+[enqueue] task 508 enqueue, task count: 7
+[enqueue] task 507 enqueue, task count: 8
+[tick] task count: 8, wcounts: 436, sum: 4739, race_prob: 0. set task 506 timeslice 100 ms
+[requeue] move task 506 to tail
+[pick next] pick task 505 as the next to run
+[enqueue] task 509 enqueue, task count: 9
+[enqueue] task 511 enqueue, task count: 10
+[enqueue] task 510 enqueue, task count: 11
+[tick] task count: 11, wcounts: 502, sum: 5241, race_prob: 0. set task 505 timeslice 100 ms
+[requeue] move task 505 to tail
+[pick next] pick task 504 as the next to run
+[dequeue] task 504 dequeue, task count: 10
+[enqueue] task 504 enqueue, task count: 11
+[dequeue] task 504 dequeue, task count: 10
+[pick next] pick task 503 as the next to run
+[enqueue] task 512 enqueue, task count: 11
+[enqueue] task 513 enqueue, task count: 12
+[tick] task count: 12, wcounts: 710, sum: 5951, race_prob: 1. set task 503 timeslice 90 ms
+[requeue] move task 503 to tail
+[pick next] pick task 496 as the next to run
+[tick] task count: 12, wcounts: 3528, sum: 6123, race_prob: 5. set task 496 timeslice 50 ms
+[requeue] move task 496 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 12, wcounts: 1380, sum: 6556, race_prob: 2. set task 502 timeslice 80 ms
+[requeue] move task 502 to tail
+[pick next] pick task 508 as the next to run
+[enqueue] task 517 enqueue, task count: 13
+[enqueue] task 516 enqueue, task count: 14
+[enqueue] task 515 enqueue, task count: 15
+[enqueue] task 514 enqueue, task count: 16
+[tick] task count: 16, wcounts: 899, sum: 7455, race_prob: 1. set task 508 timeslice 90 ms
+[requeue] move task 508 to tail
+[pick next] pick task 507 as the next to run
+[enqueue] task 520 enqueue, task count: 17
+[enqueue] task 519 enqueue, task count: 18
+[enqueue] task 518 enqueue, task count: 19
+[tick] task count: 19, wcounts: 478, sum: 7933, race_prob: 0. set task 507 timeslice 100 ms
+[requeue] move task 507 to tail
+[pick next] pick task 506 as the next to run
+[dequeue] task 506 dequeue, task count: 18
+[enqueue] task 506 enqueue, task count: 19
+[dequeue] task 506 dequeue, task count: 18
+[pick next] pick task 509 as the next to run
+[dequeue] task 509 dequeue, task count: 17
+[enqueue] task 509 enqueue, task count: 18
+[dequeue] task 509 dequeue, task count: 17
+[pick next] pick task 511 as the next to run
+[tick] task count: 17, wcounts: 437, sum: 7934, race_prob: 0. set task 511 timeslice 100 ms
+[requeue] move task 511 to tail
+[pick next] pick task 510 as the next to run
+[dequeue] task 510 dequeue, task count: 16
+[enqueue] task 510 enqueue, task count: 17
+[dequeue] task 510 dequeue, task count: 16
+[pick next] pick task 505 as the next to run
+[dequeue] task 505 dequeue, task count: 15
+[enqueue] task 505 enqueue, task count: 16
+[dequeue] task 505 dequeue, task count: 15
+[pick next] pick task 512 as the next to run
+[tick] task count: 15, wcounts: 547, sum: 7979, race_prob: 0. set task 512 timeslice 100 ms
+[requeue] move task 512 to tail
+[pick next] pick task 513 as the next to run
+[enqueue] task 523 enqueue, task count: 16
+[enqueue] task 522 enqueue, task count: 17
+[enqueue] task 526 enqueue, task count: 18
+[enqueue] task 525 enqueue, task count: 19
+[enqueue] task 524 enqueue, task count: 20
+[tick] task count: 20, wcounts: 419, sum: 8398, race_prob: 0. set task 513 timeslice 100 ms
+[requeue] move task 513 to tail
+[pick next] pick task 503 as the next to run
+[enqueue] task 528 enqueue, task count: 21
+[enqueue] task 527 enqueue, task count: 22
+[dequeue] task 503 dequeue, task count: 21
+[enqueue] task 503 enqueue, task count: 22
+[dequeue] task 503 dequeue, task count: 21
+[pick next] pick task 496 as the next to run
+[tick] task count: 21, wcounts: 3843, sum: 8003, race_prob: 4. set task 496 timeslice 60 ms
+[requeue] move task 496 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 21, wcounts: 1676, sum: 8299, race_prob: 2. set task 502 timeslice 80 ms
+[requeue] move task 502 to tail
+[pick next] pick task 517 as the next to run
+[dequeue] task 517 dequeue, task count: 20
+[enqueue] task 517 enqueue, task count: 21
+[dequeue] task 517 dequeue, task count: 20
+[pick next] pick task 516 as the next to run
+[enqueue] task 532 enqueue, task count: 21
+[enqueue] task 531 enqueue, task count: 22
+[enqueue] task 530 enqueue, task count: 23
+[enqueue] task 529 enqueue, task count: 24
+[dequeue] task 516 dequeue, task count: 23
+[enqueue] task 516 enqueue, task count: 24
+[dequeue] task 516 dequeue, task count: 23
+[pick next] pick task 515 as the next to run
+[enqueue] task 533 enqueue, task count: 24
+[tick] task count: 24, wcounts: 455, sum: 8754, race_prob: 0. set task 515 timeslice 100 ms
+[requeue] move task 515 to tail
+[pick next] pick task 514 as the next to run
+[dequeue] task 514 dequeue, task count: 23
+[enqueue] task 514 enqueue, task count: 24
+[dequeue] task 514 dequeue, task count: 23
+[pick next] pick task 508 as the next to run
+[tick] task count: 23, wcounts: 1434, sum: 9289, race_prob: 1. set task 508 timeslice 90 ms
+[requeue] move task 508 to tail
+[pick next] pick task 520 as the next to run
+[dequeue] task 520 dequeue, task count: 22
+[enqueue] task 520 enqueue, task count: 23
+[dequeue] task 520 dequeue, task count: 22
+[pick next] pick task 519 as the next to run
+[dequeue] task 519 dequeue, task count: 21
+[enqueue] task 519 enqueue, task count: 22
+[dequeue] task 519 dequeue, task count: 21
+[pick next] pick task 518 as the next to run
+[dequeue] task 518 dequeue, task count: 20
+[enqueue] task 518 enqueue, task count: 21
+[dequeue] task 518 dequeue, task count: 20
+[pick next] pick task 507 as the next to run
+[tick] task count: 20, wcounts: 867, sum: 9678, race_prob: 0. set task 507 timeslice 100 ms
+[requeue] move task 507 to tail
+[pick next] pick task 511 as the next to run
+[tick] task count: 20, wcounts: 900, sum: 10141, race_prob: 0. set task 511 timeslice 100 ms
+[requeue] move task 511 to tail
+[pick next] pick task 512 as the next to run
+[tick] task count: 20, wcounts: 1059, sum: 10653, race_prob: 0. set task 512 timeslice 100 ms
+[requeue] move task 512 to tail
+[pick next] pick task 523 as the next to run
+[tick] task count: 20, wcounts: 427, sum: 11080, race_prob: 0. set task 523 timeslice 100 ms
+[requeue] move task 523 to tail
+[pick next] pick task 522 as the next to run
+[dequeue] task 522 dequeue, task count: 19
+[enqueue] task 522 enqueue, task count: 20
+[dequeue] task 522 dequeue, task count: 19
+[pick next] pick task 526 as the next to run
+[dequeue] task 526 dequeue, task count: 18
+[enqueue] task 526 enqueue, task count: 19
+[dequeue] task 526 dequeue, task count: 18
+[pick next] pick task 525 as the next to run
+[tick] task count: 18, wcounts: 373, sum: 11453, race_prob: 0. set task 525 timeslice 100 ms
+[requeue] move task 525 to tail
+[pick next] pick task 524 as the next to run
+[tick] task count: 18, wcounts: 441, sum: 11894, race_prob: 0. set task 524 timeslice 100 ms
+[requeue] move task 524 to tail
+[pick next] pick task 513 as the next to run
+[dequeue] task 513 dequeue, task count: 17
+[enqueue] task 513 enqueue, task count: 18
+[dequeue] task 513 dequeue, task count: 17
+[pick next] pick task 528 as the next to run
+[dequeue] task 528 dequeue, task count: 16
+[enqueue] task 528 enqueue, task count: 17
+[dequeue] task 528 dequeue, task count: 16
+[pick next] pick task 527 as the next to run
+[dequeue] task 527 dequeue, task count: 15
+[enqueue] task 527 enqueue, task count: 16
+[dequeue] task 527 dequeue, task count: 15
+[pick next] pick task 496 as the next to run
+[dequeue] task 496 dequeue, task count: 14
+[enqueue] task 496 enqueue, task count: 15
+[dequeue] task 496 dequeue, task count: 14
+[pick next] pick task 502 as the next to run
+[tick] task count: 14, wcounts: 2321, sum: 8277, race_prob: 2. set task 502 timeslice 80 ms
+[requeue] move task 502 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 14, wcounts: 909, sum: 9186, race_prob: 0. set task 532 timeslice 100 ms
+[requeue] move task 532 to tail
+[pick next] pick task 531 as the next to run
+[dequeue] task 531 dequeue, task count: 13
+[enqueue] task 531 enqueue, task count: 14
+[dequeue] task 531 dequeue, task count: 13
+[pick next] pick task 530 as the next to run
+[dequeue] task 530 dequeue, task count: 12
+[enqueue] task 530 enqueue, task count: 13
+[dequeue] task 530 dequeue, task count: 12
+[pick next] pick task 529 as the next to run
+[dequeue] task 529 dequeue, task count: 11
+[enqueue] task 529 enqueue, task count: 12
+[dequeue] task 529 dequeue, task count: 11
+[pick next] pick task 533 as the next to run
+[dequeue] task 533 dequeue, task count: 10
+[enqueue] task 533 enqueue, task count: 11
+[dequeue] task 533 dequeue, task count: 10
+[pick next] pick task 515 as the next to run
+[tick] task count: 10, wcounts: 1259, sum: 9990, race_prob: 1. set task 515 timeslice 90 ms
+[requeue] move task 515 to tail
+[pick next] pick task 508 as the next to run
+[tick] task count: 10, wcounts: 2352, sum: 10908, race_prob: 2. set task 508 timeslice 80 ms
+[requeue] move task 508 to tail
+[pick next] pick task 507 as the next to run
+[dequeue] task 507 dequeue, task count: 9
+[enqueue] task 507 enqueue, task count: 10
+[dequeue] task 507 dequeue, task count: 9
+[pick next] pick task 511 as the next to run
+[tick] task count: 9, wcounts: 1709, sum: 10850, race_prob: 1. set task 511 timeslice 90 ms
+[requeue] move task 511 to tail
+[pick next] pick task 512 as the next to run
+[tick] task count: 9, wcounts: 1645, sum: 11436, race_prob: 1. set task 512 timeslice 90 ms
+[requeue] move task 512 to tail
+[pick next] pick task 523 as the next to run
+[tick] task count: 9, wcounts: 998, sum: 12007, race_prob: 0. set task 523 timeslice 100 ms
+[requeue] move task 523 to tail
+[pick next] pick task 525 as the next to run
+[dequeue] task 525 dequeue, task count: 8
+[enqueue] task 525 enqueue, task count: 9
+[dequeue] task 525 dequeue, task count: 8
+[pick next] pick task 524 as the next to run
+[tick] task count: 8, wcounts: 1103, sum: 12296, race_prob: 0. set task 524 timeslice 100 ms
+[requeue] move task 524 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 8, wcounts: 2946, sum: 12921, race_prob: 2. set task 502 timeslice 80 ms
+[requeue] move task 502 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 8, wcounts: 1740, sum: 13752, race_prob: 1. set task 532 timeslice 90 ms
+[requeue] move task 532 to tail
+[pick next] pick task 515 as the next to run
+[tick] task count: 8, wcounts: 2160, sum: 14653, race_prob: 1. set task 515 timeslice 90 ms
+[requeue] move task 515 to tail
+[pick next] pick task 508 as the next to run
+[tick] task count: 8, wcounts: 3264, sum: 15565, race_prob: 2. set task 508 timeslice 80 ms
+[requeue] move task 508 to tail
+[pick next] pick task 511 as the next to run
+[tick] task count: 8, wcounts: 2643, sum: 16499, race_prob: 1. set task 511 timeslice 90 ms
+[requeue] move task 511 to tail
+[pick next] pick task 512 as the next to run
+[dequeue] task 512 dequeue, task count: 7
+[enqueue] task 512 enqueue, task count: 8
+[dequeue] task 512 dequeue, task count: 7
+[pick next] pick task 523 as the next to run
+[tick] task count: 7, wcounts: 1653, sum: 15509, race_prob: 1. set task 523 timeslice 90 ms
+[requeue] move task 523 to tail
+[pick next] pick task 524 as the next to run
+[tick] task count: 7, wcounts: 1738, sum: 16144, race_prob: 1. set task 524 timeslice 90 ms
+[requeue] move task 524 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 7, wcounts: 3346, sum: 16544, race_prob: 2. set task 502 timeslice 80 ms
+[requeue] move task 502 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 7, wcounts: 2483, sum: 17287, race_prob: 1. set task 532 timeslice 90 ms
+[requeue] move task 532 to tail
+[pick next] pick task 515 as the next to run
+[tick] task count: 7, wcounts: 2856, sum: 17983, race_prob: 1. set task 515 timeslice 90 ms
+[requeue] move task 515 to tail
+[pick next] pick task 508 as the next to run
+[tick] task count: 7, wcounts: 3718, sum: 18437, race_prob: 2. set task 508 timeslice 80 ms
+[requeue] move task 508 to tail
+[pick next] pick task 511 as the next to run
+[tick] task count: 7, wcounts: 3178, sum: 18972, race_prob: 1. set task 511 timeslice 90 ms
+[requeue] move task 511 to tail
+[pick next] pick task 523 as the next to run
+[tick] task count: 7, wcounts: 1949, sum: 19268, race_prob: 1. set task 523 timeslice 90 ms
+[requeue] move task 523 to tail
+[pick next] pick task 524 as the next to run
+[tick] task count: 7, wcounts: 2515, sum: 20045, race_prob: 1. set task 524 timeslice 90 ms
+[requeue] move task 524 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 7, wcounts: 3702, sum: 20401, race_prob: 1. set task 502 timeslice 90 ms
+[requeue] move task 502 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 7, wcounts: 2902, sum: 20820, race_prob: 1. set task 532 timeslice 90 ms
+[requeue] move task 532 to tail
+[pick next] pick task 515 as the next to run
+[tick] task count: 7, wcounts: 3447, sum: 21411, race_prob: 1. set task 515 timeslice 90 ms
+[requeue] move task 515 to tail
+[pick next] pick task 508 as the next to run
+[tick] task count: 7, wcounts: 4092, sum: 21785, race_prob: 1. set task 508 timeslice 90 ms
+[requeue] move task 508 to tail
+[pick next] pick task 511 as the next to run
+[tick] task count: 7, wcounts: 3470, sum: 22077, race_prob: 1. set task 511 timeslice 90 ms
+[requeue] move task 511 to tail
+[pick next] pick task 523 as the next to run
+[tick] task count: 7, wcounts: 2708, sum: 22836, race_prob: 1. set task 523 timeslice 90 ms
+[requeue] move task 523 to tail
+[pick next] pick task 524 as the next to run
+[tick] task count: 7, wcounts: 2929, sum: 23250, race_prob: 1. set task 524 timeslice 90 ms
+[requeue] move task 524 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 7, wcounts: 4220, sum: 23768, race_prob: 1. set task 502 timeslice 90 ms
+[requeue] move task 502 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 7, wcounts: 3443, sum: 24309, race_prob: 1. set task 532 timeslice 90 ms
+[requeue] move task 532 to tail
+[pick next] pick task 515 as the next to run
+[tick] task count: 7, wcounts: 3974, sum: 24836, race_prob: 1. set task 515 timeslice 90 ms
+[requeue] move task 515 to tail
+[pick next] pick task 508 as the next to run
+[tick] task count: 7, wcounts: 4582, sum: 25326, race_prob: 1. set task 508 timeslice 90 ms
+[requeue] move task 508 to tail
+[pick next] pick task 511 as the next to run
+[tick] task count: 7, wcounts: 3908, sum: 25764, race_prob: 1. set task 511 timeslice 90 ms
+[requeue] move task 511 to tail
+[pick next] pick task 523 as the next to run
+[tick] task count: 7, wcounts: 3166, sum: 26222, race_prob: 1. set task 523 timeslice 90 ms
+[requeue] move task 523 to tail
+[pick next] pick task 524 as the next to run
+[tick] task count: 7, wcounts: 3274, sum: 26567, race_prob: 1. set task 524 timeslice 90 ms
+[requeue] move task 524 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 7, wcounts: 4750, sum: 27097, race_prob: 1. set task 502 timeslice 90 ms
+[requeue] move task 502 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 7, wcounts: 3933, sum: 27587, race_prob: 1. set task 532 timeslice 90 ms
+[requeue] move task 532 to tail
+[pick next] pick task 515 as the next to run
+[tick] task count: 7, wcounts: 4285, sum: 27898, race_prob: 1. set task 515 timeslice 90 ms
+[requeue] move task 515 to tail
+[pick next] pick task 508 as the next to run
+[tick] task count: 7, wcounts: 4983, sum: 28299, race_prob: 1. set task 508 timeslice 90 ms
+[requeue] move task 508 to tail
+[pick next] pick task 511 as the next to run
+[tick] task count: 7, wcounts: 4289, sum: 28680, race_prob: 1. set task 511 timeslice 90 ms
+[requeue] move task 511 to tail
+[pick next] pick task 523 as the next to run
+[tick] task count: 7, wcounts: 3597, sum: 29111, race_prob: 1. set task 523 timeslice 90 ms
+[requeue] move task 523 to tail
+[pick next] pick task 524 as the next to run
+[tick] task count: 7, wcounts: 3775, sum: 29612, race_prob: 1. set task 524 timeslice 90 ms
+[requeue] move task 524 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 7, wcounts: 5346, sum: 30208, race_prob: 1. set task 502 timeslice 90 ms
+[requeue] move task 502 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 7, wcounts: 4477, sum: 30752, race_prob: 1. set task 532 timeslice 90 ms
+[requeue] move task 532 to tail
+[pick next] pick task 515 as the next to run
+[tick] task count: 7, wcounts: 4714, sum: 31181, race_prob: 1. set task 515 timeslice 90 ms
+[requeue] move task 515 to tail
+[pick next] pick task 508 as the next to run
+[tick] task count: 7, wcounts: 5405, sum: 31603, race_prob: 1. set task 508 timeslice 90 ms
+[requeue] move task 508 to tail
+[pick next] pick task 511 as the next to run
+[tick] task count: 7, wcounts: 4662, sum: 31976, race_prob: 1. set task 511 timeslice 90 ms
+[requeue] move task 511 to tail
+[pick next] pick task 523 as the next to run
+[tick] task count: 7, wcounts: 3929, sum: 32308, race_prob: 1. set task 523 timeslice 90 ms
+[requeue] move task 523 to tail
+[pick next] pick task 524 as the next to run
+[tick] task count: 7, wcounts: 4128, sum: 32661, race_prob: 1. set task 524 timeslice 90 ms
+[requeue] move task 524 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 7, wcounts: 5767, sum: 33082, race_prob: 1. set task 502 timeslice 90 ms
+[requeue] move task 502 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 7, wcounts: 5022, sum: 33627, race_prob: 1. set task 532 timeslice 90 ms
+[requeue] move task 532 to tail
+[pick next] pick task 515 as the next to run
+[tick] task count: 7, wcounts: 5190, sum: 34103, race_prob: 1. set task 515 timeslice 90 ms
+[requeue] move task 515 to tail
+[pick next] pick task 508 as the next to run
+[tick] task count: 7, wcounts: 5849, sum: 34547, race_prob: 1. set task 508 timeslice 90 ms
+[requeue] move task 508 to tail
+[pick next] pick task 511 as the next to run
+[tick] task count: 7, wcounts: 5289, sum: 35174, race_prob: 1. set task 511 timeslice 90 ms
+[requeue] move task 511 to tail
+[pick next] pick task 523 as the next to run
+[dequeue] task 523 dequeue, task count: 6
+[enqueue] task 523 enqueue, task count: 7
+[dequeue] task 523 dequeue, task count: 6
+[pick next] pick task 524 as the next to run
+[tick] task count: 6, wcounts: 4554, sum: 31671, race_prob: 1. set task 524 timeslice 90 ms
+[requeue] move task 524 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 6, wcounts: 6212, sum: 32116, race_prob: 1. set task 502 timeslice 90 ms
+[requeue] move task 502 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 6, wcounts: 5463, sum: 32557, race_prob: 1. set task 532 timeslice 90 ms
+[requeue] move task 532 to tail
+[pick next] pick task 515 as the next to run
+[tick] task count: 6, wcounts: 5643, sum: 33010, race_prob: 1. set task 515 timeslice 90 ms
+[requeue] move task 515 to tail
+[pick next] pick task 508 as the next to run
+[tick] task count: 6, wcounts: 6258, sum: 33419, race_prob: 1. set task 508 timeslice 90 ms
+[requeue] move task 508 to tail
+[pick next] pick task 511 as the next to run
+[tick] task count: 6, wcounts: 5719, sum: 33849, race_prob: 1. set task 511 timeslice 90 ms
+[requeue] move task 511 to tail
+[pick next] pick task 524 as the next to run
+[tick] task count: 6, wcounts: 4979, sum: 34274, race_prob: 1. set task 524 timeslice 90 ms
+[requeue] move task 524 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 6, wcounts: 6652, sum: 34714, race_prob: 1. set task 502 timeslice 90 ms
+[requeue] move task 502 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 6, wcounts: 5818, sum: 35069, race_prob: 1. set task 532 timeslice 90 ms
+[requeue] move task 532 to tail
+[pick next] pick task 515 as the next to run
+[tick] task count: 6, wcounts: 6204, sum: 35630, race_prob: 1. set task 515 timeslice 90 ms
+[requeue] move task 515 to tail
+[pick next] pick task 508 as the next to run
+[tick] task count: 6, wcounts: 6690, sum: 36062, race_prob: 1. set task 508 timeslice 90 ms
+[requeue] move task 508 to tail
+[pick next] pick task 511 as the next to run
+[tick] task count: 6, wcounts: 6204, sum: 36547, race_prob: 1. set task 511 timeslice 90 ms
+[requeue] move task 511 to tail
+[pick next] pick task 524 as the next to run
+[tick] task count: 6, wcounts: 5371, sum: 36939, race_prob: 1. set task 524 timeslice 90 ms
+[requeue] move task 524 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 6, wcounts: 7032, sum: 37319, race_prob: 1. set task 502 timeslice 90 ms
+[requeue] move task 502 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 6, wcounts: 6258, sum: 37759, race_prob: 1. set task 532 timeslice 90 ms
+[requeue] move task 532 to tail
+[pick next] pick task 515 as the next to run
+[tick] task count: 6, wcounts: 6708, sum: 38263, race_prob: 1. set task 515 timeslice 90 ms
+[requeue] move task 515 to tail
+[pick next] pick task 508 as the next to run
+[tick] task count: 6, wcounts: 7152, sum: 38725, race_prob: 1. set task 508 timeslice 90 ms
+[requeue] move task 508 to tail
+[pick next] pick task 511 as the next to run
+[tick] task count: 6, wcounts: 6769, sum: 39290, race_prob: 1. set task 511 timeslice 90 ms
+[requeue] move task 511 to tail
+[pick next] pick task 524 as the next to run
+[tick] task count: 6, wcounts: 5829, sum: 39748, race_prob: 1. set task 524 timeslice 90 ms
+[requeue] move task 524 to tail
+[pick next] pick task 502 as the next to run
+[tick] task count: 6, wcounts: 7955, sum: 40671, race_prob: 1. set task 502 timeslice 90 ms
+[requeue] move task 502 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 6, wcounts: 6765, sum: 41178, race_prob: 1. set task 532 timeslice 90 ms
+[requeue] move task 532 to tail
+[pick next] pick task 515 as the next to run
+[tick] task count: 6, wcounts: 7353, sum: 41823, race_prob: 1. set task 515 timeslice 90 ms
+[requeue] move task 515 to tail
+[pick next] pick task 508 as the next to run
+[tick] task count: 6, wcounts: 7584, sum: 42255, race_prob: 1. set task 508 timeslice 90 ms
+[requeue] move task 508 to tail
+[pick next] pick task 511 as the next to run
+[tick] task count: 6, wcounts: 7251, sum: 42737, race_prob: 1. set task 511 timeslice 90 ms
+[requeue] move task 511 to tail
+[pick next] pick task 524 as the next to run
+[tick] task count: 6, wcounts: 6234, sum: 43142, race_prob: 1. set task 524 timeslice 90 ms
+[requeue] move task 524 to tail
+[pick next] pick task 502 as the next to run
+[dequeue] task 502 dequeue, task count: 5
+[enqueue] task 502 enqueue, task count: 6
+[dequeue] task 502 dequeue, task count: 5
+[pick next] pick task 532 as the next to run
+[tick] task count: 5, wcounts: 7156, sum: 35578, race_prob: 2. set task 532 timeslice 80 ms
+[requeue] move task 532 to tail
+[pick next] pick task 515 as the next to run
+[tick] task count: 5, wcounts: 7856, sum: 36081, race_prob: 2. set task 515 timeslice 80 ms
+[requeue] move task 515 to tail
+[pick next] pick task 508 as the next to run
+[tick] task count: 5, wcounts: 8094, sum: 36591, race_prob: 2. set task 508 timeslice 80 ms
+[requeue] move task 508 to tail
+[pick next] pick task 511 as the next to run
+[tick] task count: 5, wcounts: 7711, sum: 37051, race_prob: 2. set task 511 timeslice 80 ms
+[requeue] move task 511 to tail
+[pick next] pick task 524 as the next to run
+[tick] task count: 5, wcounts: 6838, sum: 37655, race_prob: 1. set task 524 timeslice 90 ms
+[requeue] move task 524 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 5, wcounts: 7612, sum: 38111, race_prob: 1. set task 532 timeslice 90 ms
+[requeue] move task 532 to tail
+[pick next] pick task 515 as the next to run
+[dequeue] task 515 dequeue, task count: 4
+[enqueue] task 515 enqueue, task count: 5
+[dequeue] task 515 dequeue, task count: 4
+[pick next] pick task 508 as the next to run
+[dequeue] task 508 dequeue, task count: 3
+[enqueue] task 508 enqueue, task count: 4
+[dequeue] task 508 dequeue, task count: 3
+[pick next] pick task 511 as the next to run
+[dequeue] task 511 dequeue, task count: 2
+[enqueue] task 511 enqueue, task count: 3
+[dequeue] task 511 dequeue, task count: 2
+[pick next] pick task 524 as the next to run
+[tick] task count: 2, wcounts: 7263, sum: 14875, race_prob: 4. set task 524 timeslice 60 ms
+[requeue] move task 524 to tail
+[pick next] pick task 532 as the next to run
+[tick] task count: 2, wcounts: 8014, sum: 15277, race_prob: 5. set task 532 timeslice 50 ms
+[requeue] move task 532 to tail
+[pick next] pick task 524 as the next to run
+[tick] task count: 2, wcounts: 7564, sum: 15578, race_prob: 4. set task 524 timeslice 60 ms
+[requeue] move task 524 to tail
+[pick next] pick task 532 as the next to run
+[dequeue] task 532 dequeue, task count: 1
+[enqueue] task 532 enqueue, task count: 2
+[dequeue] task 532 dequeue, task count: 1
+[pick next] pick task 524 as the next to run
+[tick] no race. set task 524 timeslice 100 ms
+[dequeue] task 524 dequeue, task count: 0
+[enqueue] task 524 enqueue, task count: 1
+[dequeue] task 524 dequeue, task count: 0
+
+ 

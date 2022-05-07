@@ -12,7 +12,8 @@
 #include <sched.h>
 #include <time.h>
 
-#define MAX_WRITE_RANGE 4096 // task access MAX_WRITE_RANGE: [0,4096)
+#define MAX_WRITE_RANGE 8192 // task access MAX_WRITE_RANGE: [0,4096)
+#define SHIFT_RANEG 14
 
 static int alloc_size;
 static char *memory;
@@ -62,7 +63,7 @@ int main(int argc,char *argv[])
 	{
 		// Fork child task.
 		int shift;
-		shift = rand() % 8;
+		shift = rand() % SHIFT_RANEG;
 		int write_range;
 		write_range = MAX_WRITE_RANGE >> shift;
 		
