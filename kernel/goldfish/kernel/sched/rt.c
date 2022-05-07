@@ -1098,8 +1098,8 @@ static void __enqueue_rt_entity(struct sched_rt_entity *rt_se, bool head)
 
 	inc_rt_tasks(rt_se, rt_rq);
 
-	if (rt_task_of(rt_se)->policy == SCHED_RR)
-		printk(KERN_DEBUG "I'm in enqueue_task_rt, pid %d enqueue, rt_nr_running: %d",rt_task_of(rt_se)->pid,rt_rq->rt_nr_running);
+	// if (rt_task_of(rt_se)->policy == SCHED_RR)
+	// 	printk(KERN_DEBUG "I'm in enqueue_task_rt, pid %d enqueue, rt_nr_running: %d",rt_task_of(rt_se)->pid,rt_rq->rt_nr_running);
 }
 
 static void __dequeue_rt_entity(struct sched_rt_entity *rt_se)
@@ -1114,8 +1114,8 @@ static void __dequeue_rt_entity(struct sched_rt_entity *rt_se)
 	dec_rt_tasks(rt_se, rt_rq);
 	if (!rt_rq->rt_nr_running)
 		list_del_leaf_rt_rq(rt_rq);
-	if (rt_task_of(rt_se)->policy == SCHED_RR)
-		printk(KERN_DEBUG "I'm in dequeue_task_rt, pid %d dequeue, rt_nr_running: %d",rt_task_of(rt_se)->pid,rt_rq->rt_nr_running);	
+	// if (rt_task_of(rt_se)->policy == SCHED_RR)
+	// 	printk(KERN_DEBUG "I'm in dequeue_task_rt, pid %d dequeue, rt_nr_running: %d",rt_task_of(rt_se)->pid,rt_rq->rt_nr_running);	
 }
 
 /*
