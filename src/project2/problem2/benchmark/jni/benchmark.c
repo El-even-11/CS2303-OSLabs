@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
         time_us = 1000000 * (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec);
 
 
-        printf("%s benchmark end, time consume: %d.%d ms\n", sched_name_arr[sched],time_us/1000000,(time_us%1000000)/1000);
+        printf("%s benchmark end, time consume: %d.%d s\n", sched_name_arr[sched],time_us/1000000,(time_us%1000000)/1000);
     }
 
     printf("Benchmark end\n");
