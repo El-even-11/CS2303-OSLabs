@@ -57,16 +57,21 @@ int main(int argc, char *argv[])
 
     pid_t *child_pid_arr;
     int *write_times_arr;
+    int write_sum;
     child_pid_arr = malloc(sizeof(pid_t) * childnum);
     write_times_arr = malloc(sizeof(int) * childnum);
+    write_sum = 0;
 
-    printf("Start  NORMAL | FIFO | RR | RAS  Benchmark ...\n");
+    printf("> Start  NORMAL | FIFO | RR | RAS  Benchmark ...\n");
 
     int i;
     for (i = 0; i < childnum; i++)
     {
         write_times_arr[i] = MAX_WRITE_TIMES >> (rand() % SHIFT_RANGE);
+        write_sum += write_times_arr[i];
     }
+
+    printf("> Random write start, write times sum: %d ...\n", write_sum);
 
     int sched;
     pid_t pid;
@@ -80,10 +85,13 @@ int main(int argc, char *argv[])
 
     int time_us;
 
+    double time_consume_arr[4];
+    double writes_per_sec_arr[4];
+
     for (sched = 0; sched < 4; sched++)
     {
         printf("--------------------------------------------------\n");
-        printf("Start %s Benchmark ...\n", sched_name_arr[sched]);
+        printf("> Start %s Benchmark ...\n", sched_name_arr[sched]);
         gettimeofday(&start, NULL);
 
         for (i = 0; i < childnum; i++)
@@ -95,7 +103,7 @@ int main(int argc, char *argv[])
             {
                 // parent task
                 child_pid_arr[i] = pid;
-                printf("Fork child pid: %d\n", pid);
+                printf("[%s] Fork child pid: %d\n",sched_name_arr[sched], pid);
             }
             else if (pid == 0)
             {
@@ -106,7 +114,7 @@ int main(int argc, char *argv[])
                 struct sched_param param;
                 param.sched_priority = sched_arr[sched] == 6 ? 0 : 40;
                 syscall(156, getpid(), sched_arr[sched], &param);
-                printf("set task pid %d policy %d -> %d\n", getpid(), oldpolicy, sched_arr[sched]);
+                printf("[%s] Set task pid %d policy %d -> %d\n",sched_name_arr[sched], getpid(), oldpolicy, sched_arr[sched]);
                 sleep(5);
 
                 int j;
@@ -122,12 +130,13 @@ int main(int argc, char *argv[])
                 // long timeslice;
                 // syscall(161, getpid(), &t);
                 // timeslice = t.tv_nsec / 1000000;
-                printf("pid %d done, write times: %d\n", getpid(), write_times);
+                printf("[%s] Pid %d done, write times: %d\n",sched_name_arr[sched], getpid(), write_times);
                 exit(0);
             }
             else
             {
                 printf("Fork error\n");
+                exit(1);
             }
         }
 
@@ -136,13 +145,28 @@ int main(int argc, char *argv[])
             waitpid(child_pid_arr[i], NULL, 0);
 
         gettimeofday(&end, NULL);
-        time_us = 1000000 * (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec);
+        time_us = 1000000 * (end.tv_sec - start.tv_sec - 5) + (end.tv_usec - start.tv_usec);
+        double writes_per_sec;
+        writes_per_sec = write_sum * 1.0 / (time_us * 1.0 / 1000000);
 
+        time_consume_arr[sched] = time_us*1.0 / 1000000;
+        writes_per_sec_arr[sched] = writes_per_sec;
 
-        printf("%s benchmark end, time consume: %d.%d s\n", sched_name_arr[sched],time_us/1000000,(time_us%1000000)/1000);
+        printf("> %s benchmark end, time consume: %.3f s, write %.2f times per sec\n", sched_name_arr[sched], time_consume_arr[sched], writes_per_sec);
+        printf("--------------------------------------------------\n");
     }
 
-    printf("Benchmark end\n");
+    printf("> All benchmarks completed.\n");
+    printf("> Statistical information:\n");
+    printf("Total write times: %d, child process count: %d\n", write_sum, childnum);
+    printf("--------------------------------------------------\n");
+    printf("SCHED\t time consume\t write times per sec\t\n");
+    for (sched = 0; sched < 4; sched++)
+    {
+        printf("%s \t %.3fs\t %.2f\t\n", sched_name_arr[sched], time_consume_arr[sched], writes_per_sec_arr[sched]);
+    }
+    printf("--------------------------------------------------\n");
+    printf("> Benchmark end.\n");
 
     // free
     munmap(memory, alloc_size);

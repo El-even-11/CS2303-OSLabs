@@ -1,0 +1,270 @@
+Please choose the number of child tasks (1-100): 20
+> Start  NORMAL | FIFO | RR | RAS  Benchmark ...
+> Random write start, write times sum: 28800 ...
+--------------------------------------------------
+> Start NORMAL Benchmark ...
+[NORMAL] Fork child pid: 2085
+[NORMAL] Fork child pid: 2086
+[NORMAL] Fork child pid: 2087
+[NORMAL] Set task pid 2087 policy 0 -> 0
+[NORMAL] Set task pid 2086 policy 0 -> 0
+[NORMAL] Set task pid 2085 policy 0 -> 0
+[NORMAL] Fork child pid: 2088
+[NORMAL] Fork child pid: 2089
+[NORMAL] Set task pid 2089 policy 0 -> 0
+[NORMAL] Set task pid 2088 policy 0 -> 0
+[NORMAL] Fork child pid: 2090
+[NORMAL] Set task pid 2090 policy 0 -> 0
+[NORMAL] Fork child pid: 2091
+[NORMAL] Fork child pid: 2092
+[NORMAL] Fork child pid: 2093
+[NORMAL] Fork child pid: 2094
+[NORMAL] Fork child pid: 2095
+[NORMAL] Fork child pid: 2096
+[NORMAL] Fork child pid: 2097
+[NORMAL] Fork child pid: 2098
+[NORMAL] Fork child pid: 2099
+[NORMAL] Fork child pid: 2100
+[NORMAL] Fork child pid: 2101
+[NORMAL] Fork child pid: 2102
+[NORMAL] Fork child pid: 2103
+[NORMAL] Set task pid 2100 policy 0 -> 0
+[NORMAL] Set task pid 2103 policy 0 -> 0
+[NORMAL] Set task pid 2099 policy 0 -> 0
+[NORMAL] Set task pid 2098 policy 0 -> 0
+[NORMAL] Set task pid 2097 policy 0 -> 0
+[NORMAL] Set task pid 2096 policy 0 -> 0
+[NORMAL] Set task pid 2095 policy 0 -> 0
+[NORMAL] Set task pid 2093 policy 0 -> 0
+[NORMAL] Set task pid 2092 policy 0 -> 0
+[NORMAL] Set task pid 2091 policy 0 -> 0
+[NORMAL] Set task pid 2104 policy 0 -> 0
+[NORMAL] Fork child pid: 2104
+[NORMAL] Set task pid 2101 policy 0 -> 0
+[NORMAL] Set task pid 2102 policy 0 -> 0
+[NORMAL] Set task pid 2094 policy 0 -> 0
+[NORMAL] Pid 2086 done, write times: 16
+[NORMAL] Pid 2088 done, write times: 32
+[NORMAL] Pid 2085 done, write times: 64
+[NORMAL] Pid 2098 done, write times: 64
+[NORMAL] Pid 2099 done, write times: 16
+[NORMAL] Pid 2102 done, write times: 128
+[NORMAL] Pid 2100 done, write times: 64
+[NORMAL] Pid 2104 done, write times: 128
+[NORMAL] Pid 2096 done, write times: 128
+[NORMAL] Pid 2095 done, write times: 256
+[NORMAL] Pid 2103 done, write times: 256
+[NORMAL] Pid 2089 done, write times: 1024
+[NORMAL] Pid 2094 done, write times: 1024
+[NORMAL] Pid 2090 done, write times: 1024
+[NORMAL] Pid 2097 done, write times: 2048
+[NORMAL] Pid 2101 done, write times: 2048
+[NORMAL] Pid 2092 done, write times: 4096
+[NORMAL] Pid 2093 done, write times: 4096
+[NORMAL] Pid 2087 done, write times: 4096
+[NORMAL] Pid 2091 done, write times: 8192
+> NORMAL benchmark end, time consume: 11.763 s, write 2448.27 times per sec
+--------------------------------------------------
+--------------------------------------------------
+> Start FIFO Benchmark ...
+[FIFO] Fork child pid: 2105
+[FIFO] Fork child pid: 2106
+[FIFO] Fork child pid: 2107
+[FIFO] Fork child pid: 2108
+[FIFO] Set task pid 2109 policy 0 -> 1
+[FIFO] Set task pid 2108 policy 0 -> 1
+[FIFO] Set task pid 2107 policy 0 -> 1
+[FIFO] Set task pid 2106 policy 0 -> 1
+[FIFO] Set task pid 2105 policy 0 -> 1
+[FIFO] Fork child pid: 2109
+[FIFO] Fork child pid: 2110
+[FIFO] Fork child pid: 2111
+[FIFO] Set task pid 2111 policy 0 -> 1
+[FIFO] Set task pid 2110 policy 0 -> 1
+[FIFO] Fork child pid: 2112
+[FIFO] Fork child pid: 2113
+[FIFO] Fork child pid: 2114
+[FIFO] Fork child pid: 2115
+[FIFO] Set task pid 2115 policy 0 -> 1
+[FIFO] Set task pid 2114 policy 0 -> 1
+[FIFO] Set task pid 2112 policy 0 -> 1
+[FIFO] Fork child pid: 2116
+[FIFO] Set task pid 2116 policy 0 -> 1
+[FIFO] Fork child pid: 2117
+[FIFO] Set task pid 2117 policy 0 -> 1
+[FIFO] Set task pid 2113 policy 0 -> 1
+[FIFO] Fork child pid: 2118
+[FIFO] Fork child pid: 2119
+[FIFO] Fork child pid: 2120
+[FIFO] Set task pid 2120 policy 0 -> 1
+[FIFO] Set task pid 2118 policy 0 -> 1
+[FIFO] Set task pid 2119 policy 0 -> 1
+[FIFO] Fork child pid: 2121
+[FIFO] Fork child pid: 2122
+[FIFO] Fork child pid: 2123
+[FIFO] Set task pid 2121 policy 0 -> 1
+[FIFO] Set task pid 2122 policy 0 -> 1
+[FIFO] Fork child pid: 2124
+[FIFO] Set task pid 2124 policy 0 -> 1
+[FIFO] Set task pid 2123 policy 0 -> 1
+[FIFO] Pid 2109 done, write times: 1024
+[FIFO] Pid 2108 done, write times: 32
+[FIFO] Pid 2107 done, write times: 4096
+[FIFO] Pid 2106 done, write times: 16
+[FIFO] Pid 2105 done, write times: 64
+[FIFO] Pid 2111 done, write times: 8192
+[FIFO] Pid 2110 done, write times: 1024
+[FIFO] Pid 2115 done, write times: 256
+[FIFO] Pid 2114 done, write times: 1024
+[FIFO] Pid 2112 done, write times: 4096
+[FIFO] Pid 2116 done, write times: 128
+[FIFO] Pid 2117 done, write times: 2048
+[FIFO] Pid 2113 done, write times: 4096
+[FIFO] Pid 2120 done, write times: 64
+[FIFO] Pid 2118 done, write times: 64
+[FIFO] Pid 2119 done, write times: 16
+[FIFO] Pid 2121 done, write times: 2048
+[FIFO] Pid 2122 done, write times: 128
+[FIFO] Pid 2124 done, write times: 128
+[FIFO] Pid 2123 done, write times: 256
+> FIFO benchmark end, time consume: 11.187 s, write 2574.35 times per sec
+--------------------------------------------------
+--------------------------------------------------
+> Start RR Benchmark ...
+[RR] Fork child pid: 2125
+[RR] Set task pid 2125 policy 0 -> 2
+[RR] Fork child pid: 2126
+[RR] Fork child pid: 2127
+[RR] Set task pid 2127 policy 0 -> 2
+[RR] Set task pid 2126 policy 0 -> 2
+[RR] Fork child pid: 2128
+[RR] Fork child pid: 2129
+[RR] Fork child pid: 2130
+[RR] Fork child pid: 2131
+[RR] Fork child pid: 2132
+[RR] Fork child pid: 2133
+[RR] Set task pid 2128 policy 0 -> 2
+[RR] Set task pid 2129 policy 0 -> 2
+[RR] Set task pid 2133 policy 0 -> 2
+[RR] Set task pid 2132 policy 0 -> 2
+[RR] Set task pid 2131 policy 0 -> 2
+[RR] Set task pid 2130 policy 0 -> 2
+[RR] Fork child pid: 2134
+[RR] Fork child pid: 2135
+[RR] Fork child pid: 2136
+[RR] Fork child pid: 2137
+[RR] Fork child pid: 2138
+[RR] Fork child pid: 2139
+[RR] Set task pid 2134 policy 0 -> 2
+[RR] Set task pid 2139 policy 0 -> 2
+[RR] Set task pid 2138 policy 0 -> 2
+[RR] Set task pid 2137 policy 0 -> 2
+[RR] Set task pid 2136 policy 0 -> 2
+[RR] Set task pid 2135 policy 0 -> 2
+[RR] Fork child pid: 2140
+[RR] Fork child pid: 2141
+[RR] Fork child pid: 2142
+[RR] Fork child pid: 2143
+[RR] Set task pid 2143 policy 0 -> 2
+[RR] Set task pid 2144 policy 0 -> 2
+[RR] Fork child pid: 2144
+[RR] Set task pid 2142 policy 0 -> 2
+[RR] Set task pid 2141 policy 0 -> 2
+[RR] Set task pid 2140 policy 0 -> 2
+[RR] Pid 2125 done, write times: 64
+[RR] Pid 2126 done, write times: 16
+[RR] Pid 2128 done, write times: 32
+[RR] Pid 2139 done, write times: 16
+[RR] Pid 2138 done, write times: 64
+[RR] Pid 2136 done, write times: 128
+[RR] Pid 2135 done, write times: 256
+[RR] Pid 2143 done, write times: 256
+[RR] Pid 2144 done, write times: 128
+[RR] Pid 2142 done, write times: 128
+[RR] Pid 2140 done, write times: 64
+[RR] Pid 2130 done, write times: 1024
+[RR] Pid 2134 done, write times: 1024
+[RR] Pid 2129 done, write times: 1024
+[RR] Pid 2137 done, write times: 2048
+[RR] Pid 2141 done, write times: 2048
+[RR] Pid 2133 done, write times: 4096
+[RR] Pid 2127 done, write times: 4096
+[RR] Pid 2132 done, write times: 4096
+[RR] Pid 2131 done, write times: 8192
+> RR benchmark end, time consume: 12.193 s, write 2362.07 times per sec
+--------------------------------------------------
+--------------------------------------------------
+> Start RAS Benchmark ...
+[RAS] Fork child pid: 2145
+[RAS] Set task pid 2145 policy 0 -> 6
+[RAS] Set task pid 2146 policy 0 -> 6
+[RAS] Fork child pid: 2146
+[RAS] Fork child pid: 2147
+[RAS] Fork child pid: 2148
+[RAS] Set task pid 2149 policy 0 -> 6
+[RAS] Set task pid 2148 policy 0 -> 6
+[RAS] Set task pid 2147 policy 0 -> 6
+[RAS] Fork child pid: 2149
+[RAS] Fork child pid: 2150
+[RAS] Set task pid 2151 policy 0 -> 6
+[RAS] Set task pid 2150 policy 0 -> 6
+[RAS] Fork child pid: 2151
+[RAS] Fork child pid: 2152
+[RAS] Fork child pid: 2153
+[RAS] Fork child pid: 2154
+[RAS] Fork child pid: 2155
+[RAS] Set task pid 2156 policy 0 -> 6
+[RAS] Set task pid 2155 policy 0 -> 6
+[RAS] Set task pid 2154 policy 0 -> 6
+[RAS] Set task pid 2153 policy 0 -> 6
+[RAS] Set task pid 2152 policy 0 -> 6
+[RAS] Fork child pid: 2156
+[RAS] Fork child pid: 2157
+[RAS] Fork child pid: 2158
+[RAS] Fork child pid: 2159
+[RAS] Set task pid 2160 policy 0 -> 6
+[RAS] Set task pid 2159 policy 0 -> 6
+[RAS] Set task pid 2158 policy 0 -> 6
+[RAS] Set task pid 2157 policy 0 -> 6
+[RAS] Fork child pid: 2160
+[RAS] Fork child pid: 2161
+[RAS] Set task pid 2162 policy 0 -> 6
+[RAS] Set task pid 2161 policy 0 -> 6
+[RAS] Fork child pid: 2162
+[RAS] Fork child pid: 2163
+[RAS] Fork child pid: 2164
+[RAS] Set task pid 2164 policy 0 -> 6
+[RAS] Set task pid 2163 policy 0 -> 6
+[RAS] Pid 2145 done, write times: 64
+[RAS] Pid 2146 done, write times: 16
+[RAS] Pid 2148 done, write times: 32
+[RAS] Pid 2149 done, write times: 1024
+[RAS] Pid 2156 done, write times: 128
+[RAS] Pid 2155 done, write times: 256
+[RAS] Pid 2160 done, write times: 64
+[RAS] Pid 2159 done, write times: 16
+[RAS] Pid 2158 done, write times: 64
+[RAS] Pid 2162 done, write times: 128
+[RAS] Pid 2164 done, write times: 128
+[RAS] Pid 2163 done, write times: 256
+[RAS] Pid 2150 done, write times: 1024
+[RAS] Pid 2154 done, write times: 1024
+[RAS] Pid 2157 done, write times: 2048
+[RAS] Pid 2161 done, write times: 2048
+[RAS] Pid 2147 done, write times: 4096
+[RAS] Pid 2153 done, write times: 4096
+[RAS] Pid 2152 done, write times: 4096
+[RAS] Pid 2151 done, write times: 8192
+> RAS benchmark end, time consume: 10.318 s, write 2791.17 times per sec
+--------------------------------------------------
+> All benchmarks completed.
+> Statistical information:
+Total write times: 28800, child process count: 20
+--------------------------------------------------
+SCHED	 time consume	 write times per sec	
+NORMAL 	 11.763s	     2448.27	
+FIFO 	 11.187s	     2574.35	
+RR 	     12.193s	     2362.07	
+RAS 	 10.318s	     2791.17	
+--------------------------------------------------
+> Benchmark end.
