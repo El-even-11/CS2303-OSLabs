@@ -262,9 +262,9 @@ Please choose the number of child tasks (1-100): 20
 Total write times: 28800, child process count: 20
 --------------------------------------------------
 SCHED	 time consume	 write times per sec	
-NORMAL 	 11.763s	     2448.27	
-FIFO 	 11.187s	     2574.35	
-RR 	     12.193s	     2362.07	
-RAS 	 10.318s	     2791.17	
+NORMAL 	 11.763s	 2448.27	
+FIFO 	 11.187s	 2574.35	
+RR 	 12.193s	 2362.07	
+RAS 	 10.318s	 2791.17	
 --------------------------------------------------
 > Benchmark end.
