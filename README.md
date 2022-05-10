@@ -18,5 +18,7 @@ Test file for RAS should **NOT** write too many times. This would result in runt
     - [x] Basic ras scheduler and test file (May. 6th) 
     - [x] Weighted timeslice determined by race prob (May. 6th) 
     - [x] Benchmark (May. 7th) 
+    - [ ] Optimize race probability calculation O(n) -> O(1)
     - [ ] Throttling strategy
     - [ ] Run on Multi-CPU
+    
