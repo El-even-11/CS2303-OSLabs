@@ -25,9 +25,10 @@ int main()
 	struct sigaction sa;
 	int wcount;
 
-	printf("Start memory trace testing program!\n");
+	printf("Start memory trace testing program...\n");
 
 	syscall(361, getpid());
+	printf("Invoke sys_start_trace\n");
 
 	/* Init segv_handler to handle SIGSEGV */
 	memset(&sa, 0, sizeof(sa));
@@ -43,7 +44,7 @@ int main()
 	close(fd);
 
 	int i;
-	for (i = 0; i < getpagesize(); i++)
+	for (i = 0; i < 4; i++)
 	{
 		/* set protection */
 		mprotect(memory, alloc_size, PROT_READ);
@@ -54,12 +55,13 @@ int main()
 
 	/* Get wcount */
 	syscall(363, getpid(), &wcount);
-	printf("Task pid : %d, Wcount = %d, times = %d\n", getpid(), wcount, times);
+	printf("Task pid : %d, wcounts = %d, actual write times = %d\n", getpid(), wcount, times);
+	times = 0;
 
 	// stop tracing
 	syscall(362, getpid());
-
-	for (i = 0; i < getpagesize(); i++)
+	printf("Invoke sys_stop_trace\n");
+	for (i = 0; i < 4; i++)
 	{
 		/* set protection */
 		mprotect(memory, alloc_size, PROT_READ);
@@ -70,7 +72,7 @@ int main()
 
 	/* Get wcount */
 	syscall(363, getpid(), &wcount);
-	printf("Task pid : %d, Wcount = %d, times = %d\n", getpid(), wcount, times);
+	printf("Task pid : %d, Wcount = %d, actual write times = %d\n", getpid(), wcount, times);
 	
 	/* freee */
 	munmap(memory, alloc_size);

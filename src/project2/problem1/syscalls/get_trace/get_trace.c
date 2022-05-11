@@ -13,9 +13,10 @@ static int sys_get_trace(pid_t _pid, int *wcounts)
 {
     struct task_struct *task;
     task = get_pid_task(find_get_pid(_pid), PIDTYPE_PID); // get task by pid
-    if (!task || task->trace_flag == 0) 
+    if (!task || task->trace_flag == 0) {
+        *wcounts = 0;    
         return -EINVAL;
-
+    }
     *wcounts = task->wcounts;
     return 0;
 }
