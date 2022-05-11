@@ -13,7 +13,7 @@
 #include <time.h>
 
 #define WRITE_RANGE 1024
-#define MAX_WRITE_TIMES 8192 
+#define MAX_WRITE_TIMES 1 << 16
 #define SHIFT_RANGE 10
 
 static int alloc_size;
