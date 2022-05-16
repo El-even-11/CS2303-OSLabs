@@ -11,11 +11,6 @@
 #include <stdlib.h>
 #include <sched.h>
 
-#define RANGE 4096   // task access range: [0,4096)
-
-static int alloc_size;
-static char *memory;
-
 static char *policys[] = {
     "SCHED_NORMAL",
     "SCHED_FIFO",
@@ -26,11 +21,6 @@ static char *policys[] = {
     "SCHED_RAS",
 };
 
-void segv_handler(int signal_number)
-{
-	mprotect(memory, alloc_size, PROT_READ | PROT_WRITE);
-}
-
 int main(int argc,char *argv[])
 {
 	int fd;
@@ -38,24 +28,12 @@ int main(int argc,char *argv[])
 	struct sigaction sa;
 
 	printf("Start RAS scheduler test ...\n");
+    printf("Please input the pid of the test task: ");
+    pid_t pid;
 
-    // Init segv_handler to handle SIGSEGV for wcounts tracing.
-	memset(&sa, 0, sizeof(sa));
-	sa.sa_handler = &segv_handler;
-	sigaction(SIGSEGV, &sa, NULL);
-
-    // Allocate memory for process, set the memory can only be read.
-	alloc_size = 10 * getpagesize();
-	fd = open("/dev/zero", O_RDONLY);
-	memory = mmap(NULL, alloc_size, PROT_READ, MAP_PRIVATE, fd, 0);
-	close(fd);
-
-    // Start tracing
-	syscall(361, getpid());
-    printf("Start trace for task %d\n",getpid());
-
+    scanf("%d",&pid);
     int policy;
-    policy = syscall(157, getpid());
+    policy = syscall(157, pid);
 
     if (policy > 6) {
         printf("ERROR POLICY!\n");
@@ -64,36 +42,24 @@ int main(int argc,char *argv[])
 
     printf("Current scheduling algorithm is %s\n",policys[policy]);
 
-    printf("Please input the choice of scheduling algorithm (0-NORMAL, 1-FIFO, 2-RR, 6-RAS): %d\n",atoi(argv[1]));
+    printf("Please input the choice of scheduling algorithm (0-NORMAL, 1-FIFO, 2-RR, 6-RAS): ");
+    
+    scanf("%d",&policy);
+
+    int prio;
+    printf("Please input the priority: ");
+    scanf("%d",&prio);
+
     struct sched_param param;
-    param.sched_priority = atoi(argv[1]) == 6 ? 0 : 1;
+    param.sched_priority = prio;
+    
 
     printf("Changing ...\n");
-    syscall(156, getpid(), atoi(argv[1]), &param);
+    syscall(156, pid, policy, &param);
 
-    policy = syscall(157, getpid());
+    policy = syscall(157, pid);
     printf("Current scheduling algorithm is %s\n", policys[policy]);
+    printf("Done.\n");
 
-    printf("Writing ...\n");
-
-    int i;
-    for (i=0;i<RANGE;i++){
-        mprotect(memory, alloc_size, PROT_READ);
-        memory[i] = i;
-    }
-
-    struct timespec t;
-    long timeslice;
-    syscall(161, getpid(), &t);
-    timeslice = t.tv_nsec / 1000000;
-    printf("Timeslice : %ld ms.\n", timeslice);
-
-    int wcounts;
-	// Get wcounts.
-	syscall(363, getpid(), &wcounts);
-	printf("Task pid : %d, Wcount = %d\n", getpid(), wcounts);	
-	
-	/* freee */
-	munmap(memory, alloc_size);
 	return 0;
 }
