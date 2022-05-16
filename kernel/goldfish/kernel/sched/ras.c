@@ -57,7 +57,7 @@ static void requeue_task_ras(struct rq *rq, struct task_struct *p, int head)
 			list_move(&ras_se->run_list, queue);
 		else
 			list_move_tail(&ras_se->run_list, queue);
-		printk(KERN_DEBUG "[requeue] move task %d to tail",p->pid);
+		// printk(KERN_DEBUG "[requeue] move task %d to tail",p->pid);
 	}
 }
 
@@ -80,7 +80,7 @@ enqueue_task_ras(struct rq *rq, struct task_struct *p, int flags)
 
 	ras_rq->ras_nr_running++;
 
-	printk(KERN_DEBUG "[enqueue] task %d enqueue, task count: %d",p->pid,ras_rq->ras_nr_running);
+	// printk(KERN_DEBUG "[enqueue] task %d enqueue, task count: %d",p->pid,ras_rq->ras_nr_running);
 	inc_nr_running(rq);
 }
 
@@ -97,14 +97,14 @@ dequeue_task_ras(struct rq *rq, struct task_struct *p, int flags)
 	list_del_init(&ras_se->run_list);
 
 	ras_rq->ras_nr_running--;
-	printk(KERN_DEBUG "[dequeue] task %d dequeue, task count: %d",p->pid,ras_rq->ras_nr_running);
+	// printk(KERN_DEBUG "[dequeue] task %d dequeue, task count: %d",p->pid,ras_rq->ras_nr_running);
 	dec_nr_running(rq);
 }
 
 static void
 yield_task_ras(struct rq *rq)
 {
-	printk(KERN_DEBUG "[yield]");
+	// printk(KERN_DEBUG "[yield]");
 	requeue_task_ras(rq, rq->curr, 0);
 }
 
@@ -137,7 +137,7 @@ pick_next_task_ras(struct rq *rq)
 	p = ras_task_of(ras_se);
 	p->se.exec_start = rq->clock_task;
 
-	printk(KERN_DEBUG "[pick next] pick task %d as the next to run",p->pid);
+	// printk(KERN_DEBUG "[pick next] pick task %d as the next to run",p->pid);
 
 	return p;
 }
@@ -174,7 +174,7 @@ task_tick_ras(struct rq *rq, struct task_struct *task, int queued)
 		// No race. Set MAX timeslice to avoid frequently schedule.
 		task->ras.time_slice = RAS_MAX_TIMESLICE;
 		task->ras.total_timeslice = RAS_MAX_TIMESLICE;
-		printk(KERN_DEBUG "[tick] no race. set task %d timeslice %d ms",task->pid,RAS_MAX_TIMESLICE * 10);
+		printk(KERN_DEBUG "[tick] task count: 1, no race. set task %d timeslice %d ms",task->pid,RAS_MAX_TIMESLICE * 10);
 	} else {
 		// Calculate race probability.
 		int wcounts = task->wcounts;
@@ -199,7 +199,7 @@ task_tick_ras(struct rq *rq, struct task_struct *task, int queued)
 			// not tracing or no memory write
 			task->ras.time_slice = RAS_MAX_TIMESLICE;
 			task->ras.total_timeslice = RAS_MAX_TIMESLICE;
-			printk(KERN_DEBUG "[tick] no write. set task %d timeslice %d ms",task->pid,RAS_MAX_TIMESLICE * 10);
+			printk(KERN_DEBUG "[tick] task count: %d, no write. set task %d timeslice %d ms",task_cnt, task->pid,RAS_MAX_TIMESLICE * 10);
 		} else {
 			int race_prob = wcounts * 10 / sum;
 			unsigned int timeslice = -1*race_prob + RAS_MAX_TIMESLICE;
@@ -233,7 +233,7 @@ switched_to_ras(struct rq *rq, struct task_struct *p)
 {
 	if (p->on_rq && rq->curr != p)
 	{
-		printk(KERN_DEBUG "[switch], resched task %d",rq->curr->pid);
+		// printk(KERN_DEBUG "[switch], resched task %d",rq->curr->pid);
 		resched_task(rq->curr);
 	}
 }
