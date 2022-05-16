@@ -1,990 +1,1310 @@
 Please choose the number of child tasks (1-100): 80
 > Start  NORMAL | FIFO | RR | RAS  Benchmark ...
-> Random write start, write times sum: 95536 ...
+> Random write start, write times sum: 130944 ...
 --------------------------------------------------
 > Start NORMAL Benchmark ...
+[NORMAL] Fork child pid: 2498
+[NORMAL] Fork child pid: 2499
+[NORMAL] Fork child pid: 2500
+[NORMAL] Fork child pid: 2501
+[NORMAL] Fork child pid: 2502
+[NORMAL] Fork child pid: 2503
+[NORMAL] Task pid 2503 latency: 27.967000 ms
+[NORMAL] Task pid 2500 latency: 204.469000 ms
+[NORMAL] Set task pid 2500 policy 0 -> 0
+[NORMAL] Task pid 2499 latency: 54.812000 ms
+[NORMAL] Task pid 2501 latency: 14.870000 ms
+[NORMAL] Set task pid 2501 policy 0 -> 0
+[NORMAL] Fork child pid: 2504
+[NORMAL] Fork child pid: 2505
+[NORMAL] Set task pid 2499 policy 0 -> 0
+[NORMAL] Task pid 2504 latency: 192.404000 ms
+[NORMAL] Set task pid 2504 policy 0 -> 0
+[NORMAL] Set task pid 2503 policy 0 -> 0
+[NORMAL] Task pid 2502 latency: 140.662000 ms
+[NORMAL] Set task pid 2502 policy 0 -> 0
+[NORMAL] Fork child pid: 2506
+[NORMAL] Fork child pid: 2507
+[NORMAL] Fork child pid: 2508
+[NORMAL] Fork child pid: 2509
+[NORMAL] Fork child pid: 2510
+[NORMAL] Fork child pid: 2511
+[NORMAL] Task pid 2506 latency: 140.415000 ms
+[NORMAL] Set task pid 2506 policy 0 -> 0
+[NORMAL] Task pid 2505 latency: 11.564000 ms
+[NORMAL] Set task pid 2505 policy 0 -> 0
+[NORMAL] Task pid 2512 latency: 87.453000 ms
+[NORMAL] Set task pid 2512 policy 0 -> 0
+[NORMAL] Task pid 2511 latency: 92.541000 ms
+[NORMAL] Set task pid 2511 policy 0 -> 0
+[NORMAL] Fork child pid: 2512
+[NORMAL] Task pid 2498 latency: 207.551000 ms
+[NORMAL] Set task pid 2498 policy 0 -> 0
+[NORMAL] Task pid 2510 latency: 94.986000 ms
+[NORMAL] Set task pid 2510 policy 0 -> 0
+[NORMAL] Task pid 2507 latency: 250.845000 ms
+[NORMAL] Set task pid 2507 policy 0 -> 0
+[NORMAL] Task pid 2508 latency: 256.387000 ms
+[NORMAL] Set task pid 2508 policy 0 -> 0
+[NORMAL] Task pid 2509 latency: 287.871000 ms
+[NORMAL] Set task pid 2509 policy 0 -> 0
+[NORMAL] Fork child pid: 2513
+[NORMAL] Fork child pid: 2514
+[NORMAL] Fork child pid: 2515
+[NORMAL] Fork child pid: 2516
+[NORMAL] Task pid 2516 latency: 13.554000 ms
+[NORMAL] Set task pid 2516 policy 0 -> 0
+[NORMAL] Task pid 2515 latency: 19.973000 ms
+[NORMAL] Set task pid 2515 policy 0 -> 0
+[NORMAL] Task pid 2514 latency: 29.345000 ms
+[NORMAL] Set task pid 2514 policy 0 -> 0
+[NORMAL] Task pid 2513 latency: 84.196000 ms
+[NORMAL] Set task pid 2513 policy 0 -> 0
+[NORMAL] Fork child pid: 2517
+[NORMAL] Fork child pid: 2518
+[NORMAL] Fork child pid: 2519
+[NORMAL] Fork child pid: 2520
+[NORMAL] Fork child pid: 2521
+[NORMAL] Fork child pid: 2522
+[NORMAL] Fork child pid: 2523
+[NORMAL] Fork child pid: 2524
+[NORMAL] Fork child pid: 2525
+[NORMAL] Fork child pid: 2526
+[NORMAL] Fork child pid: 2527
+[NORMAL] Fork child pid: 2528
+[NORMAL] Task pid 2527 latency: 3.232000 ms
+[NORMAL] Set task pid 2527 policy 0 -> 0
+[NORMAL] Task pid 2526 latency: 5.523000 ms
+[NORMAL] Set task pid 2526 policy 0 -> 0
+[NORMAL] Task pid 2529 latency: 21.298000 ms
+[NORMAL] Set task pid 2529 policy 0 -> 0
+[NORMAL] Task pid 2525 latency: 28.602000 ms
+[NORMAL] Set task pid 2525 policy 0 -> 0
+[NORMAL] Task pid 2524 latency: 36.339000 ms
+[NORMAL] Set task pid 2524 policy 0 -> 0
+[NORMAL] Task pid 2523 latency: 38.760000 ms
+[NORMAL] Set task pid 2523 policy 0 -> 0
+[NORMAL] Task pid 2522 latency: 40.628000 ms
+[NORMAL] Set task pid 2522 policy 0 -> 0
+[NORMAL] Task pid 2521 latency: 43.091000 ms
+[NORMAL] Set task pid 2521 policy 0 -> 0
+[NORMAL] Task pid 2520 latency: 51.719000 ms
+[NORMAL] Set task pid 2520 policy 0 -> 0
+[NORMAL] Task pid 2519 latency: 58.127000 ms
+[NORMAL] Set task pid 2519 policy 0 -> 0
+[NORMAL] Task pid 2518 latency: 166.652000 ms
+[NORMAL] Set task pid 2518 policy 0 -> 0
+[NORMAL] Task pid 2517 latency: 88.315000 ms
+[NORMAL] Fork child pid: 2529
+[NORMAL] Fork child pid: 2530
+[NORMAL] Fork child pid: 2531
+[NORMAL] Fork child pid: 2532
+[NORMAL] Task pid 2528 latency: 6.874000 ms
+[NORMAL] Set task pid 2528 policy 0 -> 0
+[NORMAL] Task pid 2532 latency: 20.005000 ms
+[NORMAL] Set task pid 2532 policy 0 -> 0
+[NORMAL] Task pid 2530 latency: 32.167000 ms
+[NORMAL] Set task pid 2530 policy 0 -> 0
+[NORMAL] Set task pid 2517 policy 0 -> 0
+[NORMAL] Task pid 2533 latency: 33.860000 ms
+[NORMAL] Set task pid 2533 policy 0 -> 0
+[NORMAL] Task pid 2531 latency: 109.107000 ms
+[NORMAL] Set task pid 2531 policy 0 -> 0
+[NORMAL] Fork child pid: 2533
+[NORMAL] Fork child pid: 2534
+[NORMAL] Fork child pid: 2535
+[NORMAL] Fork child pid: 2536
+[NORMAL] Fork child pid: 2537
+[NORMAL] Fork child pid: 2538
+[NORMAL] Task pid 2539 latency: 18.761000 ms
+[NORMAL] Set task pid 2539 policy 0 -> 0
+[NORMAL] Task pid 2538 latency: 21.600000 ms
+[NORMAL] Set task pid 2538 policy 0 -> 0
+[NORMAL] Task pid 2537 latency: 26.370000 ms
+[NORMAL] Set task pid 2537 policy 0 -> 0
+[NORMAL] Task pid 2535 latency: 102.057000 ms
+[NORMAL] Set task pid 2535 policy 0 -> 0
+[NORMAL] Task pid 2534 latency: 105.573000 ms
+[NORMAL] Set task pid 2534 policy 0 -> 0
+[NORMAL] Fork child pid: 2539
+[NORMAL] Task pid 2536 latency: 32.174000 ms
+[NORMAL] Set task pid 2536 policy 0 -> 0
+[NORMAL] Fork child pid: 2540
+[NORMAL] Fork child pid: 2541
+[NORMAL] Fork child pid: 2542
+[NORMAL] Task pid 2542 latency: 17.138000 ms
+[NORMAL] Set task pid 2542 policy 0 -> 0
+[NORMAL] Task pid 2541 latency: 27.349000 ms
+[NORMAL] Set task pid 2541 policy 0 -> 0
+[NORMAL] Task pid 2540 latency: 191.680000 ms
+[NORMAL] Set task pid 2540 policy 0 -> 0
+[NORMAL] Fork child pid: 2543
+[NORMAL] Fork child pid: 2544
+[NORMAL] Fork child pid: 2545
+[NORMAL] Fork child pid: 2546
+[NORMAL] Task pid 2547 latency: 12.293000 ms
+[NORMAL] Set task pid 2547 policy 0 -> 0
+[NORMAL] Task pid 2546 latency: 21.018000 ms
+[NORMAL] Set task pid 2546 policy 0 -> 0
+[NORMAL] Task pid 2545 latency: 26.698000 ms
+[NORMAL] Task pid 2544 latency: 99.461000 ms
+[NORMAL] Set task pid 2544 policy 0 -> 0
+[NORMAL] Task pid 2543 latency: 165.854000 ms
+[NORMAL] Set task pid 2543 policy 0 -> 0
+[NORMAL] Fork child pid: 2547
+[NORMAL] Fork child pid: 2548
+[NORMAL] Fork child pid: 2549
+[NORMAL] Fork child pid: 2550
+[NORMAL] Fork child pid: 2551
+[NORMAL] Fork child pid: 2552
+[NORMAL] Fork child pid: 2553
+[NORMAL] Fork child pid: 2554
+[NORMAL] Fork child pid: 2555
+[NORMAL] Task pid 2556 latency: 14.866000 ms
+[NORMAL] Set task pid 2556 policy 0 -> 0
+[NORMAL] Task pid 2555 latency: 18.551000 ms
+[NORMAL] Set task pid 2555 policy 0 -> 0
+[NORMAL] Task pid 2554 latency: 21.865000 ms
+[NORMAL] Set task pid 2554 policy 0 -> 0
+[NORMAL] Task pid 2552 latency: 25.942000 ms
+[NORMAL] Set task pid 2552 policy 0 -> 0
+[NORMAL] Task pid 2551 latency: 33.340000 ms
+[NORMAL] Set task pid 2551 policy 0 -> 0
+[NORMAL] Task pid 2550 latency: 33.677000 ms
+[NORMAL] Set task pid 2550 policy 0 -> 0
+[NORMAL] Task pid 2549 latency: 98.275000 ms
+[NORMAL] Set task pid 2549 policy 0 -> 0
+[NORMAL] Task pid 2548 latency: 104.418000 ms
+[NORMAL] Set task pid 2548 policy 0 -> 0
+[NORMAL] Fork child pid: 2556
+[NORMAL] Fork child pid: 2557
+[NORMAL] Fork child pid: 2558
+[NORMAL] Fork child pid: 2559
+[NORMAL] Task pid 2553 latency: 24.087000 ms
+[NORMAL] Set task pid 2553 policy 0 -> 0
+[NORMAL] Task pid 2560 latency: 30.281000 ms
+[NORMAL] Set task pid 2560 policy 0 -> 0
+[NORMAL] Task pid 2558 latency: 41.179000 ms
+[NORMAL] Set task pid 2558 policy 0 -> 0
+[NORMAL] Set task pid 2545 policy 0 -> 0
+[NORMAL] Task pid 2557 latency: 46.706000 ms
+[NORMAL] Set task pid 2557 policy 0 -> 0
+[NORMAL] Task pid 2559 latency: 36.517000 ms
+[NORMAL] Set task pid 2559 policy 0 -> 0
+[NORMAL] Fork child pid: 2560
+[NORMAL] Fork child pid: 2561
+[NORMAL] Task pid 2561 latency: 52.503000 ms
+[NORMAL] Set task pid 2561 policy 0 -> 0
+[NORMAL] Fork child pid: 2562
+[NORMAL] Task pid 2562 latency: 68.295000 ms
+[NORMAL] Set task pid 2562 policy 0 -> 0
+[NORMAL] Task pid 2563 latency: 67.923000 ms
+[NORMAL] Set task pid 2563 policy 0 -> 0
+[NORMAL] Fork child pid: 2563
+[NORMAL] Fork child pid: 2564
+[NORMAL] Fork child pid: 2565
+[NORMAL] Fork child pid: 2566
+[NORMAL] Task pid 2567 latency: 11.533000 ms
+[NORMAL] Set task pid 2567 policy 0 -> 0
+[NORMAL] Task pid 2566 latency: 30.202000 ms
+[NORMAL] Set task pid 2566 policy 0 -> 0
+[NORMAL] Task pid 2564 latency: 40.147000 ms
+[NORMAL] Fork child pid: 2567
 [NORMAL] Fork child pid: 2568
+[NORMAL] Task pid 2568 latency: 8.248000 ms
 [NORMAL] Set task pid 2568 policy 0 -> 0
+[NORMAL] Task pid 2565 latency: 150.858000 ms
+[NORMAL] Set task pid 2565 policy 0 -> 0
+[NORMAL] Set task pid 2564 policy 0 -> 0
 [NORMAL] Fork child pid: 2569
 [NORMAL] Fork child pid: 2570
+[NORMAL] Task pid 2569 latency: 92.231000 ms
+[NORMAL] Set task pid 2569 policy 0 -> 0
+[NORMAL] Task pid 2570 latency: 90.409000 ms
+[NORMAL] Set task pid 2570 policy 0 -> 0
 [NORMAL] Fork child pid: 2571
 [NORMAL] Fork child pid: 2572
+[NORMAL] Task pid 2571 latency: 177.523000 ms
+[NORMAL] Set task pid 2571 policy 0 -> 0
+[NORMAL] Task pid 2572 latency: 29.699000 ms
+[NORMAL] Set task pid 2572 policy 0 -> 0
 [NORMAL] Fork child pid: 2573
 [NORMAL] Fork child pid: 2574
 [NORMAL] Fork child pid: 2575
-[NORMAL] Fork child pid: 2576
-[NORMAL] Set task pid 2576 policy 0 -> 0
+[NORMAL] Task pid 2575 latency: 2.954000 ms
 [NORMAL] Set task pid 2575 policy 0 -> 0
-[NORMAL] Set task pid 2574 policy 0 -> 0
+[NORMAL] Task pid 2573 latency: 23.360000 ms
 [NORMAL] Set task pid 2573 policy 0 -> 0
-[NORMAL] Set task pid 2572 policy 0 -> 0
-[NORMAL] Set task pid 2571 policy 0 -> 0
+[NORMAL] Task pid 2574 latency: 58.478000 ms
+[NORMAL] Set task pid 2574 policy 0 -> 0
+[NORMAL] Fork child pid: 2576
 [NORMAL] Fork child pid: 2577
-[NORMAL] Fork child pid: 2578
-[NORMAL] Fork child pid: 2579
-[NORMAL] Fork child pid: 2580
-[NORMAL] Fork child pid: 2581
-[NORMAL] Fork child pid: 2582
-[NORMAL] Fork child pid: 2583
+[NORMAL] Task pid 2577 latency: 3.848000 ms
 [NORMAL] Set task pid 2577 policy 0 -> 0
-[NORMAL] Set task pid 2570 policy 0 -> 0
-[NORMAL] Set task pid 2583 policy 0 -> 0
-[NORMAL] Set task pid 2581 policy 0 -> 0
-[NORMAL] Set task pid 2580 policy 0 -> 0
-[NORMAL] Set task pid 2579 policy 0 -> 0
-[NORMAL] Set task pid 2569 policy 0 -> 0
-[NORMAL] Set task pid 2584 policy 0 -> 0
-[NORMAL] Fork child pid: 2584
-[NORMAL] Fork child pid: 2585
-[NORMAL] Fork child pid: 2586
-[NORMAL] Set task pid 2582 policy 0 -> 0
-[NORMAL] Set task pid 2586 policy 0 -> 0
-[NORMAL] Set task pid 2585 policy 0 -> 0
-[NORMAL] Set task pid 2578 policy 0 -> 0
-[NORMAL] Fork child pid: 2587
-[NORMAL] Fork child pid: 2588
-[NORMAL] Set task pid 2587 policy 0 -> 0
-[NORMAL] Set task pid 2588 policy 0 -> 0
-[NORMAL] Fork child pid: 2589
-[NORMAL] Fork child pid: 2590
-[NORMAL] Fork child pid: 2591
-[NORMAL] Set task pid 2592 policy 0 -> 0
-[NORMAL] Set task pid 2589 policy 0 -> 0
-[NORMAL] Set task pid 2590 policy 0 -> 0
-[NORMAL] Set task pid 2591 policy 0 -> 0
-[NORMAL] Fork child pid: 2592
-[NORMAL] Fork child pid: 2593
-[NORMAL] Set task pid 2593 policy 0 -> 0
-[NORMAL] Fork child pid: 2594
-[NORMAL] Set task pid 2594 policy 0 -> 0
-[NORMAL] Fork child pid: 2595
-[NORMAL] Fork child pid: 2596
-[NORMAL] Fork child pid: 2597
-[NORMAL] Set task pid 2596 policy 0 -> 0
-[NORMAL] Set task pid 2598 policy 0 -> 0
-[NORMAL] Set task pid 2597 policy 0 -> 0
-[NORMAL] Set task pid 2595 policy 0 -> 0
-[NORMAL] Fork child pid: 2598
-[NORMAL] Fork child pid: 2599
-[NORMAL] Fork child pid: 2600
-[NORMAL] Fork child pid: 2601
-[NORMAL] Fork child pid: 2602
-[NORMAL] Set task pid 2603 policy 0 -> 0
-[NORMAL] Set task pid 2602 policy 0 -> 0
-[NORMAL] Set task pid 2600 policy 0 -> 0
-[NORMAL] Set task pid 2599 policy 0 -> 0
-[NORMAL] Fork child pid: 2603
-[NORMAL] Fork child pid: 2604
-[NORMAL] Fork child pid: 2605
-[NORMAL] Fork child pid: 2606
-[NORMAL] Fork child pid: 2607
-[NORMAL] Set task pid 2607 policy 0 -> 0
-[NORMAL] Set task pid 2606 policy 0 -> 0
-[NORMAL] Set task pid 2601 policy 0 -> 0
-[NORMAL] Set task pid 2605 policy 0 -> 0
-[NORMAL] Set task pid 2604 policy 0 -> 0
-[NORMAL] Set task pid 2608 policy 0 -> 0
-[NORMAL] Fork child pid: 2608
-[NORMAL] Fork child pid: 2609
-[NORMAL] Fork child pid: 2610
-[NORMAL] Set task pid 2611 policy 0 -> 0
-[NORMAL] Set task pid 2609 policy 0 -> 0
-[NORMAL] Fork child pid: 2611
-[NORMAL] Fork child pid: 2612
-[NORMAL] Fork child pid: 2613
-[NORMAL] Set task pid 2610 policy 0 -> 0
-[NORMAL] Set task pid 2613 policy 0 -> 0
-[NORMAL] Set task pid 2612 policy 0 -> 0
-[NORMAL] Fork child pid: 2614
-[NORMAL] Fork child pid: 2615
-[NORMAL] Fork child pid: 2616
-[NORMAL] Fork child pid: 2617
-[NORMAL] Set task pid 2618 policy 0 -> 0
-[NORMAL] Set task pid 2617 policy 0 -> 0
-[NORMAL] Set task pid 2616 policy 0 -> 0
-[NORMAL] Set task pid 2615 policy 0 -> 0
-[NORMAL] Set task pid 2614 policy 0 -> 0
-[NORMAL] Fork child pid: 2618
-[NORMAL] Fork child pid: 2619
-[NORMAL] Set task pid 2619 policy 0 -> 0
-[NORMAL] Fork child pid: 2620
-[NORMAL] Fork child pid: 2621
-[NORMAL] Set task pid 2621 policy 0 -> 0
-[NORMAL] Fork child pid: 2622
-[NORMAL] Fork child pid: 2623
-[NORMAL] Set task pid 2623 policy 0 -> 0
-[NORMAL] Set task pid 2622 policy 0 -> 0
-[NORMAL] Set task pid 2624 policy 0 -> 0
-[NORMAL] Fork child pid: 2624
-[NORMAL] Set task pid 2620 policy 0 -> 0
-[NORMAL] Fork child pid: 2625
-[NORMAL] Fork child pid: 2626
-[NORMAL] Fork child pid: 2627
-[NORMAL] Fork child pid: 2628
-[NORMAL] Fork child pid: 2629
-[NORMAL] Set task pid 2629 policy 0 -> 0
-[NORMAL] Set task pid 2627 policy 0 -> 0
-[NORMAL] Set task pid 2626 policy 0 -> 0
-[NORMAL] Set task pid 2625 policy 0 -> 0
-[NORMAL] Set task pid 2628 policy 0 -> 0
-[NORMAL] Fork child pid: 2630
-[NORMAL] Fork child pid: 2631
-[NORMAL] Fork child pid: 2632
-[NORMAL] Set task pid 2632 policy 0 -> 0
-[NORMAL] Set task pid 2631 policy 0 -> 0
-[NORMAL] Set task pid 2630 policy 0 -> 0
-[NORMAL] Fork child pid: 2633
-[NORMAL] Set task pid 2633 policy 0 -> 0
-[NORMAL] Fork child pid: 2634
-[NORMAL] Fork child pid: 2635
-[NORMAL] Set task pid 2634 policy 0 -> 0
-[NORMAL] Set task pid 2635 policy 0 -> 0
-[NORMAL] Fork child pid: 2636
-[NORMAL] Set task pid 2636 policy 0 -> 0
-[NORMAL] Fork child pid: 2637
-[NORMAL] Fork child pid: 2638
-[NORMAL] Set task pid 2637 policy 0 -> 0
-[NORMAL] Set task pid 2638 policy 0 -> 0
-[NORMAL] Fork child pid: 2639
-[NORMAL] Set task pid 2639 policy 0 -> 0
-[NORMAL] Fork child pid: 2640
-[NORMAL] Fork child pid: 2641
-[NORMAL] Fork child pid: 2642
-[NORMAL] Fork child pid: 2643
-[NORMAL] Fork child pid: 2644
-[NORMAL] Set task pid 2645 policy 0 -> 0
-[NORMAL] Set task pid 2644 policy 0 -> 0
-[NORMAL] Set task pid 2642 policy 0 -> 0
-[NORMAL] Set task pid 2640 policy 0 -> 0
-[NORMAL] Set task pid 2641 policy 0 -> 0
-[NORMAL] Fork child pid: 2645
-[NORMAL] Fork child pid: 2646
-[NORMAL] Fork child pid: 2647
-[NORMAL] Set task pid 2647 policy 0 -> 0
-[NORMAL] Set task pid 2646 policy 0 -> 0
-[NORMAL] Set task pid 2643 policy 0 -> 0
-[NORMAL] Pid 2575 done, write times: 16
-[NORMAL] Pid 2577 done, write times: 16
-[NORMAL] Pid 2583 done, write times: 16
-[NORMAL] Pid 2581 done, write times: 16
-[NORMAL] Pid 2569 done, write times: 16
-[NORMAL] Pid 2578 done, write times: 16
-[NORMAL] Pid 2588 done, write times: 16
-[NORMAL] Pid 2592 done, write times: 16
-[NORMAL] Pid 2571 done, write times: 128
-[NORMAL] Pid 2607 done, write times: 16
-[NORMAL] Pid 2601 done, write times: 16
-[NORMAL] Pid 2611 done, write times: 32
-[NORMAL] Pid 2625 done, write times: 16
-[NORMAL] Pid 2584 done, write times: 32
-[NORMAL] Pid 2633 done, write times: 16
-[NORMAL] Pid 2636 done, write times: 64
-[NORMAL] Pid 2644 done, write times: 16
-[NORMAL] Pid 2609 done, write times: 64
-[NORMAL] Pid 2613 done, write times: 64
-[NORMAL] Pid 2618 done, write times: 64
-[NORMAL] Pid 2615 done, write times: 64
-[NORMAL] Pid 2624 done, write times: 16
-[NORMAL] Pid 2621 done, write times: 16
-[NORMAL] Pid 2623 done, write times: 16
-[NORMAL] Pid 2587 done, write times: 32
-[NORMAL] Pid 2620 done, write times: 16
-[NORMAL] Pid 2591 done, write times: 128
-[NORMAL] Pid 2576 done, write times: 64
-[NORMAL] Pid 2573 done, write times: 64
-[NORMAL] Pid 2589 done, write times: 128
-[NORMAL] Pid 2570 done, write times: 64
-[NORMAL] Pid 2637 done, write times: 64
-[NORMAL] Pid 2594 done, write times: 64
-[NORMAL] Pid 2603 done, write times: 64
-[NORMAL] Pid 2619 done, write times: 128
-[NORMAL] Pid 2642 done, write times: 128
-[NORMAL] Pid 2595 done, write times: 256
-[NORMAL] Pid 2600 done, write times: 128
-[NORMAL] Pid 2605 done, write times: 128
-[NORMAL] Pid 2641 done, write times: 128
-[NORMAL] Pid 2646 done, write times: 128
-[NORMAL] Pid 2629 done, write times: 128
-[NORMAL] Pid 2582 done, write times: 256
-[NORMAL] Pid 2606 done, write times: 256
-[NORMAL] Pid 2632 done, write times: 256
-[NORMAL] Pid 2572 done, write times: 256
-[NORMAL] Pid 2640 done, write times: 256
-[NORMAL] Pid 2612 done, write times: 256
-[NORMAL] Pid 2622 done, write times: 256
-[NORMAL] Pid 2634 done, write times: 512
-[NORMAL] Pid 2579 done, write times: 512
-[NORMAL] Pid 2580 done, write times: 512
-[NORMAL] Pid 2626 done, write times: 512
-[NORMAL] Pid 2645 done, write times: 512
-[NORMAL] Pid 2608 done, write times: 512
-[NORMAL] Pid 2616 done, write times: 512
-[NORMAL] Pid 2638 done, write times: 512
-[NORMAL] Pid 2586 done, write times: 1024
-[NORMAL] Pid 2610 done, write times: 1024
-[NORMAL] Pid 2647 done, write times: 1024
-[NORMAL] Pid 2568 done, write times: 1024
-[NORMAL] Pid 2599 done, write times: 1024
-[NORMAL] Pid 2598 done, write times: 2048
-[NORMAL] Pid 2635 done, write times: 2048
-[NORMAL] Pid 2627 done, write times: 2048
-[NORMAL] Pid 2614 done, write times: 2048
-[NORMAL] Pid 2596 done, write times: 2048
-[NORMAL] Pid 2604 done, write times: 2048
-[NORMAL] Pid 2593 done, write times: 2048
-[NORMAL] Pid 2617 done, write times: 2048
-[NORMAL] Pid 2631 done, write times: 4096
-[NORMAL] Pid 2602 done, write times: 4096
-[NORMAL] Pid 2630 done, write times: 4096
-[NORMAL] Pid 2628 done, write times: 4096
-[NORMAL] Pid 2585 done, write times: 8192
-[NORMAL] Pid 2639 done, write times: 8192
-[NORMAL] Pid 2590 done, write times: 8192
-[NORMAL] Pid 2643 done, write times: 8192
-[NORMAL] Pid 2597 done, write times: 8192
-[NORMAL] Pid 2574 done, write times: 8192
-> NORMAL benchmark end, time consume: 27.400 s, write 3486.73 times per sec
+[NORMAL] Task pid 2576 latency: 173.841000 ms
+[NORMAL] Set task pid 2576 policy 0 -> 0
+[NORMAL] Pid 2506 done, write times: 32, turnaround time: 0.140 s
+[NORMAL] Pid 2504 done, write times: 128, turnaround time: 0.192 s
+[NORMAL] Pid 2507 done, write times: 16, turnaround time: 1.251 s
+[NORMAL] Pid 2505 done, write times: 64, turnaround time: 1.012 s
+[NORMAL] Pid 2516 done, write times: 32, turnaround time: 0.014 s
+[NORMAL] Pid 2527 done, write times: 16, turnaround time: 0.003 s
+[NORMAL] Pid 2526 done, write times: 32, turnaround time: 0.006 s
+[NORMAL] Pid 2503 done, write times: 256, turnaround time: 1.028 s
+[NORMAL] Pid 2517 done, write times: 16, turnaround time: 0.088 s
+[NORMAL] Pid 2525 done, write times: 64, turnaround time: 0.029 s
+[NORMAL] Pid 2514 done, write times: 128, turnaround time: 0.029 s
+[NORMAL] Pid 2537 done, write times: 16, turnaround time: 0.026 s
+[NORMAL] Pid 2536 done, write times: 32, turnaround time: 0.032 s
+[NORMAL] Pid 2524 done, write times: 128, turnaround time: 1.036 s
+[NORMAL] Pid 2547 done, write times: 16, turnaround time: 0.012 s
+[NORMAL] Pid 2546 done, write times: 32, turnaround time: 0.021 s
+[NORMAL] Pid 2557 done, write times: 16, turnaround time: 0.047 s
+[NORMAL] Pid 2535 done, write times: 64, turnaround time: 0.102 s
+[NORMAL] Pid 2556 done, write times: 32, turnaround time: 0.015 s
+[NORMAL] Pid 2555 done, write times: 64, turnaround time: 0.019 s
+[NORMAL] Pid 2545 done, write times: 64, turnaround time: 0.027 s
+[NORMAL] Pid 2515 done, write times: 64, turnaround time: 1.020 s
+[NORMAL] Pid 2567 done, write times: 16, turnaround time: 1.012 s
+[NORMAL] Pid 2566 done, write times: 32, turnaround time: 1.030 s
+[NORMAL] Pid 2565 done, write times: 64, turnaround time: 1.151 s
+[NORMAL] Pid 2564 done, write times: 128, turnaround time: 1.040 s
+[NORMAL] Pid 2577 done, write times: 16, turnaround time: 0.004 s
+[NORMAL] Pid 2576 done, write times: 32, turnaround time: 0.174 s
+[NORMAL] Pid 2534 done, write times: 128, turnaround time: 2.106 s
+[NORMAL] Pid 2575 done, write times: 64, turnaround time: 0.003 s
+[NORMAL] Pid 2574 done, write times: 128, turnaround time: 0.058 s
+[NORMAL] Pid 2533 done, write times: 256, turnaround time: 2.034 s
+[NORMAL] Pid 2544 done, write times: 128, turnaround time: 1.099 s
+[NORMAL] Pid 2554 done, write times: 128, turnaround time: 2.022 s
+[NORMAL] Pid 2523 done, write times: 256, turnaround time: 3.039 s
+[NORMAL] Pid 2513 done, write times: 256, turnaround time: 4.084 s
+[NORMAL] Pid 2563 done, write times: 256, turnaround time: 2.068 s
+[NORMAL] Pid 2512 done, write times: 512, turnaround time: 5.087 s
+[NORMAL] Pid 2543 done, write times: 256, turnaround time: 3.166 s
+[NORMAL] Pid 2553 done, write times: 256, turnaround time: 3.024 s
+[NORMAL] Pid 2522 done, write times: 512, turnaround time: 4.041 s
+[NORMAL] Pid 2502 done, write times: 512, turnaround time: 5.141 s
+[NORMAL] Pid 2573 done, write times: 256, turnaround time: 2.023 s
+[NORMAL] Pid 2542 done, write times: 512, turnaround time: 5.017 s
+[NORMAL] Pid 2572 done, write times: 512, turnaround time: 4.030 s
+[NORMAL] Pid 2552 done, write times: 512, turnaround time: 5.026 s
+[NORMAL] Pid 2562 done, write times: 512, turnaround time: 5.068 s
+[NORMAL] Pid 2532 done, write times: 512, turnaround time: 7.020 s
+[NORMAL] Pid 2521 done, write times: 1024, turnaround time: 7.043 s
+[NORMAL] Pid 2531 done, write times: 1024, turnaround time: 8.109 s
+[NORMAL] Pid 2541 done, write times: 1024, turnaround time: 9.027 s
+[NORMAL] Pid 2501 done, write times: 1024, turnaround time: 10.015 s
+[NORMAL] Pid 2511 done, write times: 1024, turnaround time: 10.093 s
+[NORMAL] Pid 2561 done, write times: 1024, turnaround time: 9.053 s
+[NORMAL] Pid 2551 done, write times: 1024, turnaround time: 9.033 s
+[NORMAL] Pid 2571 done, write times: 1024, turnaround time: 10.178 s
+[NORMAL] Pid 2500 done, write times: 2048, turnaround time: 13.204 s
+[NORMAL] Pid 2540 done, write times: 2048, turnaround time: 13.192 s
+[NORMAL] Pid 2510 done, write times: 2048, turnaround time: 14.095 s
+[NORMAL] Pid 2520 done, write times: 2048, turnaround time: 15.052 s
+[NORMAL] Pid 2530 done, write times: 2048, turnaround time: 15.032 s
+[NORMAL] Pid 2550 done, write times: 2048, turnaround time: 14.034 s
+[NORMAL] Pid 2560 done, write times: 2048, turnaround time: 15.030 s
+[NORMAL] Pid 2570 done, write times: 2048, turnaround time: 16.090 s
+[NORMAL] Pid 2519 done, write times: 4096, turnaround time: 23.058 s
+[NORMAL] Pid 2529 done, write times: 4096, turnaround time: 23.021 s
+[NORMAL] Pid 2559 done, write times: 4096, turnaround time: 24.037 s
+[NORMAL] Pid 2549 done, write times: 4096, turnaround time: 24.098 s
+[NORMAL] Pid 2499 done, write times: 4096, turnaround time: 26.055 s
+[NORMAL] Pid 2509 done, write times: 4096, turnaround time: 26.288 s
+[NORMAL] Pid 2569 done, write times: 4096, turnaround time: 25.092 s
+[NORMAL] Pid 2539 done, write times: 4096, turnaround time: 26.019 s
+[NORMAL] Pid 2568 done, write times: 8192, turnaround time: 36.008 s
+[NORMAL] Pid 2548 done, write times: 8192, turnaround time: 36.104 s
+[NORMAL] Pid 2508 done, write times: 8192, turnaround time: 38.256 s
+[NORMAL] Pid 2558 done, write times: 8192, turnaround time: 37.041 s
+[NORMAL] Pid 2518 done, write times: 8192, turnaround time: 38.167 s
+[NORMAL] Pid 2498 done, write times: 8192, turnaround time: 41.208 s
+[NORMAL] Pid 2538 done, write times: 8192, turnaround time: 40.022 s
+[NORMAL] Pid 2528 done, write times: 8192, turnaround time: 40.007 s
+> NORMAL benchmark end, time consume: 41.616 s, write 3146.46 times per sec
 --------------------------------------------------
 --------------------------------------------------
 > Start FIFO Benchmark ...
+[FIFO] Fork child pid: 2578
+[FIFO] Fork child pid: 2579
+[FIFO] Fork child pid: 2580
+[FIFO] Fork child pid: 2581
+[FIFO] Fork child pid: 2582
+[FIFO] Task pid 2582 latency: 2.513000 ms
+[FIFO] Set task pid 2582 policy 0 -> 1
+[FIFO] Task pid 2581 latency: 8.153000 ms
+[FIFO] Set task pid 2581 policy 0 -> 1
+[FIFO] Task pid 2580 latency: 13.843000 ms
+[FIFO] Set task pid 2580 policy 0 -> 1
+[FIFO] Task pid 2578 latency: 120.315000 ms
+[FIFO] Set task pid 2578 policy 0 -> 1
+[FIFO] Fork child pid: 2583
+[FIFO] Fork child pid: 2584
+[FIFO] Fork child pid: 2585
+[FIFO] Fork child pid: 2586
+[FIFO] Fork child pid: 2587
+[FIFO] Task pid 2583 latency: 105.010000 ms
+[FIFO] Set task pid 2583 policy 0 -> 1
+[FIFO] Task pid 2587 latency: 3.847000 ms
+[FIFO] Set task pid 2587 policy 0 -> 1
+[FIFO] Task pid 2586 latency: 7.982000 ms
+[FIFO] Set task pid 2586 policy 0 -> 1
+[FIFO] Task pid 2585 latency: 27.443000 ms
+[FIFO] Set task pid 2585 policy 0 -> 1
+[FIFO] Task pid 2579 latency: 19.527000 ms
+[FIFO] Set task pid 2579 policy 0 -> 1
+[FIFO] Fork child pid: 2588
+[FIFO] Fork child pid: 2589
+[FIFO] Task pid 2588 latency: 85.288000 ms
+[FIFO] Set task pid 2588 policy 0 -> 1
+[FIFO] Task pid 2584 latency: 36.970000 ms
+[FIFO] Set task pid 2584 policy 0 -> 1
+[FIFO] Task pid 2589 latency: 51.755000 ms
+[FIFO] Set task pid 2589 policy 0 -> 1
+[FIFO] Task pid 2590 latency: 84.851000 ms
+[FIFO] Set task pid 2590 policy 0 -> 1
+[FIFO] Fork child pid: 2590
+[FIFO] Fork child pid: 2591
+[FIFO] Task pid 2591 latency: 1.104000 ms
+[FIFO] Set task pid 2591 policy 0 -> 1
+[FIFO] Fork child pid: 2592
+[FIFO] Fork child pid: 2593
+[FIFO] Fork child pid: 2594
+[FIFO] Task pid 2594 latency: 14.765000 ms
+[FIFO] Set task pid 2594 policy 0 -> 1
+[FIFO] Task pid 2593 latency: 19.803000 ms
+[FIFO] Set task pid 2593 policy 0 -> 1
+[FIFO] Task pid 2592 latency: 72.764000 ms
+[FIFO] Set task pid 2592 policy 0 -> 1
+[FIFO] Fork child pid: 2595
+[FIFO] Fork child pid: 2596
+[FIFO] Task pid 2595 latency: 112.984000 ms
+[FIFO] Set task pid 2595 policy 0 -> 1
+[FIFO] Task pid 2597 latency: 38.729000 ms
+[FIFO] Set task pid 2597 policy 0 -> 1
+[FIFO] Task pid 2596 latency: 52.409000 ms
+[FIFO] Set task pid 2596 policy 0 -> 1
+[FIFO] Fork child pid: 2597
+[FIFO] Fork child pid: 2598
+[FIFO] Fork child pid: 2599
+[FIFO] Fork child pid: 2600
+[FIFO] Fork child pid: 2601
+[FIFO] Fork child pid: 2602
+[FIFO] Task pid 2603 latency: 13.977000 ms
+[FIFO] Set task pid 2603 policy 0 -> 1
+[FIFO] Task pid 2602 latency: 17.593000 ms
+[FIFO] Set task pid 2602 policy 0 -> 1
+[FIFO] Task pid 2601 latency: 21.892000 ms
+[FIFO] Set task pid 2601 policy 0 -> 1
+[FIFO] Task pid 2599 latency: 46.784000 ms
+[FIFO] Set task pid 2599 policy 0 -> 1
+[FIFO] Task pid 2598 latency: 80.591000 ms
+[FIFO] Set task pid 2598 policy 0 -> 1
+[FIFO] Fork child pid: 2603
+[FIFO] Fork child pid: 2604
+[FIFO] Task pid 2600 latency: 31.802000 ms
+[FIFO] Set task pid 2600 policy 0 -> 1
+[FIFO] Task pid 2604 latency: 27.860000 ms
+[FIFO] Set task pid 2604 policy 0 -> 1
+[FIFO] Task pid 2605 latency: 20.963000 ms
+[FIFO] Set task pid 2605 policy 0 -> 1
+[FIFO] Fork child pid: 2605
+[FIFO] Fork child pid: 2606
+[FIFO] Task pid 2607 latency: 51.586000 ms
+[FIFO] Set task pid 2607 policy 0 -> 1
+[FIFO] Task pid 2606 latency: 75.411000 ms
+[FIFO] Set task pid 2606 policy 0 -> 1
+[FIFO] Fork child pid: 2607
+[FIFO] Fork child pid: 2608
+[FIFO] Fork child pid: 2609
+[FIFO] Fork child pid: 2610
+[FIFO] Fork child pid: 2611
+[FIFO] Fork child pid: 2612
+[FIFO] Fork child pid: 2613
+[FIFO] Fork child pid: 2614
+[FIFO] Fork child pid: 2615
+[FIFO] Task pid 2615 latency: 9.056000 ms
+[FIFO] Set task pid 2615 policy 0 -> 1
+[FIFO] Task pid 2609 latency: 67.787000 ms
+[FIFO] Set task pid 2609 policy 0 -> 1
+[FIFO] Task pid 2613 latency: 22.278000 ms
+[FIFO] Set task pid 2613 policy 0 -> 1
+[FIFO] Task pid 2612 latency: 40.576000 ms
+[FIFO] Set task pid 2612 policy 0 -> 1
+[FIFO] Task pid 2611 latency: 43.066000 ms
+[FIFO] Set task pid 2611 policy 0 -> 1
+[FIFO] Task pid 2610 latency: 46.504000 ms
+[FIFO] Set task pid 2610 policy 0 -> 1
+[FIFO] Task pid 2608 latency: 102.594000 ms
+[FIFO] Set task pid 2608 policy 0 -> 1
+[FIFO] Fork child pid: 2616
+[FIFO] Fork child pid: 2617
+[FIFO] Fork child pid: 2618
+[FIFO] Fork child pid: 2619
+[FIFO] Fork child pid: 2620
+[FIFO] Task pid 2616 latency: 146.578000 ms
+[FIFO] Set task pid 2616 policy 0 -> 1
+[FIFO] Task pid 2614 latency: 13.575000 ms
+[FIFO] Set task pid 2614 policy 0 -> 1
+[FIFO] Task pid 2621 latency: 10.836000 ms
+[FIFO] Set task pid 2621 policy 0 -> 1
+[FIFO] Task pid 2619 latency: 54.223000 ms
+[FIFO] Set task pid 2619 policy 0 -> 1
+[FIFO] Task pid 2618 latency: 59.602000 ms
+[FIFO] Set task pid 2618 policy 0 -> 1
+[FIFO] Task pid 2617 latency: 63.275000 ms
+[FIFO] Set task pid 2617 policy 0 -> 1
+[FIFO] Fork child pid: 2621
+[FIFO] Fork child pid: 2622
+[FIFO] Task pid 2620 latency: 18.435000 ms
+[FIFO] Set task pid 2620 policy 0 -> 1
+[FIFO] Task pid 2622 latency: 28.714000 ms
+[FIFO] Set task pid 2622 policy 0 -> 1
+[FIFO] Fork child pid: 2623
+[FIFO] Fork child pid: 2624
+[FIFO] Fork child pid: 2625
+[FIFO] Fork child pid: 2626
+[FIFO] Task pid 2625 latency: 47.206000 ms
+[FIFO] Set task pid 2625 policy 0 -> 1
+[FIFO] Task pid 2624 latency: 52.079000 ms
+[FIFO] Set task pid 2624 policy 0 -> 1
+[FIFO] Task pid 2623 latency: 201.557000 ms
+[FIFO] Set task pid 2623 policy 0 -> 1
+[FIFO] Task pid 2626 latency: 164.458000 ms
+[FIFO] Set task pid 2626 policy 0 -> 1
+[FIFO] Fork child pid: 2627
+[FIFO] Fork child pid: 2628
+[FIFO] Task pid 2627 latency: 283.182000 ms
+[FIFO] Set task pid 2627 policy 0 -> 1
+[FIFO] Task pid 2629 latency: 14.124000 ms
+[FIFO] Set task pid 2629 policy 0 -> 1
+[FIFO] Task pid 2628 latency: 20.406000 ms
+[FIFO] Set task pid 2628 policy 0 -> 1
+[FIFO] Fork child pid: 2629
+[FIFO] Fork child pid: 2630
+[FIFO] Fork child pid: 2631
+[FIFO] Fork child pid: 2632
+[FIFO] Task pid 2632 latency: 22.140000 ms
+[FIFO] Set task pid 2632 policy 0 -> 1
+[FIFO] Task pid 2631 latency: 34.475000 ms
+[FIFO] Set task pid 2631 policy 0 -> 1
+[FIFO] Task pid 2630 latency: 84.053000 ms
+[FIFO] Set task pid 2630 policy 0 -> 1
+[FIFO] Fork child pid: 2633
+[FIFO] Fork child pid: 2634
+[FIFO] Task pid 2634 latency: 23.433000 ms
+[FIFO] Set task pid 2634 policy 0 -> 1
+[FIFO] Task pid 2633 latency: 148.735000 ms
+[FIFO] Set task pid 2633 policy 0 -> 1
+[FIFO] Fork child pid: 2635
+[FIFO] Fork child pid: 2636
+[FIFO] Fork child pid: 2637
+[FIFO] Fork child pid: 2638
+[FIFO] Task pid 2639 latency: 3.499000 ms
+[FIFO] Set task pid 2639 policy 0 -> 1
+[FIFO] Task pid 2638 latency: 8.915000 ms
+[FIFO] Set task pid 2638 policy 0 -> 1
+[FIFO] Task pid 2637 latency: 13.319000 ms
+[FIFO] Set task pid 2637 policy 0 -> 1
+[FIFO] Task pid 2635 latency: 174.835000 ms
+[FIFO] Set task pid 2635 policy 0 -> 1
+[FIFO] Fork child pid: 2639
+[FIFO] Fork child pid: 2640
+[FIFO] Fork child pid: 2641
+[FIFO] Fork child pid: 2642
+[FIFO] Fork child pid: 2643
+[FIFO] Task pid 2644 latency: 14.952000 ms
+[FIFO] Set task pid 2644 policy 0 -> 1
+[FIFO] Task pid 2642 latency: 39.306000 ms
+[FIFO] Task pid 2641 latency: 51.079000 ms
+[FIFO] Set task pid 2641 policy 0 -> 1
+[FIFO] Task pid 2636 latency: 17.681000 ms
+[FIFO] Set task pid 2636 policy 0 -> 1
+[FIFO] Fork child pid: 2644
+[FIFO] Fork child pid: 2645
+[FIFO] Fork child pid: 2646
+[FIFO] Task pid 2643 latency: 164.065000 ms
+[FIFO] Set task pid 2643 policy 0 -> 1
+[FIFO] Task pid 2647 latency: 18.113000 ms
+[FIFO] Set task pid 2647 policy 0 -> 1
+[FIFO] Set task pid 2642 policy 0 -> 1
+[FIFO] Task pid 2645 latency: 34.561000 ms
+[FIFO] Set task pid 2645 policy 0 -> 1
+[FIFO] Task pid 2640 latency: 66.533000 ms
+[FIFO] Set task pid 2640 policy 0 -> 1
+[FIFO] Fork child pid: 2647
 [FIFO] Fork child pid: 2648
 [FIFO] Fork child pid: 2649
 [FIFO] Fork child pid: 2650
-[FIFO] Set task pid 2650 policy 0 -> 1
-[FIFO] Set task pid 2649 policy 0 -> 1
-[FIFO] Set task pid 2651 policy 0 -> 1
 [FIFO] Fork child pid: 2651
-[FIFO] Set task pid 2648 policy 0 -> 1
 [FIFO] Fork child pid: 2652
 [FIFO] Fork child pid: 2653
 [FIFO] Fork child pid: 2654
 [FIFO] Fork child pid: 2655
 [FIFO] Fork child pid: 2656
 [FIFO] Fork child pid: 2657
+[FIFO] Task pid 2657 latency: 7.123000 ms
 [FIFO] Set task pid 2657 policy 0 -> 1
+[FIFO] Task pid 2656 latency: 9.545000 ms
 [FIFO] Set task pid 2656 policy 0 -> 1
-[FIFO] Set task pid 2655 policy 0 -> 1
+[FIFO] Task pid 2654 latency: 17.862000 ms
 [FIFO] Set task pid 2654 policy 0 -> 1
+[FIFO] Task pid 2653 latency: 23.279000 ms
 [FIFO] Set task pid 2653 policy 0 -> 1
+[FIFO] Task pid 2652 latency: 27.356000 ms
 [FIFO] Set task pid 2652 policy 0 -> 1
-[FIFO] Fork child pid: 2658
-[FIFO] Set task pid 2658 policy 0 -> 1
-[FIFO] Fork child pid: 2659
-[FIFO] Fork child pid: 2660
-[FIFO] Fork child pid: 2661
-[FIFO] Fork child pid: 2662
-[FIFO] Fork child pid: 2663
-[FIFO] Fork child pid: 2664
-[FIFO] Fork child pid: 2665
-[FIFO] Fork child pid: 2666
-[FIFO] Set task pid 2667 policy 0 -> 1
-[FIFO] Set task pid 2666 policy 0 -> 1
-[FIFO] Set task pid 2665 policy 0 -> 1
-[FIFO] Set task pid 2664 policy 0 -> 1
-[FIFO] Set task pid 2663 policy 0 -> 1
-[FIFO] Set task pid 2662 policy 0 -> 1
-[FIFO] Set task pid 2660 policy 0 -> 1
-[FIFO] Set task pid 2659 policy 0 -> 1
-[FIFO] Fork child pid: 2667
-[FIFO] Fork child pid: 2668
-[FIFO] Set task pid 2668 policy 0 -> 1
-[FIFO] Fork child pid: 2669
-[FIFO] Set task pid 2661 policy 0 -> 1
-[FIFO] Set task pid 2669 policy 0 -> 1
-[FIFO] Set task pid 2670 policy 0 -> 1
-[FIFO] Fork child pid: 2670
-[FIFO] Fork child pid: 2671
-[FIFO] Fork child pid: 2672
-[FIFO] Set task pid 2673 policy 0 -> 1
-[FIFO] Set task pid 2672 policy 0 -> 1
-[FIFO] Set task pid 2671 policy 0 -> 1
-[FIFO] Fork child pid: 2673
-[FIFO] Fork child pid: 2674
-[FIFO] Set task pid 2674 policy 0 -> 1
-[FIFO] Fork child pid: 2675
-[FIFO] Fork child pid: 2676
-[FIFO] Set task pid 2675 policy 0 -> 1
-[FIFO] Set task pid 2676 policy 0 -> 1
-[FIFO] Set task pid 2677 policy 0 -> 1
-[FIFO] Fork child pid: 2677
-[FIFO] Fork child pid: 2678
-[FIFO] Fork child pid: 2679
-[FIFO] Set task pid 2680 policy 0 -> 1
-[FIFO] Set task pid 2679 policy 0 -> 1
-[FIFO] Set task pid 2678 policy 0 -> 1
-[FIFO] Fork child pid: 2680
-[FIFO] Fork child pid: 2681
-[FIFO] Fork child pid: 2682
-[FIFO] Set task pid 2683 policy 0 -> 1
-[FIFO] Set task pid 2682 policy 0 -> 1
-[FIFO] Set task pid 2681 policy 0 -> 1
-[FIFO] Fork child pid: 2683
-[FIFO] Fork child pid: 2684
-[FIFO] Fork child pid: 2685
-[FIFO] Set task pid 2684 policy 0 -> 1
-[FIFO] Set task pid 2686 policy 0 -> 1
-[FIFO] Fork child pid: 2686
-[FIFO] Fork child pid: 2687
-[FIFO] Fork child pid: 2688
-[FIFO] Set task pid 2688 policy 0 -> 1
-[FIFO] Fork child pid: 2689
-[FIFO] Set task pid 2689 policy 0 -> 1
-[FIFO] Set task pid 2687 policy 0 -> 1
-[FIFO] Set task pid 2685 policy 0 -> 1
-[FIFO] Set task pid 2690 policy 0 -> 1
-[FIFO] Fork child pid: 2690
-[FIFO] Set task pid 2691 policy 0 -> 1
-[FIFO] Fork child pid: 2691
-[FIFO] Fork child pid: 2692
-[FIFO] Set task pid 2693 policy 0 -> 1
-[FIFO] Set task pid 2692 policy 0 -> 1
-[FIFO] Fork child pid: 2693
-[FIFO] Fork child pid: 2694
-[FIFO] Set task pid 2694 policy 0 -> 1
-[FIFO] Set task pid 2695 policy 0 -> 1
-[FIFO] Fork child pid: 2695
-[FIFO] Set task pid 2697 policy 0 -> 1
-[FIFO] Fork child pid: 2697
-[FIFO] Fork child pid: 2698
-[FIFO] Set task pid 2699 policy 0 -> 1
-[FIFO] Set task pid 2698 policy 0 -> 1
-[FIFO] Fork child pid: 2699
-[FIFO] Fork child pid: 2700
-[FIFO] Fork child pid: 2701
-[FIFO] Fork child pid: 2702
-[FIFO] Set task pid 2703 policy 0 -> 1
-[FIFO] Set task pid 2702 policy 0 -> 1
-[FIFO] Set task pid 2701 policy 0 -> 1
-[FIFO] Set task pid 2700 policy 0 -> 1
-[FIFO] Fork child pid: 2703
-[FIFO] Fork child pid: 2704
-[FIFO] Set task pid 2705 policy 0 -> 1
-[FIFO] Set task pid 2704 policy 0 -> 1
-[FIFO] Fork child pid: 2705
-[FIFO] Fork child pid: 2706
-[FIFO] Fork child pid: 2707
-[FIFO] Fork child pid: 2708
-[FIFO] Fork child pid: 2709
-[FIFO] Fork child pid: 2710
-[FIFO] Set task pid 2710 policy 0 -> 1
-[FIFO] Set task pid 2709 policy 0 -> 1
-[FIFO] Set task pid 2708 policy 0 -> 1
-[FIFO] Set task pid 2707 policy 0 -> 1
-[FIFO] Set task pid 2706 policy 0 -> 1
-[FIFO] Set task pid 2711 policy 0 -> 1
-[FIFO] Fork child pid: 2711
-[FIFO] Fork child pid: 2712
-[FIFO] Set task pid 2712 policy 0 -> 1
-[FIFO] Fork child pid: 2713
-[FIFO] Set task pid 2713 policy 0 -> 1
-[FIFO] Fork child pid: 2714
-[FIFO] Set task pid 2714 policy 0 -> 1
-[FIFO] Fork child pid: 2715
-[FIFO] Set task pid 2715 policy 0 -> 1
-[FIFO] Fork child pid: 2716
-[FIFO] Fork child pid: 2717
-[FIFO] Fork child pid: 2718
-[FIFO] Fork child pid: 2719
-[FIFO] Fork child pid: 2720
-[FIFO] Fork child pid: 2721
-[FIFO] Fork child pid: 2722
-[FIFO] Fork child pid: 2723
-[FIFO] Fork child pid: 2724
-[FIFO] Fork child pid: 2725
-[FIFO] Set task pid 2724 policy 0 -> 1
-[FIFO] Set task pid 2726 policy 0 -> 1
-[FIFO] Set task pid 2725 policy 0 -> 1
-[FIFO] Set task pid 2723 policy 0 -> 1
-[FIFO] Set task pid 2722 policy 0 -> 1
-[FIFO] Set task pid 2721 policy 0 -> 1
-[FIFO] Set task pid 2720 policy 0 -> 1
-[FIFO] Set task pid 2719 policy 0 -> 1
-[FIFO] Set task pid 2718 policy 0 -> 1
-[FIFO] Set task pid 2717 policy 0 -> 1
-[FIFO] Set task pid 2716 policy 0 -> 1
-[FIFO] Fork child pid: 2726
-[FIFO] Fork child pid: 2727
-[FIFO] Set task pid 2727 policy 0 -> 1
-[FIFO] Fork child pid: 2728
-[FIFO] Set task pid 2728 policy 0 -> 1
-[FIFO] Pid 2650 done, write times: 64
-[FIFO] Pid 2649 done, write times: 16
-[FIFO] Pid 2651 done, write times: 128
-[FIFO] Pid 2648 done, write times: 1024
-[FIFO] Pid 2657 done, write times: 16
-[FIFO] Pid 2656 done, write times: 64
-[FIFO] Pid 2655 done, write times: 16
-[FIFO] Pid 2654 done, write times: 8192
-[FIFO] Pid 2653 done, write times: 64
-[FIFO] Pid 2652 done, write times: 256
-[FIFO] Pid 2658 done, write times: 16
-[FIFO] Pid 2667 done, write times: 32
-[FIFO] Pid 2666 done, write times: 1024
-[FIFO] Pid 2665 done, write times: 8192
-[FIFO] Pid 2664 done, write times: 32
-[FIFO] Pid 2663 done, write times: 16
-[FIFO] Pid 2662 done, write times: 256
-[FIFO] Pid 2660 done, write times: 512
-[FIFO] Pid 2659 done, write times: 512
-[FIFO] Pid 2668 done, write times: 16
-[FIFO] Pid 2661 done, write times: 16
-[FIFO] Pid 2669 done, write times: 128
-[FIFO] Pid 2670 done, write times: 8192
-[FIFO] Pid 2673 done, write times: 2048
-[FIFO] Pid 2672 done, write times: 16
-[FIFO] Pid 2671 done, write times: 128
-[FIFO] Pid 2674 done, write times: 64
-[FIFO] Pid 2675 done, write times: 256
-[FIFO] Pid 2676 done, write times: 2048
-[FIFO] Pid 2677 done, write times: 8192
-[FIFO] Pid 2680 done, write times: 128
-[FIFO] Pid 2679 done, write times: 1024
-[FIFO] Pid 2678 done, write times: 2048
-[FIFO] Pid 2683 done, write times: 64
-[FIFO] Pid 2682 done, write times: 4096
-[FIFO] Pid 2681 done, write times: 16
-[FIFO] Pid 2684 done, write times: 2048
-[FIFO] Pid 2686 done, write times: 256
-[FIFO] Pid 2688 done, write times: 512
-[FIFO] Pid 2689 done, write times: 64
-[FIFO] Pid 2687 done, write times: 16
-[FIFO] Pid 2685 done, write times: 128
-[FIFO] Pid 2690 done, write times: 1024
-[FIFO] Pid 2691 done, write times: 32
-[FIFO] Pid 2693 done, write times: 64
-[FIFO] Pid 2692 done, write times: 256
-[FIFO] Pid 2694 done, write times: 2048
-[FIFO] Pid 2695 done, write times: 64
-[FIFO] Pid 2697 done, write times: 512
-[FIFO] Pid 2699 done, write times: 64
-[FIFO] Pid 2698 done, write times: 2048
-[FIFO] Pid 2703 done, write times: 256
-[FIFO] Pid 2702 done, write times: 16
-[FIFO] Pid 2701 done, write times: 16
-[FIFO] Pid 2700 done, write times: 128
-[FIFO] Pid 2705 done, write times: 16
-[FIFO] Pid 2704 done, write times: 16
-[FIFO] Pid 2710 done, write times: 128
-[FIFO] Pid 2709 done, write times: 4096
-[FIFO] Pid 2708 done, write times: 2048
-[FIFO] Pid 2707 done, write times: 512
-[FIFO] Pid 2706 done, write times: 16
-[FIFO] Pid 2711 done, write times: 4096
-[FIFO] Pid 2712 done, write times: 4096
-[FIFO] Pid 2713 done, write times: 256
-[FIFO] Pid 2714 done, write times: 16
-[FIFO] Pid 2715 done, write times: 512
-[FIFO] Pid 2724 done, write times: 8192
-[FIFO] Pid 2726 done, write times: 512
-[FIFO] Pid 2725 done, write times: 16
-[FIFO] Pid 2723 done, write times: 128
-[FIFO] Pid 2722 done, write times: 128
-[FIFO] Pid 2721 done, write times: 256
-[FIFO] Pid 2720 done, write times: 8192
-[FIFO] Pid 2719 done, write times: 512
-[FIFO] Pid 2718 done, write times: 64
-[FIFO] Pid 2717 done, write times: 64
-[FIFO] Pid 2716 done, write times: 2048
-[FIFO] Pid 2727 done, write times: 128
-[FIFO] Pid 2728 done, write times: 1024
-> FIFO benchmark end, time consume: 27.360 s, write 3491.85 times per sec
+[FIFO] Task pid 2646 latency: 27.273000 ms
+[FIFO] Set task pid 2646 policy 0 -> 1
+[FIFO] Task pid 2651 latency: 37.941000 ms
+[FIFO] Set task pid 2651 policy 0 -> 1
+[FIFO] Task pid 2650 latency: 45.184000 ms
+[FIFO] Set task pid 2650 policy 0 -> 1
+[FIFO] Task pid 2649 latency: 50.340000 ms
+[FIFO] Set task pid 2649 policy 0 -> 1
+[FIFO] Task pid 2648 latency: 98.677000 ms
+[FIFO] Set task pid 2648 policy 0 -> 1
+[FIFO] Task pid 2655 latency: 14.355000 ms
+[FIFO] Set task pid 2655 policy 0 -> 1
+[FIFO] Pid 2582 done, write times: 512, turnaround time: 0.003 s
+[FIFO] Pid 2581 done, write times: 1024, turnaround time: 0.008 s
+[FIFO] Pid 2580 done, write times: 2048, turnaround time: 0.014 s
+[FIFO] Pid 2578 done, write times: 8192, turnaround time: 2.120 s
+[FIFO] Pid 2583 done, write times: 256, turnaround time: 2.105 s
+[FIFO] Pid 2587 done, write times: 16, turnaround time: 2.004 s
+[FIFO] Pid 2586 done, write times: 32, turnaround time: 2.008 s
+[FIFO] Pid 2585 done, write times: 64, turnaround time: 2.027 s
+[FIFO] Pid 2579 done, write times: 4096, turnaround time: 3.020 s
+[FIFO] Pid 2588 done, write times: 8192, turnaround time: 4.085 s
+[FIFO] Pid 2584 done, write times: 128, turnaround time: 4.037 s
+[FIFO] Pid 2589 done, write times: 4096, turnaround time: 5.052 s
+[FIFO] Pid 2590 done, write times: 2048, turnaround time: 6.085 s
+[FIFO] Pid 2591 done, write times: 1024, turnaround time: 6.001 s
+[FIFO] Pid 2594 done, write times: 128, turnaround time: 6.015 s
+[FIFO] Pid 2593 done, write times: 256, turnaround time: 6.020 s
+[FIFO] Pid 2592 done, write times: 512, turnaround time: 6.073 s
+[FIFO] Pid 2595 done, write times: 64, turnaround time: 6.113 s
+[FIFO] Pid 2597 done, write times: 16, turnaround time: 6.039 s
+[FIFO] Pid 2596 done, write times: 32, turnaround time: 6.052 s
+[FIFO] Pid 2603 done, write times: 256, turnaround time: 7.014 s
+[FIFO] Pid 2602 done, write times: 512, turnaround time: 7.018 s
+[FIFO] Pid 2601 done, write times: 1024, turnaround time: 7.022 s
+[FIFO] Pid 2599 done, write times: 4096, turnaround time: 8.047 s
+[FIFO] Pid 2598 done, write times: 8192, turnaround time: 10.081 s
+[FIFO] Pid 2600 done, write times: 2048, turnaround time: 10.032 s
+[FIFO] Pid 2604 done, write times: 128, turnaround time: 10.028 s
+[FIFO] Pid 2605 done, write times: 64, turnaround time: 10.021 s
+[FIFO] Pid 2607 done, write times: 16, turnaround time: 10.052 s
+[FIFO] Pid 2606 done, write times: 32, turnaround time: 9.075 s
+[FIFO] Pid 2615 done, write times: 64, turnaround time: 9.009 s
+[FIFO] Pid 2609 done, write times: 4096, turnaround time: 10.068 s
+[FIFO] Pid 2613 done, write times: 256, turnaround time: 10.022 s
+[FIFO] Pid 2612 done, write times: 512, turnaround time: 10.041 s
+[FIFO] Pid 2611 done, write times: 1024, turnaround time: 10.043 s
+[FIFO] Pid 2610 done, write times: 2048, turnaround time: 11.047 s
+[FIFO] Pid 2608 done, write times: 8192, turnaround time: 13.103 s
+[FIFO] Pid 2616 done, write times: 32, turnaround time: 13.147 s
+[FIFO] Pid 2614 done, write times: 128, turnaround time: 13.014 s
+[FIFO] Pid 2621 done, write times: 1024, turnaround time: 13.011 s
+[FIFO] Pid 2619 done, write times: 4096, turnaround time: 14.054 s
+[FIFO] Pid 2618 done, write times: 8192, turnaround time: 16.060 s
+[FIFO] Pid 2617 done, write times: 16, turnaround time: 16.063 s
+[FIFO] Pid 2620 done, write times: 2048, turnaround time: 16.018 s
+[FIFO] Pid 2622 done, write times: 512, turnaround time: 16.029 s
+[FIFO] Pid 2625 done, write times: 64, turnaround time: 16.047 s
+[FIFO] Pid 2624 done, write times: 128, turnaround time: 16.052 s
+[FIFO] Pid 2623 done, write times: 256, turnaround time: 16.202 s
+[FIFO] Pid 2626 done, write times: 32, turnaround time: 16.164 s
+[FIFO] Pid 2627 done, write times: 16, turnaround time: 16.283 s
+[FIFO] Pid 2629 done, write times: 4096, turnaround time: 17.014 s
+[FIFO] Pid 2628 done, write times: 8192, turnaround time: 19.020 s
+[FIFO] Pid 2632 done, write times: 512, turnaround time: 19.022 s
+[FIFO] Pid 2631 done, write times: 1024, turnaround time: 19.034 s
+[FIFO] Pid 2630 done, write times: 2048, turnaround time: 20.084 s
+[FIFO] Pid 2634 done, write times: 128, turnaround time: 19.023 s
+[FIFO] Pid 2633 done, write times: 256, turnaround time: 20.149 s
+[FIFO] Pid 2639 done, write times: 4096, turnaround time: 20.003 s
+[FIFO] Pid 2638 done, write times: 8192, turnaround time: 22.009 s
+[FIFO] Pid 2637 done, write times: 16, turnaround time: 22.013 s
+[FIFO] Pid 2635 done, write times: 64, turnaround time: 22.175 s
+[FIFO] Pid 2644 done, write times: 128, turnaround time: 22.015 s
+[FIFO] Pid 2641 done, write times: 1024, turnaround time: 22.051 s
+[FIFO] Pid 2636 done, write times: 32, turnaround time: 22.018 s
+[FIFO] Pid 2643 done, write times: 256, turnaround time: 22.164 s
+[FIFO] Pid 2647 done, write times: 16, turnaround time: 22.018 s
+[FIFO] Pid 2642 done, write times: 512, turnaround time: 22.039 s
+[FIFO] Pid 2645 done, write times: 64, turnaround time: 22.035 s
+[FIFO] Pid 2640 done, write times: 2048, turnaround time: 23.067 s
+[FIFO] Pid 2657 done, write times: 16, turnaround time: 23.007 s
+[FIFO] Pid 2656 done, write times: 32, turnaround time: 23.010 s
+[FIFO] Pid 2654 done, write times: 128, turnaround time: 23.018 s
+[FIFO] Pid 2653 done, write times: 256, turnaround time: 23.023 s
+[FIFO] Pid 2652 done, write times: 512, turnaround time: 23.027 s
+[FIFO] Pid 2646 done, write times: 32, turnaround time: 23.027 s
+[FIFO] Pid 2651 done, write times: 1024, turnaround time: 23.038 s
+[FIFO] Pid 2650 done, write times: 2048, turnaround time: 23.045 s
+[FIFO] Pid 2649 done, write times: 4096, turnaround time: 24.050 s
+[FIFO] Pid 2648 done, write times: 8192, turnaround time: 26.099 s
+[FIFO] Pid 2655 done, write times: 64, turnaround time: 26.014 s
+> FIFO benchmark end, time consume: 28.863 s, write 4536.82 times per sec
 --------------------------------------------------
 --------------------------------------------------
 > Start RR Benchmark ...
-[RR] Set task pid 2729 policy 0 -> 2
+[RR] Fork child pid: 2658
+[RR] Fork child pid: 2659
+[RR] Fork child pid: 2660
+[RR] Fork child pid: 2661
+[RR] Task pid 2661 latency: 22.538000 ms
+[RR] Set task pid 2661 policy 0 -> 2
+[RR] Task pid 2660 latency: 34.584000 ms
+[RR] Set task pid 2660 policy 0 -> 2
+[RR] Task pid 2659 latency: 37.189000 ms
+[RR] Set task pid 2659 policy 0 -> 2
+[RR] Task pid 2658 latency: 40.935000 ms
+[RR] Set task pid 2658 policy 0 -> 2
+[RR] Fork child pid: 2662
+[RR] Fork child pid: 2663
+[RR] Fork child pid: 2664
+[RR] Task pid 2662 latency: 78.072000 ms
+[RR] Set task pid 2662 policy 0 -> 2
+[RR] Task pid 2665 latency: 31.768000 ms
+[RR] Set task pid 2665 policy 0 -> 2
+[RR] Task pid 2664 latency: 35.722000 ms
+[RR] Set task pid 2664 policy 0 -> 2
+[RR] Task pid 2663 latency: 45.514000 ms
+[RR] Fork child pid: 2665
+[RR] Fork child pid: 2666
+[RR] Fork child pid: 2667
+[RR] Fork child pid: 2668
+[RR] Task pid 2669 latency: 33.747000 ms
+[RR] Set task pid 2669 policy 0 -> 2
+[RR] Set task pid 2663 policy 0 -> 2
+[RR] Task pid 2667 latency: 48.857000 ms
+[RR] Set task pid 2667 policy 0 -> 2
+[RR] Task pid 2666 latency: 70.796000 ms
+[RR] Set task pid 2666 policy 0 -> 2
+[RR] Fork child pid: 2669
+[RR] Fork child pid: 2670
+[RR] Fork child pid: 2671
+[RR] Fork child pid: 2672
+[RR] Task pid 2673 latency: 13.809000 ms
+[RR] Set task pid 2673 policy 0 -> 2
+[RR] Task pid 2668 latency: 41.924000 ms
+[RR] Set task pid 2668 policy 0 -> 2
+[RR] Task pid 2671 latency: 31.683000 ms
+[RR] Set task pid 2671 policy 0 -> 2
+[RR] Task pid 2670 latency: 38.104000 ms
+[RR] Set task pid 2670 policy 0 -> 2
+[RR] Fork child pid: 2673
+[RR] Fork child pid: 2674
+[RR] Task pid 2672 latency: 25.245000 ms
+[RR] Set task pid 2672 policy 0 -> 2
+[RR] Task pid 2675 latency: 19.473000 ms
+[RR] Set task pid 2675 policy 0 -> 2
+[RR] Task pid 2674 latency: 59.639000 ms
+[RR] Set task pid 2674 policy 0 -> 2
+[RR] Fork child pid: 2675
+[RR] Task pid 2676 latency: 2.470000 ms
+[RR] Set task pid 2676 policy 0 -> 2
+[RR] Fork child pid: 2676
+[RR] Task pid 2677 latency: 70.288000 ms
+[RR] Set task pid 2677 policy 0 -> 2
+[RR] Fork child pid: 2677
+[RR] Fork child pid: 2678
+[RR] Fork child pid: 2679
+[RR] Fork child pid: 2680
+[RR] Task pid 2680 latency: 14.995000 ms
+[RR] Set task pid 2680 policy 0 -> 2
+[RR] Task pid 2679 latency: 20.724000 ms
+[RR] Set task pid 2679 policy 0 -> 2
+[RR] Task pid 2678 latency: 25.559000 ms
+[RR] Set task pid 2678 policy 0 -> 2
+[RR] Task pid 2681 latency: 60.036000 ms
+[RR] Set task pid 2681 policy 0 -> 2
+[RR] Fork child pid: 2681
+[RR] Fork child pid: 2682
+[RR] Fork child pid: 2683
+[RR] Fork child pid: 2684
+[RR] Fork child pid: 2685
+[RR] Task pid 2683 latency: 54.729000 ms
+[RR] Set task pid 2683 policy 0 -> 2
+[RR] Task pid 2684 latency: 53.834000 ms
+[RR] Set task pid 2684 policy 0 -> 2
+[RR] Task pid 2685 latency: 53.506000 ms
+[RR] Set task pid 2685 policy 0 -> 2
+[RR] Task pid 2682 latency: 61.057000 ms
+[RR] Set task pid 2682 policy 0 -> 2
+[RR] Fork child pid: 2686
+[RR] Fork child pid: 2687
+[RR] Fork child pid: 2688
+[RR] Fork child pid: 2689
+[RR] Task pid 2689 latency: 7.532000 ms
+[RR] Set task pid 2689 policy 0 -> 2
+[RR] Task pid 2687 latency: 17.947000 ms
+[RR] Set task pid 2687 policy 0 -> 2
+[RR] Task pid 2686 latency: 211.971000 ms
+[RR] Set task pid 2686 policy 0 -> 2
+[RR] Task pid 2690 latency: 148.900000 ms
+[RR] Fork child pid: 2690
+[RR] Fork child pid: 2691
+[RR] Task pid 2688 latency: 13.407000 ms
+[RR] Set task pid 2688 policy 0 -> 2
+[RR] Task pid 2691 latency: 7.400000 ms
+[RR] Set task pid 2690 policy 0 -> 2
+[RR] Set task pid 2691 policy 0 -> 2
+[RR] Fork child pid: 2692
+[RR] Fork child pid: 2693
+[RR] Fork child pid: 2694
+[RR] Fork child pid: 2695
+[RR] Fork child pid: 2696
+[RR] Task pid 2695 latency: 19.477000 ms
+[RR] Set task pid 2695 policy 0 -> 2
+[RR] Task pid 2694 latency: 29.954000 ms
+[RR] Set task pid 2694 policy 0 -> 2
+[RR] Task pid 2696 latency: 53.865000 ms
+[RR] Set task pid 2696 policy 0 -> 2
+[RR] Task pid 2693 latency: 73.950000 ms
+[RR] Set task pid 2693 policy 0 -> 2
+[RR] Task pid 2692 latency: 81.773000 ms
+[RR] Set task pid 2692 policy 0 -> 2
+[RR] Task pid 2697 latency: 123.840000 ms
+[RR] Set task pid 2697 policy 0 -> 2
+[RR] Fork child pid: 2697
+[RR] Fork child pid: 2698
+[RR] Fork child pid: 2699
+[RR] Fork child pid: 2700
+[RR] Fork child pid: 2701
+[RR] Fork child pid: 2702
+[RR] Fork child pid: 2703
+[RR] Fork child pid: 2704
+[RR] Task pid 2704 latency: 13.195000 ms
+[RR] Set task pid 2704 policy 0 -> 2
+[RR] Task pid 2703 latency: 17.918000 ms
+[RR] Set task pid 2703 policy 0 -> 2
+[RR] Task pid 2702 latency: 21.173000 ms
+[RR] Set task pid 2702 policy 0 -> 2
+[RR] Task pid 2700 latency: 29.745000 ms
+[RR] Set task pid 2700 policy 0 -> 2
+[RR] Task pid 2699 latency: 35.359000 ms
+[RR] Set task pid 2699 policy 0 -> 2
+[RR] Task pid 2698 latency: 46.416000 ms
+[RR] Set task pid 2698 policy 0 -> 2
+[RR] Fork child pid: 2705
+[RR] Fork child pid: 2706
+[RR] Fork child pid: 2707
+[RR] Fork child pid: 2708
+[RR] Fork child pid: 2709
+[RR] Fork child pid: 2710
+[RR] Fork child pid: 2711
+[RR] Fork child pid: 2712
+[RR] Fork child pid: 2713
+[RR] Task pid 2713 latency: 18.372000 ms
+[RR] Set task pid 2713 policy 0 -> 2
+[RR] Task pid 2712 latency: 22.670000 ms
+[RR] Set task pid 2712 policy 0 -> 2
+[RR] Task pid 2701 latency: 148.556000 ms
+[RR] Set task pid 2701 policy 0 -> 2
+[RR] Task pid 2710 latency: 35.541000 ms
+[RR] Set task pid 2710 policy 0 -> 2
+[RR] Task pid 2709 latency: 40.747000 ms
+[RR] Set task pid 2709 policy 0 -> 2
+[RR] Task pid 2707 latency: 46.250000 ms
+[RR] Set task pid 2707 policy 0 -> 2
+[RR] Task pid 2706 latency: 50.933000 ms
+[RR] Set task pid 2706 policy 0 -> 2
+[RR] Task pid 2705 latency: 61.313000 ms
+[RR] Set task pid 2705 policy 0 -> 2
+[RR] Fork child pid: 2714
+[RR] Fork child pid: 2715
+[RR] Task pid 2714 latency: 142.722000 ms
+[RR] Set task pid 2714 policy 0 -> 2
+[RR] Task pid 2711 latency: 29.272000 ms
+[RR] Set task pid 2711 policy 0 -> 2
+[RR] Task pid 2708 latency: 157.853000 ms
+[RR] Set task pid 2708 policy 0 -> 2
+[RR] Task pid 2715 latency: 22.244000 ms
+[RR] Set task pid 2715 policy 0 -> 2
+[RR] Fork child pid: 2716
+[RR] Task pid 2716 latency: 111.920000 ms
+[RR] Set task pid 2716 policy 0 -> 2
+[RR] Task pid 2717 latency: 19.923000 ms
+[RR] Set task pid 2717 policy 0 -> 2
+[RR] Fork child pid: 2717
+[RR] Fork child pid: 2718
+[RR] Fork child pid: 2719
+[RR] Task pid 2719 latency: 13.247000 ms
+[RR] Set task pid 2719 policy 0 -> 2
+[RR] Task pid 2720 latency: 47.251000 ms
+[RR] Set task pid 2720 policy 0 -> 2
+[RR] Fork child pid: 2720
+[RR] Fork child pid: 2721
+[RR] Fork child pid: 2722
+[RR] Fork child pid: 2723
+[RR] Fork child pid: 2724
+[RR] Task pid 2718 latency: 21.783000 ms
+[RR] Set task pid 2718 policy 0 -> 2
+[RR] Task pid 2725 latency: 72.232000 ms
+[RR] Set task pid 2725 policy 0 -> 2
+[RR] Task pid 2724 latency: 87.692000 ms
+[RR] Set task pid 2724 policy 0 -> 2
+[RR] Task pid 2722 latency: 116.410000 ms
+[RR] Set task pid 2722 policy 0 -> 2
+[RR] Fork child pid: 2725
+[RR] Fork child pid: 2726
+[RR] Task pid 2721 latency: 1.608000 ms
+[RR] Set task pid 2721 policy 0 -> 2
+[RR] Fork child pid: 2727
+[RR] Fork child pid: 2728
 [RR] Fork child pid: 2729
 [RR] Fork child pid: 2730
-[RR] Set task pid 2730 policy 0 -> 2
-[RR] Set task pid 2731 policy 0 -> 2
 [RR] Fork child pid: 2731
-[RR] Set task pid 2732 policy 0 -> 2
 [RR] Fork child pid: 2732
-[RR] Set task pid 2733 policy 0 -> 2
 [RR] Fork child pid: 2733
-[RR] Set task pid 2734 policy 0 -> 2
 [RR] Fork child pid: 2734
+[RR] Task pid 2734 latency: 12.854000 ms
+[RR] Set task pid 2734 policy 0 -> 2
+[RR] Task pid 2733 latency: 15.852000 ms
+[RR] Set task pid 2733 policy 0 -> 2
+[RR] Task pid 2732 latency: 18.296000 ms
+[RR] Set task pid 2732 policy 0 -> 2
+[RR] Task pid 2730 latency: 47.897000 ms
+[RR] Set task pid 2730 policy 0 -> 2
 [RR] Fork child pid: 2735
 [RR] Fork child pid: 2736
-[RR] Fork child pid: 2737
-[RR] Fork child pid: 2738
-[RR] Set task pid 2738 policy 0 -> 2
-[RR] Set task pid 2737 policy 0 -> 2
-[RR] Set task pid 2736 policy 0 -> 2
+[RR] Task pid 2726 latency: 88.925000 ms
+[RR] Set task pid 2726 policy 0 -> 2
+[RR] Task pid 2727 latency: 76.730000 ms
+[RR] Set task pid 2727 policy 0 -> 2
+[RR] Task pid 2723 latency: 236.290000 ms
+[RR] Set task pid 2723 policy 0 -> 2
+[RR] Task pid 2728 latency: 59.591000 ms
+[RR] Set task pid 2728 policy 0 -> 2
+[RR] Task pid 2731 latency: 40.067000 ms
+[RR] Set task pid 2731 policy 0 -> 2
+[RR] Task pid 2729 latency: 54.105000 ms
+[RR] Set task pid 2729 policy 0 -> 2
+[RR] Task pid 2735 latency: 55.761000 ms
 [RR] Set task pid 2735 policy 0 -> 2
-[RR] Fork child pid: 2739
-[RR] Fork child pid: 2740
-[RR] Fork child pid: 2741
-[RR] Fork child pid: 2742
-[RR] Fork child pid: 2743
-[RR] Fork child pid: 2744
-[RR] Fork child pid: 2745
-[RR] Fork child pid: 2746
-[RR] Fork child pid: 2747
-[RR] Set task pid 2748 policy 0 -> 2
-[RR] Set task pid 2747 policy 0 -> 2
-[RR] Set task pid 2746 policy 0 -> 2
-[RR] Set task pid 2745 policy 0 -> 2
-[RR] Set task pid 2744 policy 0 -> 2
-[RR] Set task pid 2739 policy 0 -> 2
-[RR] Set task pid 2743 policy 0 -> 2
-[RR] Set task pid 2742 policy 0 -> 2
-[RR] Set task pid 2740 policy 0 -> 2
-[RR] Fork child pid: 2748
-[RR] Fork child pid: 2749
-[RR] Fork child pid: 2750
-[RR] Set task pid 2741 policy 0 -> 2
-[RR] Set task pid 2750 policy 0 -> 2
-[RR] Set task pid 2749 policy 0 -> 2
-[RR] Set task pid 2751 policy 0 -> 2
-[RR] Fork child pid: 2751
-[RR] Fork child pid: 2752
-[RR] Fork child pid: 2753
-[RR] Fork child pid: 2754
-[RR] Fork child pid: 2755
-[RR] Fork child pid: 2756
-[RR] Fork child pid: 2757
-[RR] Set task pid 2757 policy 0 -> 2
-[RR] Set task pid 2756 policy 0 -> 2
-[RR] Set task pid 2755 policy 0 -> 2
-[RR] Set task pid 2754 policy 0 -> 2
-[RR] Set task pid 2753 policy 0 -> 2
-[RR] Set task pid 2752 policy 0 -> 2
-[RR] Set task pid 2758 policy 0 -> 2
-[RR] Fork child pid: 2758
-[RR] Fork child pid: 2759
-[RR] Set task pid 2760 policy 0 -> 2
-[RR] Set task pid 2759 policy 0 -> 2
-[RR] Fork child pid: 2760
-[RR] Fork child pid: 2761
-[RR] Fork child pid: 2762
-[RR] Fork child pid: 2763
-[RR] Fork child pid: 2764
-[RR] Fork child pid: 2765
-[RR] Set task pid 2765 policy 0 -> 2
-[RR] Set task pid 2764 policy 0 -> 2
-[RR] Set task pid 2763 policy 0 -> 2
-[RR] Set task pid 2762 policy 0 -> 2
-[RR] Set task pid 2761 policy 0 -> 2
-[RR] Fork child pid: 2766
-[RR] Fork child pid: 2767
-[RR] Fork child pid: 2768
-[RR] Fork child pid: 2769
-[RR] Fork child pid: 2770
-[RR] Fork child pid: 2771
-[RR] Fork child pid: 2772
-[RR] Fork child pid: 2773
-[RR] Set task pid 2773 policy 0 -> 2
-[RR] Set task pid 2772 policy 0 -> 2
-[RR] Set task pid 2766 policy 0 -> 2
-[RR] Set task pid 2771 policy 0 -> 2
-[RR] Set task pid 2770 policy 0 -> 2
-[RR] Set task pid 2768 policy 0 -> 2
-[RR] Set task pid 2767 policy 0 -> 2
-[RR] Fork child pid: 2774
-[RR] Fork child pid: 2775
-[RR] Set task pid 2774 policy 0 -> 2
-[RR] Set task pid 2769 policy 0 -> 2
-[RR] Set task pid 2775 policy 0 -> 2
-[RR] Set task pid 2776 policy 0 -> 2
-[RR] Fork child pid: 2776
-[RR] Fork child pid: 2777
-[RR] Set task pid 2777 policy 0 -> 2
-[RR] Set task pid 2778 policy 0 -> 2
-[RR] Fork child pid: 2778
-[RR] Fork child pid: 2779
-[RR] Set task pid 2779 policy 0 -> 2
-[RR] Fork child pid: 2780
-[RR] Fork child pid: 2781
-[RR] Fork child pid: 2782
-[RR] Set task pid 2782 policy 0 -> 2
-[RR] Set task pid 2781 policy 0 -> 2
-[RR] Set task pid 2780 policy 0 -> 2
-[RR] Fork child pid: 2783
-[RR] Set task pid 2783 policy 0 -> 2
-[RR] Fork child pid: 2784
-[RR] Set task pid 2784 policy 0 -> 2
-[RR] Fork child pid: 2785
-[RR] Set task pid 2785 policy 0 -> 2
-[RR] Fork child pid: 2786
-[RR] Set task pid 2786 policy 0 -> 2
-[RR] Set task pid 2787 policy 0 -> 2
-[RR] Fork child pid: 2787
-[RR] Fork child pid: 2788
-[RR] Set task pid 2788 policy 0 -> 2
-[RR] Fork child pid: 2789
-[RR] Set task pid 2790 policy 0 -> 2
-[RR] Set task pid 2789 policy 0 -> 2
-[RR] Fork child pid: 2790
-[RR] Fork child pid: 2791
-[RR] Set task pid 2791 policy 0 -> 2
-[RR] Fork child pid: 2792
-[RR] Set task pid 2793 policy 0 -> 2
-[RR] Set task pid 2792 policy 0 -> 2
-[RR] Fork child pid: 2793
-[RR] Fork child pid: 2794
-[RR] Set task pid 2794 policy 0 -> 2
-[RR] Fork child pid: 2795
-[RR] Fork child pid: 2796
-[RR] Fork child pid: 2797
-[RR] Fork child pid: 2798
-[RR] Fork child pid: 2799
-[RR] Fork child pid: 2800
-[RR] Fork child pid: 2801
-[RR] Fork child pid: 2802
-[RR] Set task pid 2802 policy 0 -> 2
-[RR] Set task pid 2801 policy 0 -> 2
-[RR] Set task pid 2800 policy 0 -> 2
-[RR] Set task pid 2799 policy 0 -> 2
-[RR] Set task pid 2797 policy 0 -> 2
-[RR] Set task pid 2796 policy 0 -> 2
-[RR] Set task pid 2795 policy 0 -> 2
-[RR] Set task pid 2803 policy 0 -> 2
-[RR] Fork child pid: 2803
-[RR] Fork child pid: 2804
-[RR] Fork child pid: 2805
-[RR] Fork child pid: 2806
-[RR] Fork child pid: 2807
-[RR] Fork child pid: 2808
-[RR] Set task pid 2808 policy 0 -> 2
-[RR] Set task pid 2798 policy 0 -> 2
-[RR] Set task pid 2806 policy 0 -> 2
-[RR] Set task pid 2804 policy 0 -> 2
-[RR] Set task pid 2807 policy 0 -> 2
-[RR] Set task pid 2805 policy 0 -> 2
-[RR] Pid 2730 done, write times: 16
-[RR] Pid 2731 done, write times: 64
-[RR] Pid 2732 done, write times: 128
-[RR] Pid 2733 done, write times: 256
-[RR] Pid 2729 done, write times: 1024
-[RR] Pid 2734 done, write times: 64
-[RR] Pid 2738 done, write times: 16
-[RR] Pid 2737 done, write times: 64
-[RR] Pid 2736 done, write times: 16
-[RR] Pid 2748 done, write times: 32
-[RR] Pid 2745 done, write times: 32
-[RR] Pid 2744 done, write times: 16
-[RR] Pid 2739 done, write times: 16
-[RR] Pid 2743 done, write times: 256
-[RR] Pid 2742 done, write times: 16
-[RR] Pid 2741 done, write times: 512
-[RR] Pid 2750 done, write times: 128
-[RR] Pid 2749 done, write times: 16
-[RR] Pid 2756 done, write times: 256
-[RR] Pid 2755 done, write times: 64
-[RR] Pid 2753 done, write times: 16
-[RR] Pid 2752 done, write times: 128
-[RR] Pid 2764 done, write times: 64
-[RR] Pid 2762 done, write times: 16
-[RR] Pid 2761 done, write times: 128
-[RR] Pid 2773 done, write times: 256
-[RR] Pid 2772 done, write times: 32
-[RR] Pid 2766 done, write times: 128
-[RR] Pid 2770 done, write times: 64
-[RR] Pid 2768 done, write times: 16
-[RR] Pid 2767 done, write times: 256
-[RR] Pid 2774 done, write times: 64
-[RR] Pid 2769 done, write times: 512
-[RR] Pid 2776 done, write times: 64
-[RR] Pid 2777 done, write times: 512
-[RR] Pid 2779 done, write times: 64
-[RR] Pid 2782 done, write times: 16
-[RR] Pid 2781 done, write times: 16
-[RR] Pid 2780 done, write times: 128
-[RR] Pid 2783 done, write times: 256
-[RR] Pid 2784 done, write times: 16
-[RR] Pid 2785 done, write times: 16
-[RR] Pid 2786 done, write times: 16
-[RR] Pid 2790 done, write times: 128
-[RR] Pid 2793 done, write times: 256
-[RR] Pid 2794 done, write times: 16
-[RR] Pid 2802 done, write times: 128
-[RR] Pid 2801 done, write times: 256
-[RR] Pid 2797 done, write times: 64
-[RR] Pid 2803 done, write times: 128
-[RR] Pid 2740 done, write times: 512
-[RR] Pid 2798 done, write times: 64
-[RR] Pid 2806 done, write times: 512
-[RR] Pid 2807 done, write times: 128
-[RR] Pid 2805 done, write times: 16
-[RR] Pid 2760 done, write times: 1024
-[RR] Pid 2747 done, write times: 1024
-[RR] Pid 2787 done, write times: 512
-[RR] Pid 2799 done, write times: 512
-[RR] Pid 2795 done, write times: 512
-[RR] Pid 2808 done, write times: 1024
-[RR] Pid 2771 done, write times: 1024
-[RR] Pid 2757 done, write times: 2048
-[RR] Pid 2759 done, write times: 2048
-[RR] Pid 2765 done, write times: 2048
-[RR] Pid 2778 done, write times: 2048
-[RR] Pid 2788 done, write times: 2048
-[RR] Pid 2796 done, write times: 2048
-[RR] Pid 2754 done, write times: 2048
-[RR] Pid 2775 done, write times: 2048
-[RR] Pid 2792 done, write times: 4096
-[RR] Pid 2789 done, write times: 4096
-[RR] Pid 2791 done, write times: 4096
-[RR] Pid 2763 done, write times: 4096
-[RR] Pid 2735 done, write times: 8192
-[RR] Pid 2758 done, write times: 8192
-[RR] Pid 2746 done, write times: 8192
-[RR] Pid 2800 done, write times: 8192
-[RR] Pid 2804 done, write times: 8192
-[RR] Pid 2751 done, write times: 8192
-> RR benchmark end, time consume: 26.461 s, write 3610.48 times per sec
+[RR] Fork child pid: 2737
+[RR] Task pid 2737 latency: 134.159000 ms
+[RR] Set task pid 2737 policy 0 -> 2
+[RR] Task pid 2736 latency: 44.407000 ms
+[RR] Set task pid 2736 policy 0 -> 2
+[RR] Pid 2662 done, write times: 512, turnaround time: 1.078 s
+[RR] Pid 2665 done, write times: 64, turnaround time: 1.032 s
+[RR] Pid 2664 done, write times: 128, turnaround time: 1.036 s
+[RR] Pid 2663 done, write times: 256, turnaround time: 1.046 s
+[RR] Pid 2667 done, write times: 16, turnaround time: 0.049 s
+[RR] Pid 2666 done, write times: 32, turnaround time: 0.071 s
+[RR] Pid 2673 done, write times: 256, turnaround time: 0.014 s
+[RR] Pid 2672 done, write times: 512, turnaround time: 1.025 s
+[RR] Pid 2675 done, write times: 64, turnaround time: 1.019 s
+[RR] Pid 2674 done, write times: 128, turnaround time: 1.060 s
+[RR] Pid 2676 done, write times: 32, turnaround time: 1.002 s
+[RR] Pid 2677 done, write times: 16, turnaround time: 1.070 s
+[RR] Pid 2661 done, write times: 1024, turnaround time: 2.023 s
+[RR] Pid 2683 done, write times: 256, turnaround time: 2.055 s
+[RR] Pid 2684 done, write times: 128, turnaround time: 2.054 s
+[RR] Pid 2685 done, write times: 64, turnaround time: 2.054 s
+[RR] Pid 2687 done, write times: 16, turnaround time: 2.018 s
+[RR] Pid 2686 done, write times: 32, turnaround time: 2.212 s
+[RR] Pid 2695 done, write times: 64, turnaround time: 2.019 s
+[RR] Pid 2694 done, write times: 128, turnaround time: 2.030 s
+[RR] Pid 2671 done, write times: 1024, turnaround time: 3.032 s
+[RR] Pid 2696 done, write times: 32, turnaround time: 2.054 s
+[RR] Pid 2693 done, write times: 256, turnaround time: 2.074 s
+[RR] Pid 2692 done, write times: 512, turnaround time: 2.082 s
+[RR] Pid 2697 done, write times: 16, turnaround time: 2.124 s
+[RR] Pid 2704 done, write times: 128, turnaround time: 2.013 s
+[RR] Pid 2703 done, write times: 256, turnaround time: 2.018 s
+[RR] Pid 2713 done, write times: 256, turnaround time: 3.018 s
+[RR] Pid 2712 done, write times: 512, turnaround time: 3.023 s
+[RR] Pid 2707 done, write times: 16, turnaround time: 4.046 s
+[RR] Pid 2706 done, write times: 32, turnaround time: 4.051 s
+[RR] Pid 2705 done, write times: 64, turnaround time: 4.061 s
+[RR] Pid 2714 done, write times: 128, turnaround time: 4.143 s
+[RR] Pid 2715 done, write times: 64, turnaround time: 4.022 s
+[RR] Pid 2716 done, write times: 32, turnaround time: 4.112 s
+[RR] Pid 2717 done, write times: 16, turnaround time: 4.020 s
+[RR] Pid 2725 done, write times: 64, turnaround time: 5.072 s
+[RR] Pid 2724 done, write times: 128, turnaround time: 5.088 s
+[RR] Pid 2734 done, write times: 128, turnaround time: 4.013 s
+[RR] Pid 2733 done, write times: 256, turnaround time: 4.016 s
+[RR] Pid 2732 done, write times: 512, turnaround time: 4.018 s
+[RR] Pid 2726 done, write times: 32, turnaround time: 4.089 s
+[RR] Pid 2727 done, write times: 16, turnaround time: 4.077 s
+[RR] Pid 2723 done, write times: 256, turnaround time: 5.236 s
+[RR] Pid 2735 done, write times: 64, turnaround time: 5.056 s
+[RR] Pid 2681 done, write times: 1024, turnaround time: 7.060 s
+[RR] Pid 2737 done, write times: 16, turnaround time: 5.134 s
+[RR] Pid 2736 done, write times: 32, turnaround time: 5.044 s
+[RR] Pid 2682 done, write times: 512, turnaround time: 7.061 s
+[RR] Pid 2660 done, write times: 2048, turnaround time: 8.035 s
+[RR] Pid 2691 done, write times: 1024, turnaround time: 8.007 s
+[RR] Pid 2702 done, write times: 512, turnaround time: 3.021 s
+[RR] Pid 2701 done, write times: 1024, turnaround time: 7.149 s
+[RR] Pid 2711 done, write times: 1024, turnaround time: 8.029 s
+[RR] Pid 2722 done, write times: 512, turnaround time: 8.116 s
+[RR] Pid 2721 done, write times: 1024, turnaround time: 9.002 s
+[RR] Pid 2731 done, write times: 1024, turnaround time: 8.040 s
+[RR] Pid 2670 done, write times: 2048, turnaround time: 11.038 s
+[RR] Pid 2680 done, write times: 2048, turnaround time: 12.015 s
+[RR] Pid 2690 done, write times: 2048, turnaround time: 13.149 s
+[RR] Pid 2700 done, write times: 2048, turnaround time: 13.030 s
+[RR] Pid 2710 done, write times: 2048, turnaround time: 13.036 s
+[RR] Pid 2730 done, write times: 2048, turnaround time: 13.048 s
+[RR] Pid 2720 done, write times: 2048, turnaround time: 16.047 s
+[RR] Pid 2669 done, write times: 4096, turnaround time: 17.034 s
+[RR] Pid 2659 done, write times: 4096, turnaround time: 19.037 s
+[RR] Pid 2709 done, write times: 4096, turnaround time: 19.041 s
+[RR] Pid 2719 done, write times: 4096, turnaround time: 19.013 s
+[RR] Pid 2679 done, write times: 4096, turnaround time: 21.021 s
+[RR] Pid 2689 done, write times: 4096, turnaround time: 21.008 s
+[RR] Pid 2699 done, write times: 4096, turnaround time: 20.035 s
+[RR] Pid 2729 done, write times: 4096, turnaround time: 20.054 s
+[RR] Pid 2688 done, write times: 8192, turnaround time: 26.013 s
+[RR] Pid 2668 done, write times: 8192, turnaround time: 26.042 s
+[RR] Pid 2658 done, write times: 8192, turnaround time: 27.041 s
+[RR] Pid 2718 done, write times: 8192, turnaround time: 26.022 s
+[RR] Pid 2698 done, write times: 8192, turnaround time: 26.046 s
+[RR] Pid 2678 done, write times: 8192, turnaround time: 27.026 s
+[RR] Pid 2728 done, write times: 8192, turnaround time: 25.060 s
+[RR] Pid 2708 done, write times: 8192, turnaround time: 26.158 s
+> RR benchmark end, time consume: 28.040 s, write 4669.85 times per sec
 --------------------------------------------------
 --------------------------------------------------
 > Start RAS Benchmark ...
+[RAS] Fork child pid: 2738
+[RAS] Fork child pid: 2739
+[RAS] Task pid 2739 latency: 15.432000 ms
+[RAS] Set task pid 2739 policy 0 -> 6
+[RAS] Fork child pid: 2740
+[RAS] Fork child pid: 2741
+[RAS] Task pid 2740 latency: 72.353000 ms
+[RAS] Set task pid 2740 policy 0 -> 6
+[RAS] Task pid 2741 latency: 17.122000 ms
+[RAS] Set task pid 2741 policy 0 -> 6
+[RAS] Fork child pid: 2742
+[RAS] Task pid 2742 latency: 103.244000 ms
+[RAS] Set task pid 2742 policy 0 -> 6
+[RAS] Fork child pid: 2743
+[RAS] Task pid 2743 latency: 9.059000 ms
+[RAS] Set task pid 2743 policy 0 -> 6
+[RAS] Task pid 2744 latency: 4.911000 ms
+[RAS] Set task pid 2744 policy 0 -> 6
+[RAS] Task pid 2738 latency: 133.862000 ms
+[RAS] Set task pid 2738 policy 0 -> 6
+[RAS] Fork child pid: 2744
+[RAS] Fork child pid: 2745
+[RAS] Task pid 2745 latency: 101.477000 ms
+[RAS] Set task pid 2745 policy 0 -> 6
+[RAS] Fork child pid: 2746
+[RAS] Task pid 2746 latency: 123.542000 ms
+[RAS] Set task pid 2746 policy 0 -> 6
+[RAS] Task pid 2747 latency: 55.643000 ms
+[RAS] Set task pid 2747 policy 0 -> 6
+[RAS] Fork child pid: 2747
+[RAS] Fork child pid: 2748
+[RAS] Fork child pid: 2749
+[RAS] Task pid 2749 latency: 29.308000 ms
+[RAS] Set task pid 2749 policy 0 -> 6
+[RAS] Task pid 2748 latency: 89.444000 ms
+[RAS] Set task pid 2748 policy 0 -> 6
+[RAS] Task pid 2750 latency: 93.661000 ms
+[RAS] Set task pid 2750 policy 0 -> 6
+[RAS] Fork child pid: 2750
+[RAS] Fork child pid: 2751
+[RAS] Fork child pid: 2752
+[RAS] Fork child pid: 2753
+[RAS] Fork child pid: 2754
+[RAS] Fork child pid: 2755
+[RAS] Task pid 2755 latency: 22.231000 ms
+[RAS] Set task pid 2755 policy 0 -> 6
+[RAS] Task pid 2754 latency: 27.114000 ms
+[RAS] Set task pid 2754 policy 0 -> 6
+[RAS] Task pid 2753 latency: 31.825000 ms
+[RAS] Set task pid 2753 policy 0 -> 6
+[RAS] Task pid 2752 latency: 47.117000 ms
+[RAS] Set task pid 2752 policy 0 -> 6
+[RAS] Task pid 2751 latency: 57.289000 ms
+[RAS] Set task pid 2751 policy 0 -> 6
+[RAS] Fork child pid: 2756
+[RAS] Fork child pid: 2757
+[RAS] Fork child pid: 2758
+[RAS] Fork child pid: 2759
+[RAS] Task pid 2756 latency: 122.258000 ms
+[RAS] Set task pid 2756 policy 0 -> 6
+[RAS] Task pid 2757 latency: 47.041000 ms
+[RAS] Set task pid 2757 policy 0 -> 6
+[RAS] Task pid 2758 latency: 44.762000 ms
+[RAS] Set task pid 2758 policy 0 -> 6
+[RAS] Task pid 2759 latency: 7.662000 ms
+[RAS] Set task pid 2759 policy 0 -> 6
+[RAS] Task pid 2760 latency: 231.966000 ms
+[RAS] Set task pid 2760 policy 0 -> 6
+[RAS] Fork child pid: 2760
+[RAS] Fork child pid: 2761
+[RAS] Fork child pid: 2762
+[RAS] Task pid 2763 latency: 12.649000 ms
+[RAS] Set task pid 2763 policy 0 -> 6
+[RAS] Task pid 2762 latency: 17.055000 ms
+[RAS] Set task pid 2762 policy 0 -> 6
+[RAS] Task pid 2761 latency: 20.760000 ms
+[RAS] Set task pid 2761 policy 0 -> 6
+[RAS] Fork child pid: 2763
+[RAS] Task pid 2764 latency: 58.267000 ms
+[RAS] Set task pid 2764 policy 0 -> 6
+[RAS] Fork child pid: 2764
+[RAS] Fork child pid: 2765
+[RAS] Fork child pid: 2766
+[RAS] Fork child pid: 2767
+[RAS] Task pid 2768 latency: 11.267000 ms
+[RAS] Set task pid 2768 policy 0 -> 6
+[RAS] Task pid 2767 latency: 67.307000 ms
+[RAS] Set task pid 2767 policy 0 -> 6
+[RAS] Task pid 2766 latency: 70.795000 ms
+[RAS] Set task pid 2766 policy 0 -> 6
+[RAS] Task pid 2765 latency: 75.058000 ms
+[RAS] Set task pid 2765 policy 0 -> 6
+[RAS] Fork child pid: 2768
+[RAS] Fork child pid: 2769
+[RAS] Fork child pid: 2770
+[RAS] Fork child pid: 2771
+[RAS] Fork child pid: 2772
+[RAS] Task pid 2771 latency: 55.649000 ms
+[RAS] Set task pid 2771 policy 0 -> 6
+[RAS] Task pid 2770 latency: 68.995000 ms
+[RAS] Set task pid 2770 policy 0 -> 6
+[RAS] Fork child pid: 2773
+[RAS] Fork child pid: 2774
+[RAS] Fork child pid: 2775
+[RAS] Task pid 2775 latency: 16.618000 ms
+[RAS] Set task pid 2775 policy 0 -> 6
+[RAS] Task pid 2772 latency: 167.554000 ms
+[RAS] Set task pid 2772 policy 0 -> 6
+[RAS] Task pid 2774 latency: 63.699000 ms
+[RAS] Set task pid 2774 policy 0 -> 6
+[RAS] Task pid 2769 latency: 77.432000 ms
+[RAS] Set task pid 2769 policy 0 -> 6
+[RAS] Task pid 2773 latency: 101.855000 ms
+[RAS] Set task pid 2773 policy 0 -> 6
+[RAS] Fork child pid: 2776
+[RAS] Fork child pid: 2777
+[RAS] Fork child pid: 2778
+[RAS] Task pid 2778 latency: 5.325000 ms
+[RAS] Set task pid 2778 policy 0 -> 6
+[RAS] Task pid 2776 latency: 100.901000 ms
+[RAS] Set task pid 2776 policy 0 -> 6
+[RAS] Task pid 2777 latency: 99.902000 ms
+[RAS] Set task pid 2777 policy 0 -> 6
+[RAS] Fork child pid: 2779
+[RAS] Fork child pid: 2780
+[RAS] Fork child pid: 2781
+[RAS] Fork child pid: 2782
+[RAS] Fork child pid: 2783
+[RAS] Task pid 2784 latency: 12.949000 ms
+[RAS] Set task pid 2784 policy 0 -> 6
+[RAS] Task pid 2783 latency: 21.033000 ms
+[RAS] Task pid 2782 latency: 26.321000 ms
+[RAS] Set task pid 2782 policy 0 -> 6
+[RAS] Task pid 2781 latency: 29.395000 ms
+[RAS] Set task pid 2781 policy 0 -> 6
+[RAS] Task pid 2780 latency: 101.882000 ms
+[RAS] Set task pid 2780 policy 0 -> 6
+[RAS] Fork child pid: 2784
+[RAS] Fork child pid: 2785
+[RAS] Fork child pid: 2786
+[RAS] Set task pid 2783 policy 0 -> 6
+[RAS] Task pid 2786 latency: 7.190000 ms
+[RAS] Set task pid 2786 policy 0 -> 6
+[RAS] Task pid 2785 latency: 16.008000 ms
+[RAS] Set task pid 2785 policy 0 -> 6
+[RAS] Task pid 2779 latency: 210.557000 ms
+[RAS] Set task pid 2779 policy 0 -> 6
+[RAS] Task pid 2787 latency: 70.804000 ms
+[RAS] Set task pid 2787 policy 0 -> 6
+[RAS] Fork child pid: 2787
+[RAS] Fork child pid: 2788
+[RAS] Fork child pid: 2789
+[RAS] Fork child pid: 2790
+[RAS] Task pid 2791 latency: 13.666000 ms
+[RAS] Set task pid 2791 policy 0 -> 6
+[RAS] Task pid 2790 latency: 20.389000 ms
+[RAS] Set task pid 2790 policy 0 -> 6
+[RAS] Task pid 2789 latency: 27.511000 ms
+[RAS] Set task pid 2789 policy 0 -> 6
+[RAS] Task pid 2788 latency: 31.141000 ms
+[RAS] Set task pid 2788 policy 0 -> 6
+[RAS] Fork child pid: 2791
+[RAS] Fork child pid: 2792
+[RAS] Fork child pid: 2793
+[RAS] Fork child pid: 2794
+[RAS] Fork child pid: 2795
+[RAS] Task pid 2795 latency: 18.371000 ms
+[RAS] Set task pid 2795 policy 0 -> 6
+[RAS] Task pid 2794 latency: 25.268000 ms
+[RAS] Set task pid 2794 policy 0 -> 6
+[RAS] Task pid 2793 latency: 36.463000 ms
+[RAS] Set task pid 2793 policy 0 -> 6
+[RAS] Task pid 2792 latency: 124.645000 ms
+[RAS] Set task pid 2792 policy 0 -> 6
+[RAS] Task pid 2796 latency: 72.372000 ms
+[RAS] Set task pid 2796 policy 0 -> 6
+[RAS] Fork child pid: 2796
+[RAS] Fork child pid: 2797
+[RAS] Fork child pid: 2798
+[RAS] Fork child pid: 2799
+[RAS] Task pid 2799 latency: 68.288000 ms
+[RAS] Set task pid 2799 policy 0 -> 6
+[RAS] Task pid 2797 latency: 80.716000 ms
+[RAS] Set task pid 2797 policy 0 -> 6
+[RAS] Task pid 2800 latency: 97.779000 ms
+[RAS] Set task pid 2800 policy 0 -> 6
+[RAS] Task pid 2798 latency: 74.144000 ms
+[RAS] Set task pid 2798 policy 0 -> 6
+[RAS] Fork child pid: 2800
+[RAS] Fork child pid: 2801
+[RAS] Fork child pid: 2802
+[RAS] Task pid 2802 latency: 4.311000 ms
+[RAS] Set task pid 2802 policy 0 -> 6
+[RAS] Task pid 2801 latency: 14.077000 ms
+[RAS] Set task pid 2801 policy 0 -> 6
+[RAS] Task pid 2803 latency: 82.951000 ms
+[RAS] Set task pid 2803 policy 0 -> 6
+[RAS] Fork child pid: 2803
+[RAS] Task pid 2804 latency: 1.549000 ms
+[RAS] Set task pid 2804 policy 0 -> 6
+[RAS] Fork child pid: 2804
+[RAS] Fork child pid: 2805
+[RAS] Task pid 2805 latency: 3.600000 ms
+[RAS] Set task pid 2805 policy 0 -> 6
+[RAS] Task pid 2806 latency: 29.604000 ms
+[RAS] Set task pid 2806 policy 0 -> 6
+[RAS] Fork child pid: 2806
+[RAS] Task pid 2807 latency: 29.679000 ms
+[RAS] Set task pid 2807 policy 0 -> 6
+[RAS] Fork child pid: 2807
+[RAS] Fork child pid: 2808
+[RAS] Task pid 2808 latency: 3.271000 ms
+[RAS] Set task pid 2808 policy 0 -> 6
+[RAS] Task pid 2809 latency: 64.484000 ms
 [RAS] Set task pid 2809 policy 0 -> 6
 [RAS] Fork child pid: 2809
 [RAS] Fork child pid: 2810
 [RAS] Fork child pid: 2811
 [RAS] Fork child pid: 2812
-[RAS] Set task pid 2813 policy 0 -> 6
-[RAS] Set task pid 2812 policy 0 -> 6
-[RAS] Set task pid 2811 policy 0 -> 6
-[RAS] Set task pid 2810 policy 0 -> 6
 [RAS] Fork child pid: 2813
-[RAS] Fork child pid: 2814
+[RAS] Task pid 2814 latency: 14.030000 ms
 [RAS] Set task pid 2814 policy 0 -> 6
+[RAS] Task pid 2813 latency: 19.194000 ms
+[RAS] Set task pid 2813 policy 0 -> 6
+[RAS] Task pid 2812 latency: 23.117000 ms
+[RAS] Set task pid 2812 policy 0 -> 6
+[RAS] Task pid 2811 latency: 26.561000 ms
+[RAS] Set task pid 2811 policy 0 -> 6
+[RAS] Task pid 2810 latency: 90.379000 ms
+[RAS] Set task pid 2810 policy 0 -> 6
+[RAS] Fork child pid: 2814
+[RAS] Task pid 2815 latency: 76.801000 ms
+[RAS] Set task pid 2815 policy 0 -> 6
 [RAS] Fork child pid: 2815
 [RAS] Fork child pid: 2816
 [RAS] Fork child pid: 2817
-[RAS] Set task pid 2817 policy 0 -> 6
+[RAS] Task pid 2816 latency: 114.581000 ms
 [RAS] Set task pid 2816 policy 0 -> 6
-[RAS] Set task pid 2815 policy 0 -> 6
-[RAS] Fork child pid: 2818
-[RAS] Set task pid 2818 policy 0 -> 6
-[RAS] Fork child pid: 2819
-[RAS] Set task pid 2819 policy 0 -> 6
-[RAS] Fork child pid: 2820
-[RAS] Fork child pid: 2821
-[RAS] Set task pid 2821 policy 0 -> 6
-[RAS] Set task pid 2820 policy 0 -> 6
-[RAS] Set task pid 2822 policy 0 -> 6
-[RAS] Fork child pid: 2822
-[RAS] Set task pid 2823 policy 0 -> 6
-[RAS] Fork child pid: 2823
-[RAS] Set task pid 2824 policy 0 -> 6
-[RAS] Fork child pid: 2824
-[RAS] Fork child pid: 2825
-[RAS] Fork child pid: 2826
-[RAS] Fork child pid: 2827
-[RAS] Fork child pid: 2828
-[RAS] Fork child pid: 2829
-[RAS] Set task pid 2829 policy 0 -> 6
-[RAS] Set task pid 2828 policy 0 -> 6
-[RAS] Set task pid 2827 policy 0 -> 6
-[RAS] Set task pid 2826 policy 0 -> 6
-[RAS] Set task pid 2830 policy 0 -> 6
-[RAS] Fork child pid: 2830
-[RAS] Fork child pid: 2831
-[RAS] Fork child pid: 2832
-[RAS] Fork child pid: 2833
-[RAS] Set task pid 2834 policy 0 -> 6
-[RAS] Set task pid 2833 policy 0 -> 6
-[RAS] Set task pid 2832 policy 0 -> 6
-[RAS] Set task pid 2825 policy 0 -> 6
-[RAS] Set task pid 2831 policy 0 -> 6
-[RAS] Fork child pid: 2834
-[RAS] Set task pid 2835 policy 0 -> 6
-[RAS] Fork child pid: 2835
-[RAS] Fork child pid: 2836
-[RAS] Fork child pid: 2837
-[RAS] Set task pid 2838 policy 0 -> 6
-[RAS] Set task pid 2837 policy 0 -> 6
-[RAS] Set task pid 2836 policy 0 -> 6
-[RAS] Fork child pid: 2838
-[RAS] Fork child pid: 2839
-[RAS] Fork child pid: 2840
-[RAS] Set task pid 2840 policy 0 -> 6
-[RAS] Set task pid 2839 policy 0 -> 6
-[RAS] Fork child pid: 2841
-[RAS] Fork child pid: 2842
-[RAS] Set task pid 2841 policy 0 -> 6
-[RAS] Set task pid 2842 policy 0 -> 6
-[RAS] Fork child pid: 2843
-[RAS] Fork child pid: 2844
-[RAS] Fork child pid: 2845
-[RAS] Set task pid 2843 policy 0 -> 6
-[RAS] Set task pid 2845 policy 0 -> 6
-[RAS] Set task pid 2844 policy 0 -> 6
-[RAS] Fork child pid: 2846
-[RAS] Fork child pid: 2847
-[RAS] Fork child pid: 2848
-[RAS] Fork child pid: 2849
-[RAS] Fork child pid: 2850
-[RAS] Set task pid 2850 policy 0 -> 6
-[RAS] Set task pid 2849 policy 0 -> 6
-[RAS] Set task pid 2848 policy 0 -> 6
-[RAS] Set task pid 2846 policy 0 -> 6
-[RAS] Set task pid 2847 policy 0 -> 6
-[RAS] Fork child pid: 2851
-[RAS] Fork child pid: 2852
-[RAS] Fork child pid: 2853
-[RAS] Fork child pid: 2854
-[RAS] Fork child pid: 2855
-[RAS] Fork child pid: 2856
-[RAS] Set task pid 2856 policy 0 -> 6
-[RAS] Set task pid 2855 policy 0 -> 6
-[RAS] Set task pid 2854 policy 0 -> 6
-[RAS] Set task pid 2853 policy 0 -> 6
-[RAS] Set task pid 2852 policy 0 -> 6
-[RAS] Set task pid 2851 policy 0 -> 6
-[RAS] Fork child pid: 2857
-[RAS] Fork child pid: 2858
-[RAS] Fork child pid: 2859
-[RAS] Fork child pid: 2860
-[RAS] Fork child pid: 2861
-[RAS] Fork child pid: 2862
-[RAS] Fork child pid: 2863
-[RAS] Fork child pid: 2864
-[RAS] Fork child pid: 2865
-[RAS] Fork child pid: 2866
-[RAS] Set task pid 2867 policy 0 -> 6
-[RAS] Set task pid 2866 policy 0 -> 6
-[RAS] Set task pid 2865 policy 0 -> 6
-[RAS] Set task pid 2864 policy 0 -> 6
-[RAS] Set task pid 2857 policy 0 -> 6
-[RAS] Set task pid 2863 policy 0 -> 6
-[RAS] Set task pid 2862 policy 0 -> 6
-[RAS] Set task pid 2861 policy 0 -> 6
-[RAS] Set task pid 2860 policy 0 -> 6
-[RAS] Set task pid 2859 policy 0 -> 6
-[RAS] Set task pid 2858 policy 0 -> 6
-[RAS] Fork child pid: 2867
-[RAS] Fork child pid: 2868
-[RAS] Set task pid 2868 policy 0 -> 6
-[RAS] Fork child pid: 2869
-[RAS] Fork child pid: 2870
-[RAS] Set task pid 2870 policy 0 -> 6
-[RAS] Set task pid 2869 policy 0 -> 6
-[RAS] Fork child pid: 2871
-[RAS] Fork child pid: 2872
-[RAS] Fork child pid: 2873
-[RAS] Fork child pid: 2874
-[RAS] Set task pid 2874 policy 0 -> 6
-[RAS] Set task pid 2873 policy 0 -> 6
-[RAS] Set task pid 2872 policy 0 -> 6
-[RAS] Set task pid 2871 policy 0 -> 6
-[RAS] Set task pid 2875 policy 0 -> 6
-[RAS] Fork child pid: 2875
-[RAS] Fork child pid: 2876
-[RAS] Set task pid 2876 policy 0 -> 6
-[RAS] Fork child pid: 2877
-[RAS] Fork child pid: 2878
-[RAS] Fork child pid: 2879
-[RAS] Fork child pid: 2880
-[RAS] Fork child pid: 2881
-[RAS] Fork child pid: 2882
-[RAS] Fork child pid: 2883
-[RAS] Fork child pid: 2884
-[RAS] Set task pid 2885 policy 0 -> 6
-[RAS] Set task pid 2884 policy 0 -> 6
-[RAS] Set task pid 2883 policy 0 -> 6
-[RAS] Set task pid 2882 policy 0 -> 6
-[RAS] Set task pid 2881 policy 0 -> 6
-[RAS] Set task pid 2877 policy 0 -> 6
-[RAS] Set task pid 2880 policy 0 -> 6
-[RAS] Set task pid 2879 policy 0 -> 6
-[RAS] Set task pid 2878 policy 0 -> 6
-[RAS] Fork child pid: 2885
-[RAS] Fork child pid: 2886
-[RAS] Set task pid 2886 policy 0 -> 6
-[RAS] Fork child pid: 2887
-[RAS] Set task pid 2887 policy 0 -> 6
-[RAS] Fork child pid: 2888
-[RAS] Set task pid 2888 policy 0 -> 6
-[RAS] Pid 2813 done, write times: 256
-[RAS] Pid 2812 done, write times: 128
-[RAS] Pid 2811 done, write times: 64
-[RAS] Pid 2810 done, write times: 16
-[RAS] Pid 2814 done, write times: 64
-[RAS] Pid 2817 done, write times: 64
-[RAS] Pid 2816 done, write times: 16
-[RAS] Pid 2818 done, write times: 16
-[RAS] Pid 2819 done, write times: 16
-[RAS] Pid 2821 done, write times: 512
-[RAS] Pid 2822 done, write times: 16
-[RAS] Pid 2823 done, write times: 256
-[RAS] Pid 2824 done, write times: 16
-[RAS] Pid 2829 done, write times: 16
-[RAS] Pid 2828 done, write times: 32
-[RAS] Pid 2830 done, write times: 128
-[RAS] Pid 2833 done, write times: 16
-[RAS] Pid 2832 done, write times: 128
-[RAS] Pid 2825 done, write times: 32
-[RAS] Pid 2835 done, write times: 64
-[RAS] Pid 2836 done, write times: 256
-[RAS] Pid 2841 done, write times: 128
-[RAS] Pid 2842 done, write times: 16
-[RAS] Pid 2844 done, write times: 64
-[RAS] Pid 2809 done, write times: 1024
-[RAS] Pid 2850 done, write times: 64
-[RAS] Pid 2849 done, write times: 512
-[RAS] Pid 2848 done, write times: 16
-[RAS] Pid 2846 done, write times: 128
-[RAS] Pid 2847 done, write times: 256
-[RAS] Pid 2856 done, write times: 64
-[RAS] Pid 2854 done, write times: 64
-[RAS] Pid 2853 done, write times: 256
-[RAS] Pid 2852 done, write times: 32
-[RAS] Pid 2866 done, write times: 16
-[RAS] Pid 2865 done, write times: 16
-[RAS] Pid 2864 done, write times: 16
-[RAS] Pid 2863 done, write times: 256
-[RAS] Pid 2862 done, write times: 16
-[RAS] Pid 2861 done, write times: 16
-[RAS] Pid 2860 done, write times: 128
-[RAS] Pid 2859 done, write times: 64
-[RAS] Pid 2820 done, write times: 512
-[RAS] Pid 2870 done, write times: 128
-[RAS] Pid 2874 done, write times: 16
-[RAS] Pid 2873 done, write times: 256
-[RAS] Pid 2875 done, write times: 512
-[RAS] Pid 2885 done, write times: 16
-[RAS] Pid 2883 done, write times: 128
-[RAS] Pid 2882 done, write times: 128
-[RAS] Pid 2881 done, write times: 256
-[RAS] Pid 2877 done, write times: 64
-[RAS] Pid 2878 done, write times: 64
-[RAS] Pid 2887 done, write times: 128
-[RAS] Pid 2840 done, write times: 1024
-[RAS] Pid 2867 done, write times: 512
-[RAS] Pid 2857 done, write times: 512
-[RAS] Pid 2879 done, write times: 512
-[RAS] Pid 2886 done, write times: 512
-[RAS] Pid 2827 done, write times: 1024
-[RAS] Pid 2851 done, write times: 1024
-[RAS] Pid 2888 done, write times: 1024
-[RAS] Pid 2834 done, write times: 2048
-[RAS] Pid 2837 done, write times: 2048
-[RAS] Pid 2839 done, write times: 2048
-[RAS] Pid 2845 done, write times: 2048
-[RAS] Pid 2855 done, write times: 2048
-[RAS] Pid 2858 done, write times: 2048
-[RAS] Pid 2868 done, write times: 2048
-[RAS] Pid 2876 done, write times: 2048
-[RAS] Pid 2843 done, write times: 4096
-[RAS] Pid 2869 done, write times: 4096
-[RAS] Pid 2872 done, write times: 4096
-[RAS] Pid 2871 done, write times: 4096
-[RAS] Pid 2815 done, write times: 8192
-[RAS] Pid 2826 done, write times: 8192
-[RAS] Pid 2831 done, write times: 8192
-[RAS] Pid 2880 done, write times: 8192
-[RAS] Pid 2838 done, write times: 8192
-[RAS] Pid 2884 done, write times: 8192
-> RAS benchmark end, time consume: 23.087 s, write 4138.09 times per sec
+[RAS] Task pid 2817 latency: 13.798000 ms
+[RAS] Set task pid 2817 policy 0 -> 6
+[RAS] Pid 2743 done, write times: 256, turnaround time: 0.009 s
+[RAS] Pid 2744 done, write times: 128, turnaround time: 0.005 s
+[RAS] Pid 2745 done, write times: 64, turnaround time: 0.101 s
+[RAS] Pid 2746 done, write times: 32, turnaround time: 0.124 s
+[RAS] Pid 2747 done, write times: 16, turnaround time: 0.056 s
+[RAS] Pid 2742 done, write times: 512, turnaround time: 0.103 s
+[RAS] Pid 2755 done, write times: 64, turnaround time: 1.022 s
+[RAS] Pid 2754 done, write times: 128, turnaround time: 1.027 s
+[RAS] Pid 2753 done, write times: 256, turnaround time: 1.032 s
+[RAS] Pid 2752 done, write times: 512, turnaround time: 1.047 s
+[RAS] Pid 2741 done, write times: 1024, turnaround time: 2.017 s
+[RAS] Pid 2756 done, write times: 32, turnaround time: 1.122 s
+[RAS] Pid 2757 done, write times: 16, turnaround time: 1.047 s
+[RAS] Pid 2763 done, write times: 256, turnaround time: 1.013 s
+[RAS] Pid 2762 done, write times: 512, turnaround time: 1.017 s
+[RAS] Pid 2764 done, write times: 128, turnaround time: 1.058 s
+[RAS] Pid 2767 done, write times: 16, turnaround time: 1.067 s
+[RAS] Pid 2766 done, write times: 32, turnaround time: 1.071 s
+[RAS] Pid 2765 done, write times: 64, turnaround time: 1.075 s
+[RAS] Pid 2751 done, write times: 1024, turnaround time: 3.057 s
+[RAS] Pid 2775 done, write times: 64, turnaround time: 2.017 s
+[RAS] Pid 2772 done, write times: 512, turnaround time: 2.168 s
+[RAS] Pid 2774 done, write times: 128, turnaround time: 2.064 s
+[RAS] Pid 2773 done, write times: 256, turnaround time: 2.102 s
+[RAS] Pid 2776 done, write times: 32, turnaround time: 2.101 s
+[RAS] Pid 2777 done, write times: 16, turnaround time: 2.100 s
+[RAS] Pid 2784 done, write times: 128, turnaround time: 2.013 s
+[RAS] Pid 2782 done, write times: 512, turnaround time: 2.026 s
+[RAS] Pid 2783 done, write times: 256, turnaround time: 3.021 s
+[RAS] Pid 2786 done, write times: 32, turnaround time: 3.007 s
+[RAS] Pid 2785 done, write times: 64, turnaround time: 3.016 s
+[RAS] Pid 2787 done, write times: 16, turnaround time: 3.071 s
+[RAS] Pid 2795 done, write times: 64, turnaround time: 2.018 s
+[RAS] Pid 2794 done, write times: 128, turnaround time: 2.025 s
+[RAS] Pid 2793 done, write times: 256, turnaround time: 2.036 s
+[RAS] Pid 2792 done, write times: 512, turnaround time: 3.125 s
+[RAS] Pid 2796 done, write times: 32, turnaround time: 3.072 s
+[RAS] Pid 2797 done, write times: 16, turnaround time: 3.081 s
+[RAS] Pid 2761 done, write times: 1024, turnaround time: 4.021 s
+[RAS] Pid 2802 done, write times: 512, turnaround time: 3.004 s
+[RAS] Pid 2803 done, write times: 256, turnaround time: 3.083 s
+[RAS] Pid 2804 done, write times: 128, turnaround time: 3.002 s
+[RAS] Pid 2805 done, write times: 64, turnaround time: 4.004 s
+[RAS] Pid 2806 done, write times: 32, turnaround time: 4.030 s
+[RAS] Pid 2771 done, write times: 1024, turnaround time: 5.056 s
+[RAS] Pid 2807 done, write times: 16, turnaround time: 4.030 s
+[RAS] Pid 2814 done, write times: 128, turnaround time: 3.014 s
+[RAS] Pid 2813 done, write times: 256, turnaround time: 3.019 s
+[RAS] Pid 2812 done, write times: 512, turnaround time: 3.023 s
+[RAS] Pid 2815 done, write times: 64, turnaround time: 3.077 s
+[RAS] Pid 2816 done, write times: 32, turnaround time: 4.115 s
+[RAS] Pid 2817 done, write times: 16, turnaround time: 4.014 s
+[RAS] Pid 2740 done, write times: 2048, turnaround time: 8.072 s
+[RAS] Pid 2781 done, write times: 1024, turnaround time: 6.029 s
+[RAS] Pid 2750 done, write times: 2048, turnaround time: 8.094 s
+[RAS] Pid 2811 done, write times: 1024, turnaround time: 6.027 s
+[RAS] Pid 2791 done, write times: 1024, turnaround time: 9.014 s
+[RAS] Pid 2760 done, write times: 2048, turnaround time: 10.232 s
+[RAS] Pid 2801 done, write times: 1024, turnaround time: 8.014 s
+[RAS] Pid 2770 done, write times: 2048, turnaround time: 10.069 s
+[RAS] Pid 2780 done, write times: 2048, turnaround time: 10.102 s
+[RAS] Pid 2790 done, write times: 2048, turnaround time: 11.020 s
+[RAS] Pid 2800 done, write times: 2048, turnaround time: 10.098 s
+[RAS] Pid 2810 done, write times: 2048, turnaround time: 10.090 s
+[RAS] Pid 2739 done, write times: 4096, turnaround time: 14.015 s
+[RAS] Pid 2759 done, write times: 4096, turnaround time: 15.008 s
+[RAS] Pid 2749 done, write times: 4096, turnaround time: 15.029 s
+[RAS] Pid 2769 done, write times: 4096, turnaround time: 15.077 s
+[RAS] Pid 2789 done, write times: 4096, turnaround time: 14.028 s
+[RAS] Pid 2799 done, write times: 4096, turnaround time: 14.068 s
+[RAS] Pid 2779 done, write times: 4096, turnaround time: 16.211 s
+[RAS] Pid 2809 done, write times: 4096, turnaround time: 15.064 s
+[RAS] Pid 2738 done, write times: 8192, turnaround time: 21.134 s
+[RAS] Pid 2758 done, write times: 8192, turnaround time: 21.045 s
+[RAS] Pid 2748 done, write times: 8192, turnaround time: 21.089 s
+[RAS] Pid 2768 done, write times: 8192, turnaround time: 20.011 s
+[RAS] Pid 2798 done, write times: 8192, turnaround time: 19.074 s
+[RAS] Pid 2778 done, write times: 8192, turnaround time: 21.005 s
+[RAS] Pid 2808 done, write times: 8192, turnaround time: 20.003 s
+[RAS] Pid 2788 done, write times: 8192, turnaround time: 21.031 s
+> RAS benchmark end, time consume: 22.330 s, write 5864.17 times per sec
 --------------------------------------------------
 > All benchmarks completed.
 > Statistical information:
-Total write times: 95536, child process count: 80
+Total write times: 130944, child process count: 80
 --------------------------------------------------
-SCHED	 time consume	 write times per sec	
-NORMAL 	 27.400s	     3486.73	
-FIFO 	 27.360s	     3491.85	
-RR 	     26.461s	     3610.48	
-RAS 	 23.087s	     4138.09	
+	SCHED	time consume	write times per sec	
+	NORMAL	41.616s		3146.46	
+	FIFO	28.863s		4536.82	
+	RR	28.040s		4669.85	
+	RAS	22.330s		5864.17	
 --------------------------------------------------
 > Benchmark end.

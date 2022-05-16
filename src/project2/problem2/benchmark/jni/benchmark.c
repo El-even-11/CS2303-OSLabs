@@ -14,7 +14,7 @@
 #include <time.h>
 
 #define WRITE_RANGE 1024
-#define MAX_WRITE_TIMES 8192
+#define MAX_WRITE_TIMES 1 << 13
 #define SHIFT_RANGE 10
 
 static int alloc_size;
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
     int i;
     for (i = 0; i < childnum; i++)
     {
-        write_times_arr[i] = MAX_WRITE_TIMES >> (rand() % SHIFT_RANGE);
+        write_times_arr[i] = MAX_WRITE_TIMES >> (i % SHIFT_RANGE);
         write_sum += write_times_arr[i];
     }
 
@@ -98,23 +98,31 @@ int main(int argc, char *argv[])
         {
             // Fork child task.
             write_times = write_times_arr[i];
+            struct timeval forktime;
+            struct timeval firstexe;
+            struct timeval endtime;
+            gettimeofday(&forktime, NULL);
             pid = fork();
             if (pid > 0)
             {
                 // parent task
                 child_pid_arr[i] = pid;
-                printf("[%s] Fork child pid: %d\n",sched_name_arr[sched], pid);
+                printf("[%s] Fork child pid: %d\n", sched_name_arr[sched], pid);
             }
             else if (pid == 0)
             {
                 // child task
+                gettimeofday(&firstexe, NULL);
+                double latency;
+                latency = (firstexe.tv_sec - forktime.tv_sec) * 1000 + (firstexe.tv_usec - forktime.tv_usec) / 1000.0;
+                printf("[%s] Task pid %d latency: %f ms\n", sched_name_arr[sched], getpid(), latency);
                 int oldpolicy;
                 oldpolicy = syscall(157, getpid());
                 syscall(361, getpid());
                 struct sched_param param;
                 param.sched_priority = sched_arr[sched] == 6 ? 0 : 40;
                 syscall(156, getpid(), sched_arr[sched], &param);
-                printf("[%s] Set task pid %d policy %d -> %d\n",sched_name_arr[sched], getpid(), oldpolicy, sched_arr[sched]);
+                printf("[%s] Set task pid %d policy %d -> %d\n", sched_name_arr[sched], getpid(), oldpolicy, sched_arr[sched]);
                 sleep(5);
 
                 int j;
@@ -126,11 +134,10 @@ int main(int argc, char *argv[])
                     memory[pos] = pos;
                 }
 
-                // struct timespec t;
-                // long timeslice;
-                // syscall(161, getpid(), &t);
-                // timeslice = t.tv_nsec / 1000000;
-                printf("[%s] Pid %d done, write times: %d\n",sched_name_arr[sched], getpid(), write_times);
+                gettimeofday(&endtime, NULL);
+                double turnaround;
+                turnaround = (endtime.tv_sec - forktime.tv_sec - 5) + (firstexe.tv_usec - forktime.tv_usec) / 1000000.0;
+                printf("[%s] Pid %d done, write times: %d, turnaround time: %.3f s\n", sched_name_arr[sched], getpid(), write_times,turnaround);
                 exit(0);
             }
             else
@@ -149,7 +156,7 @@ int main(int argc, char *argv[])
         double writes_per_sec;
         writes_per_sec = write_sum * 1.0 / (time_us * 1.0 / 1000000);
 
-        time_consume_arr[sched] = time_us*1.0 / 1000000;
+        time_consume_arr[sched] = time_us * 1.0 / 1000000;
         writes_per_sec_arr[sched] = writes_per_sec;
 
         printf("> %s benchmark end, time consume: %.3f s, write %.2f times per sec\n", sched_name_arr[sched], time_consume_arr[sched], writes_per_sec);
@@ -160,10 +167,10 @@ int main(int argc, char *argv[])
     printf("> Statistical information:\n");
     printf("Total write times: %d, child process count: %d\n", write_sum, childnum);
     printf("--------------------------------------------------\n");
-    printf("SCHED\t time consume\t write times per sec\t\n");
+    printf("\tSCHED\ttime consume\twrite times per sec\t\n");
     for (sched = 0; sched < 4; sched++)
     {
-        printf("%s \t %.3fs\t %.2f\t\n", sched_name_arr[sched], time_consume_arr[sched], writes_per_sec_arr[sched]);
+        printf("\t%s\t%.3fs\t\t%.2f\t\n", sched_name_arr[sched], time_consume_arr[sched], writes_per_sec_arr[sched]);
     }
     printf("--------------------------------------------------\n");
     printf("> Benchmark end.\n");
