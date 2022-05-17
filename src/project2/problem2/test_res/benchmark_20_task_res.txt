@@ -16,7 +16,7 @@ Please choose the number of child tasks (1-100): 20
 [NORMAL] Set task pid 1615 policy 0 -> 0
 [NORMAL] Task pid 1620 latency: 13.612000 ms
 [NORMAL] Set task pid 1620 policy 0 -> 0
-[NORMAL] Task pid 1619 latency: 88.991000 ms
+[NORMAL] Task pid 1619 latency: 88.991000 ms 
 [NORMAL] Set task pid 1619 policy 0 -> 0
 [NORMAL] Task pid 1618 latency: 93.611000 ms
 [NORMAL] Set task pid 1618 policy 0 -> 0
