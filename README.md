@@ -2,9 +2,16 @@
 
 This is a repo for SJTU CS2303 Operating System Labs.
 
-## NOTICE
+## File List
 
-Test file for RAS should **NOT** write too many times. This would result in runtime exceeding. Throttling strategy in RT solved this problem. However, I didn't implement it in RAS, and the RAS always runs in a FIFO way, which pains me a lot :(
+- `/src` : All the source code for this project.
+- `/kernel-final` : The final compiled version of the linux kernel source code. (After complete Project 2).
+- `/scripts` : Some scripts for data analysis.
+- `/img` : Some images in the report.
+
+## Notice
+
+Only for reference. **DO NOT COPY**.
 
 ## TODO
 
@@ -18,7 +25,6 @@ Test file for RAS should **NOT** write too many times. This would result in runt
     - [x] Basic ras scheduler and test file (May. 6th) 
     - [x] Weighted timeslice determined by race prob (May. 6th) 
     - [x] Benchmark (May. 7th) 
-    - [ ] Optimize race probability calculation O(n) -> O(1)
-    - [ ] Throttling strategy
-    - [ ] Run on Multi-CPU
+    - [ ] Throttling strategy (give up)
+    - [ ] Run on Multi-CPU (give up)
     
