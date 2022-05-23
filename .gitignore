@@ -1,6 +1,7 @@
 obj/
 libs/
 kernel-copy/
+kernel-final/
 kernel-sample/
 build/
 sample/

@@ -1,3 +1,0 @@
-kernel/drivers/misc/qemupipe/qemu_pipe.ko
-kernel/drivers/misc/qemutrace/qemu_trace.ko
-kernel/drivers/misc/qemutrace/qemu_trace_sysfs.ko

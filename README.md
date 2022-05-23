@@ -4,10 +4,11 @@ This is a repo for SJTU CS2303 Operating System Labs.
 
 ## File List
 
-- `/src` : All the source code for this project.
-- `/kernel-final` : The final compiled version of the linux kernel source code. (After complete Project 2).
+- `/src` : All the source code for this project. For modified Linux kernel source code, I've tried my best to set **MODIFIED** tag with comments at the places where I made modification. But there may be still something missing :)
 - `/scripts` : Some scripts for data analysis.
 - `/img` : Some images in the report.
+
+In addition, If you want the entire modified Linux source code, please feel free to contact me. <a href="mailto:zhao_ziqian@sjtu.edu.cn">zhao_ziqian@sjtu.edu.cn</a>
 
 ## Notice
 
