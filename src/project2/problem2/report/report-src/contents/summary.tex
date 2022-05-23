@@ -1,9 +1,0 @@
-% !TEX root = ../main.tex
-
-\begin{summary}
-In this project, we first implemented the Memory Accessing Tracing method. Then, based on the tracer, we designed and implemented a new Linux scheduling algorithm RAS. Next, we successfully embedded it into Linux kernel, and proved that it can work correctly. Finally, we wrote several benchmark programs to test the performance of RAS and compared RAS with Linux native scheduling algorithms, NORMAL, FIFO and RR. The benchmark results shown that RAS has higher throughput, shorter \& more stable turnaround time and slightly lower latency.
-
-Although the results are exciting, we still have to note that RAS has many limitations. For example, Memory Access Tracing can not be done completely in the kernel so far. Therefore, if we want to use RAS, we have to manually set protection for the specified memory again and again. Besides, RAS is only sensitive to write operation. So for CPU-bound tasks, RAS can not gain a better performance. We still need to make further improvements for RAS.
-
-For me, this is my first time to read the Linux source code. That's a really challenge. But I learned a lot from it. This project has laid a foundation for me to explore the field of system in the future.
-\end{summary}
