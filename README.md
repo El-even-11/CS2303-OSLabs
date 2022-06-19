@@ -8,7 +8,7 @@ This is a repo for SJTU CS2303 Operating System Labs.
 - `/scripts` : Some scripts for data analysis.
 - `/img` : Some images in the report.
 
-In addition, If you want the entire modified Linux source code, please feel free to contact me. <a href="mailto:zhao_ziqian@sjtu.edu.cn">zhao_ziqian@sjtu.edu.cn</a>
+In addition, if you want the entire modified Linux source code, please feel free to contact me. <a href="mailto:zhao_ziqian@sjtu.edu.cn">zhao_ziqian@sjtu.edu.cn</a>
 
 ## Notice
 
@@ -26,6 +26,9 @@ Only for reference. **DO NOT COPY**.
     - [x] Basic ras scheduler and test file (May. 6th) 
     - [x] Weighted timeslice determined by race prob (May. 6th) 
     - [x] Benchmark (May. 7th) 
-    - [ ] Throttling strategy (give up)
-    - [ ] Run on Multi-CPU (give up)
+    - [ ] Throttling strategy (aborted)
+    - [ ] Run on Multi-CPU (aborted)
     
+## Final Score
+
+100/100 🥰
